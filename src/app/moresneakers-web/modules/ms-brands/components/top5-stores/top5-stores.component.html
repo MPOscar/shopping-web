@@ -1,0 +1,39 @@
+<div id="top5-stores-section" class="mb-2 pb-5 px-5" *ngIf="shopsSellingThisBrandToShow.length > 0">
+
+  <div id="our-partners-header" class="d-flex justify-content-center my-0 py-2 pt-md-5 pb-md-2 text-uppercase">
+    <h1 class="section-title font-weight-light">
+      Official {{name}} <span class="font-italic">Retailers</span>
+    </h1>
+  </div>
+
+  <div class="px-2">
+    <div class="d-flex justify-content-between flex-wrap px-4">
+      <div *ngFor="let store of shopsSellingThisBrandToShow" class="col-6 col-md-2 px-0">
+
+        <a [href]="store.link" class="store-link">
+          <div class="store-card">
+            <div class="store-image">
+              <div class="wrapper-div">
+                <img [src]="store.image" class="fit-cover img-fluid h-100">
+              </div>
+            </div>
+
+            <div class="font-italic w-100 text-center py-1 text-uppercase">
+              {{store.name}}
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center mt-4 pt-4">
+      <button *ngIf="shopsSellingThisBrand.length > 5 && !showAll"class="btn btn-outline-dark rounded-0 font-italic t5s-store-button" (click)="showAllStores(true)">
+        SEE ALL {{shopsSellingThisBrand.length}} STORES
+      </button>
+      <button *ngIf="showAll" class="btn btn-outline-dark rounded-0 font-italic t5s-store-button" (click)="showAllStores(false)">
+        SHOW LESS
+      </button>
+  </div>
+</div>

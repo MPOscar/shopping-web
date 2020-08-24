@@ -1,0 +1,132 @@
+@import "global/_colors";
+
+.border-right {
+  border: 0 white;
+  border-right: 2px solid;
+}
+
+.logo-div {
+  width: 15%;
+  position: relative;
+  padding-bottom: 9.5% !important;
+  object-fit: contain;
+}
+
+.logo-div img {
+  width: 60% !important;
+  object-fit: cover;
+}
+
+.logo-text {
+  height: 100px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.link-button {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: rgb(48, 48, 48) solid 1px;
+  cursor: pointer !important;
+}
+
+.link-button:hover {
+  background-color: rgb(246, 246, 246);
+  text-decoration: underline;
+}
+
+.hot-image-div {
+  position: absolute;
+  right: 0.45rem;
+  top: 0.2rem;
+  z-index: 2;
+
+  img {
+    width: 80% !important;
+  }
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+table {
+  background-color: white;
+}
+
+table td, table th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.25rem;
+}
+
+th {
+  background-color: #365577;
+  font-family: TitilliumWeb;
+  color: white;
+  line-height: 1;
+}
+
+.wrapper-div {
+  white-space: nowrap;
+}
+
+.item-name {
+  font-family: OpenSans;
+  font-size: 0.95rem;
+  width: 30%;
+}
+
+.item-code {
+  font-family: OpenSans;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.item-price {
+  position: relative;
+  font-family: OpenSans;
+  font-size: 0.8rem;
+  width: 15%;
+
+  img {
+    width: 30%;
+    object-fit: contain;
+  }
+}
+
+.item-button {
+  font-style: italic;
+  font-family: TitilliumWeb;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+
+.hot-item-button {
+  color: rgb(180, 79, 18);
+}
+
+@media (max-width: 768px) {
+  .item-button {
+    font-size: 0.9rem;
+  }
+}
+
+.item-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.width-60px {
+  width: 60px;
+}
+
+.flex-direction-column {
+  flex-direction: column;
+}
+

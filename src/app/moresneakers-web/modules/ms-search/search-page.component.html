@@ -1,0 +1,40 @@
+<div id="search-page-div" class="padding-bottom-1-5rem">
+  <!--ms-banner [backgroundImage]="'assets/images/whats-new/banner.svg'"
+             [title]="'SEARCH'"
+             [titleItalic]=""
+
+             [textTitle]="'Lorem ipsum dolor sit amet'"
+             [text]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt' +
+                     'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco' +
+                     'laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in ' +
+                     'voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat ' +
+                     'non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'">
+  </ms-banner-->
+
+  <ms-breadcrumb [steps]="['Home','Search']"></ms-breadcrumb>
+
+  <!--div class="flex-column col-12 col-md-3 col-lg-3 mb-2 mb-md-0 pl-5 padding-left-10px">
+    <filters-form></filters-form>
+  </div-->
+
+  <ms-advertisement></ms-advertisement>
+
+  <div class="d-flex align-items-stretch align-items-stretch flex-column flex-md-row">
+    <div *ngIf="showFilter" id="filters-div">
+       <filters-form [isFiltersReleases]="true" (filterEventEmiter)="filter($event)" [inputFilters]="filters"  [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [count]="count" [inputFilters]="filters" [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
+    </div>
+
+    <div id="product-table-div">
+      <ms-product-table
+        [brands]="brands"
+        [offers]="offers"
+        [releases]="releases"
+        [shops]="shops"
+        [listViewMode] = "false"
+        [styles]="styles"
+        (sortByPriceEvent)="sortByPrice($event)">
+      </ms-product-table>
+    </div>
+  </div>
+
+</div>

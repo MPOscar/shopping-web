@@ -1,0 +1,41 @@
+#footer-div {
+
+  font-family: OpenSans;
+  background-color: #365577 !important;
+  color: white;
+
+  a {
+    color: white;
+    font-size: 0.875rem;
+  }
+
+  .footer-item {
+    height: 3rem;
+    line-height: 3rem;
+  }
+
+  @media screen and (min-width: 480px) {
+    .footer-item {
+      height: 4.375rem;
+      line-height: 4.375rem;
+    }
+
+    a {
+      font-size: 1rem;
+    }
+  }
+
+  //a img {
+  //  margin-left: 1.3125em;
+  //}
+
+  #copy-span {
+    font-size: 0.875rem;
+  }
+
+  .socials-width-20px {
+    width: 20px;
+  }
+
+
+}

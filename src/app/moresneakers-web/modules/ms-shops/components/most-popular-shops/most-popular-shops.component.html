@@ -1,0 +1,36 @@
+<div>
+
+  <ms-section-title [title]="'Most Popular'"
+                    [titleItalic]="'Shops'">
+  </ms-section-title>
+
+  <div class="d-flex flex-column flex-lg-row">
+    <div *ngFor="let shop of shops; let first = first; let last = last"
+         [class.pl-lg-0]="first" [class.pr-lg-0]="last"
+         [class.middle-padding]="!first && !last"
+         class="col-12 col-lg-4 p-0 p-lg-2 mb-3 mb-lg-0">
+
+      <a class="text-decoration-none" [routerLink]="['/shops/details', getRoute(shop.name)]">
+
+        <div class="shop-card">
+          <div class="wrapper-div">
+            <img [src]="shop.mainImage">
+          </div>
+
+          <div class="text-center shop-name align-middle">{{shop.name}}</div>
+
+          <div class="d-flex shop-btn-div">
+            <a class="mx-auto">
+              <button class="button shop-btn" [routerLink]="['/shops/details', getRoute(shop.name)]">
+                Visit Store
+              </button>
+            </a>
+          </div>
+
+        </div>
+
+      </a>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,147 @@
+<!--<nav class="navbar navbar-expand-md">
+  <span class="navbar-brand text-white navbar-toggler">MENU</span>
+
+  <button (click)="toggleCollapse()" class="navbar-toggler navbar-toggler-right text-white" type="button">
+    <span [hidden]="show" class="fa fa-bars"></span>
+    <span [hidden]="!show" class="fa fa-times"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" [class.show]="show">
+    <ul class="navbar-nav d-md-flex flex-md-wrap">
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/home']">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" (click)="toggleCollapseWhatsNewMenu()">WHAT'S NEW</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/release-calendar']">RELEASE CALENDAR</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/releases']">RELEASES</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" (click)="toggleCollapseBrandsMenu()">BRANDS</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" (click)="toggleCollapsCategoriesMenu()">CATEGORIES</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/sales']">SALES</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" (click)="toggleCollapsShopsMenu()">SHOPS</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/customize']">CUSTOMIZE</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/blog']">BLOG</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn font-weight-bold" href="#" role="button" [routerLink]="['/contact']">CONTACT</a>
+      </li>
+    </ul>
+  </div>
+</nav>-->
+
+<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent justify-content-center" color-on-scroll="500">
+  <div class="container pl-10px pr-10px ml-10px mr-10px">
+    <div class="dropdown button-dropdown">
+      <div ngbDropdown>
+        <a class="dropdown-toggle" ngbDropdownToggle>
+          <span class="button-bar"></span>
+          <span class="button-bar"></span>
+          <span class="button-bar"></span>
+        </a>
+        <div ngbDropdownMenu>
+          <a class="dropdown-header">Dropdown header</a>
+          <a class="dropdown-item" href="#" [routerLink]="['/home']">HOME</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Separated link</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">One more separated link</a>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-translate">
+      <a class="navbar-brand" placement="bottom" ngbTooltip="Designed by Invision. Coded by Creative Tim">
+        Now Ui Kit
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" data-nav-image="assets/img/blurred-image-1.jpg" data-color="orange">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="toggleCollapseWhatsNewMenu()">
+            <p>WHAT'S NEW</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/release-calendar']">
+            <p>CALENDAR</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/releases']">
+            <p>RELEASES</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="toggleCollapseBrandsMenu()">
+            <p>BRANDS</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="toggleCollapsCategoriesMenu()">
+            <p>CATEGORIES</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/sales']">
+            <p>SALES</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" (click)="toggleCollapsShopsMenu()">
+            <p>SHOPS</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/customize']">
+            <p>CUSTOMIZE</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/blog']">
+            <p>BLOG</p>
+          </a>
+        </li>
+        <!--<li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
+            <i class="fab fa-twitter"></i>
+            <p class="d-lg-none d-xl-none">Twitter</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://www.facebook.com/CreativeTim" target="_blank">
+            <i class="fab fa-facebook-square"></i>
+            <p class="d-lg-none d-xl-none">Facebook</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <p class="d-lg-none d-xl-none">Instagram</p>
+          </a>
+        </li>-->
+      </ul>
+    </div>
+  </div>
+</nav>

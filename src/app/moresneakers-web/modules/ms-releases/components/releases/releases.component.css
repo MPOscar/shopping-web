@@ -1,0 +1,34 @@
+#releases-div #advertisement {
+  font-family: OpenSans;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+#releases-div #filters-div {
+  width: 25%;
+}
+#releases-div #product-table-div {
+  width: 75%;
+}
+@media screen and (max-width: 768px) {
+  #releases-div h1 {
+    font-size: 2.8em;
+  }
+  #releases-div #filters-div {
+    width: 100%;
+  }
+  #releases-div #product-table-div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #releases-div h1 {
+    font-size: 2.1em;
+  }
+}
+#releases-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+
+/*# sourceMappingURL=releases.component.css.map */

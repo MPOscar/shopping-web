@@ -1,0 +1,23 @@
+nav {
+  background-color: black;
+  padding-top: 0.125em;
+  padding-bottom: 0;
+  padding-left: 2.6875em;
+}
+
+a {
+  background-color: black;
+  color: white;
+  border-radius: 0;
+  font-family: TitilliumWeb;
+  font-size: 1.125em;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+a:hover {
+  background-color: white;
+  color: black;
+}
+
+/*# sourceMappingURL=navigation.component.css.map */

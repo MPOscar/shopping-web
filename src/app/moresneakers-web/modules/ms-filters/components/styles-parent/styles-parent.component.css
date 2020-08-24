@@ -1,0 +1,31 @@
+#styles-parent-div ::ng-deep .mat-tree-node {
+  min-height: 10px !important;
+  height: 30px !important;
+}
+#styles-parent-div ::ng-deep .mat-checkbox {
+  font-family: OpenSans;
+  font-weight: 200;
+  color: black !important;
+}
+#styles-parent-div ::ng-deep .mat-icon {
+  color: darkgray !important;
+  font-size: 1.4rem !important;
+}
+#styles-parent-div ::ng-deep .mat-checkbox-frame {
+  border-radius: 0 !important;
+  border: solid 1px black !important;
+}
+#styles-parent-div mat-tree-node[style="padding-left: 40px"] {
+  padding-left: 20px !important;
+}
+#styles-parent-div mat-tree-node {
+  font-size: 1rem !important;
+}
+#styles-parent-div mat-tree-node[style="padding-left: 80px"] {
+  padding-left: 40px !important;
+}
+#styles-parent-div ::ng-deep .mat-checkbox-layout {
+  margin-bottom: 0px !important;
+}
+
+/*# sourceMappingURL=styles-parent.component.css.map */

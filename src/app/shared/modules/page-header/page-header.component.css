@@ -1,0 +1,42 @@
+#page-header input[name^=search-terms] {
+  border: 1px solid black;
+  height: 2.875em;
+  padding-left: 1em;
+  border-radius: 0;
+  font-family: TitilliumWeb;
+  font-style: italic;
+}
+#page-header header div {
+  width: 100%;
+}
+@media screen and (min-width: 576px) {
+  #page-header input[name^=search-terms] {
+    width: 20em;
+  }
+  #page-header header div {
+    width: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  #page-header input[name^=search-terms] {
+    width: 24.3em;
+  }
+}
+#page-header input[type^=image] {
+  position: relative;
+  margin-left: -42px;
+}
+#page-header ::-webkit-input-placeholder {
+  font-style: italic;
+}
+#page-header :-moz-placeholder {
+  font-style: italic;
+}
+#page-header ::-moz-placeholder {
+  font-style: italic;
+}
+#page-header :-ms-input-placeholder {
+  font-style: italic;
+}
+
+/*# sourceMappingURL=page-header.component.css.map */

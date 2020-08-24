@@ -1,0 +1,114 @@
+$color-brown: #c45a1a;
+
+#up-coming-div {
+  background-color: #f1f1f1;
+  font-family: TitilliumWeb;
+
+  // Small and Medium devices
+  //@media (max-width: 768px) {
+  //  #coming-soon-header {
+  //    justify-content: center !important;
+  //  }
+  //}
+
+  .coming-soon-label {
+    line-height: 1;
+    font-size: 4.25rem;
+  }
+
+  @media (max-width: 768px) {
+
+    .card-footer button {
+      font-size: 0.9rem;
+    }
+
+    .coming-soon-label {
+      font-size: 3.8rem;
+    }
+  }
+
+  #calendar-btn {
+    width: 11.70em;
+    border: solid 1px black;
+    color: black;
+    font-size: 1.0625em;
+    box-sizing: border-box;
+  }
+
+  #calendar-btn:hover {
+    color: white;
+    background: black;
+  }
+
+  #calendar-icon {
+    font-size: 2em;
+  }
+
+  .card {
+    background-color: white !important;
+    box-sizing: border-box;
+    color: #3c3c3c !important;
+  }
+
+  .card-header {
+    flex-grow: 100;
+    background-color: white !important;
+  }
+
+  /*.card:hover {
+    background-color: black;
+    color: white;
+  }*/
+
+  .card-title {
+    font-family: TitilliumWeb;
+    line-height: 1;
+  }
+
+  .card-date {
+    font-family: OpenSans;
+    line-height: 1;
+  }
+
+  .card-body, .card-footer {
+    background-color: white !important;
+  }
+
+  .card-footer button {
+    color: $color-brown;
+  }
+
+  .card-footer button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .margin-bottom-none {
+    margin-bottom: 0px !important;
+  }
+
+  .padding-bottom-none {
+    padding-bottom: 0px !important;
+  }
+
+  .padding-top-none {
+    padding-top: 0px !important;
+  }
+
+  .padding-top-10px {
+    padding-top: 10px !important;
+  }
+
+}
+
+.padding-bottom-15px {
+  padding-bottom: 15px;
+}
+
+.height-300px {
+  height: 300px;
+}
+
+.justify-content-space-between {
+  justify-content: space-between;
+}

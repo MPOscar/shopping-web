@@ -1,0 +1,51 @@
+label {
+  font-family: OpenSans;
+  font-size: 1.2rem;
+}
+
+input, textarea {
+  border: 0;
+  border-radius: 0;
+  background-color: #eceef0;
+}
+
+.submit-button {
+  padding: 0.5rem 2.2rem;
+  font-style: italic;
+  font-family: TitilliumWeb;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  border: darkgray 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .submit-button {
+    font-size: 0.9rem;
+  }
+}
+.submit-button:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.info-title {
+  font-family: OpenSans;
+  font-size: 1.2rem;
+  font-weight: lighter;
+  line-height: 1.5;
+}
+
+.info {
+  font-weight: lighter;
+  font-size: 0.95rem;
+}
+
+.info-icons .fb-img {
+  width: auto;
+  height: 42px;
+}
+
+/*# sourceMappingURL=contact.component.css.map */

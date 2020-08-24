@@ -1,0 +1,345 @@
+@import "global/colors";
+
+#sales-page-div {
+
+  ::ng-deep .carousel-control-prev-icon {
+    background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+    width: 1.62em !important;
+    height: 2.62em !important;
+  }
+
+  ::ng-deep .carousel-control-next-icon {
+    background-image: url("/assets/images/our-partners/slide-next-button.svg");
+    width: 1.62em !important;
+    height: 2.62em !important;
+  }
+
+  ::ng-deep .our-selection-div .carousel-control-prev {
+    display: flex !important;
+    justify-content: left !important;
+    margin-left: 2.4rem !important;
+  }
+
+  ::ng-deep .our-selection-div .carousel-control-next {
+    display: flex !important;
+  }
+
+  ::ng-deep .our-selection-div .carousel-control-next-icon {
+    margin-left: auto;
+    margin-right: 2.4rem;
+  }
+
+  ::ng-deep .our-selection-div .carousel-control-prev-icon,
+  .our-selection-div .carousel-control-next-icon {
+    width: 1.62em !important;
+    height: 2.62em !important;
+
+  }
+
+  .store-card {
+    font-family: TitilliumWeb;
+    font-size: 1.1rem;
+    color: $dark-gray-text;
+    position: relative;
+    cursor: pointer !important;
+  }
+
+  .store-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  .store-item-div {
+    background-color: transparent;
+    height: 100%;
+  }
+
+  .store-item-div:hover .store-name {
+    background-color: black;
+  }
+
+  .store-link {
+    text-decoration: none;
+  }
+
+  .store-card:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .t5s-store-button {
+    font-family: TitilliumWeb;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    color: $orange-text;
+  }
+
+  .t5s-store-button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  $color-brown: #c45a1a;
+
+  .image-container-div {
+    position: relative;
+    width: 100% !important;
+    padding-bottom: 100%;
+  }
+
+  #sortingSelect {
+    width: 9.8rem;
+    background-color: rgb(237, 237, 237);
+    border-radius: 0;
+  }
+
+  .control-label {
+    font-family: TitilliumWeb;
+    font-size: 1.2rem;
+  }
+
+  #pagination-div, #pagination-div a {
+    color: rgb(182, 182, 182);
+  }
+
+  ::ng-deep {
+
+    .ng-select .ng-arrow-wrapper {
+      height: 100%;
+      background: white;
+      border: 1px solid rgb(237, 237, 237);
+      padding-left: 0.3125rem;
+      padding-top: 0.3125rem;
+    }
+
+    .ng-select .ng-select-container {
+      font-style: italic !important;
+      font-family: OpenSans !important;
+      font-weight: 200;
+      font-size: 0.95rem;
+      color: rgb(48, 48, 48) !important;
+      text-align: center;
+      background-color: rgb(237, 237, 237);
+      border: 0;
+      border-radius: 0 !important;
+      padding-left: 0rem !important;
+    }
+
+    .ng-select.ng-select-single .ng-select-container .ng-value-container,
+    .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+      padding-left: 0.2rem !important;
+      overflow: visible !important;
+    }
+
+    .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+      font-style: italic;
+      font-weight: lighter;
+    }
+
+    .ng-input {
+      padding-left: 0 !important;
+      padding-right: 20px !important;
+    }
+
+    .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+      background-color: rgb(237, 237, 237);
+      border: 0;
+    }
+
+    .ng-select .ng-clear-wrapper .ng-clear {
+      display: none !important;
+    }
+  }
+
+  #view-mode-icon {
+    width: 1.375rem;
+    height: 1.125rem;
+    font-size: 1.2rem;
+  }
+
+  .view-mode-div {
+    cursor: pointer !important;
+  }
+
+  .hot-image-div {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.3rem;
+    z-index: 2;
+  }
+
+  .item-image-div {
+    z-index: 1;
+    background-color: #ecedef;
+  }
+
+  .card {
+    border: transparent solid 1px !important;
+  }
+
+  .card:hover {
+    border: rgba(0, 0, 0, 0.19) solid 1px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  .item-info-div {
+    font-family: OpenSans;
+  }
+
+  .item-name-div {
+    font-family: OpenSans;
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #3c3c3c;
+    line-height: 1.3;
+    min-height: 2.625rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .item-feature-div {
+    font-size: 0.8rem;
+    color: rgb(140, 140, 140);
+  }
+
+  .prev-price-span {
+    font-family: TitilliumWeb;
+    color: #000;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+  }
+
+  .current-price-span {
+    font-family: TitilliumWeb;
+    color: $color-brown;
+    font-size: 0.9rem;
+  }
+
+  .os-logo-span {
+    width: 20%;
+    padding-bottom: 10%;
+    position: relative;
+  }
+
+  .item-button {
+    width: 100%;
+    font-family: TitilliumWeb;
+    color: $color-brown;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    border: black 1px solid;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  @media (max-width: 768px) {
+    .item-button {
+      font-size: 0.9rem;
+    }
+  }
+
+  .item-button:hover {
+    background-color: black;
+    color: white;
+  }
+
+  // Just for Mobiles
+  .col-6 {
+    max-width: 49%;
+  }
+
+  // Just for Tablets size
+  @media (min-width: 768px) {
+    .col-md-4 {
+      max-width: 31% !important;
+    }
+  }
+
+  // Just for Extra Large Screens
+  @media (min-width: 1200px) {
+    .col-xl-3 {
+      max-width: 24% !important;
+    }
+  }
+
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+
+  .os-items-table {
+    padding: 0 9.2rem;
+  }
+}
+
+// =========================
+// OUR SELECTION STYLES
+// =========================
+
+.our-selection-div {
+
+  .our-selection-slide {
+    position: relative;
+    width: 100%;
+    padding-bottom: 34.5%;
+  }
+
+}
+
+// --------------------------
+
+// =========================
+// LATEST DEALS STYLES
+// =========================
+
+.latest-deals-div {
+
+  .latest-deals-slide {
+    position: relative;
+    width: 100%;
+    padding-bottom: 47%;
+  }
+
+}
+
+// --------------------------
+
+
+// =========================
+// PRODUCT TABLE AND FILTERS STYLES
+// =========================
+
+#sales-page-div {
+
+  #filters-div {
+    width: 100%;
+  }
+
+  #product-table-div {
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    #filters-div {
+      width: 25%;
+    }
+
+    #product-table-div {
+      width: 75%;
+    }
+  }
+
+}
+
+// --------------------------
+
+
+.promo-code {
+  color: rgb(0, 0, 0);
+  position: absolute;
+  left: 5px;
+  font-size: 14px;
+  bottom: 2px;
+}

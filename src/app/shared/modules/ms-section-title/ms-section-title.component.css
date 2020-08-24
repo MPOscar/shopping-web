@@ -1,0 +1,17 @@
+.section-title h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+@media screen and (max-width: 768px) {
+  .section-title h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .section-title h1 {
+    font-size: 1.55em;
+  }
+}
+
+/*# sourceMappingURL=ms-section-title.component.css.map */

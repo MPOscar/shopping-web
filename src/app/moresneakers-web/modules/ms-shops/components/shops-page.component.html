@@ -1,0 +1,58 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div class="padding-bottom-1-5rem">
+  <ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl"
+             [title]="'Shops'"
+
+             [textTitle]="title"
+             [text]="description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home','Shops']"></ms-breadcrumb>
+
+  <div class="mb-5">
+    <ms-most-popular-shops [shops]="mostPopularShops">
+    </ms-most-popular-shops>
+  </div>
+
+  <div class="d-flex align-items-stretch flex-column flex-md-row">
+    <div id="filters-div" class="pt-5">
+      <filters-form
+      [shops]="shops"
+      [styles]="styles"
+      [categories]="categories"
+      [brands]="brands"
+      [samePage]="true"
+      [isFiltersShops]="true"
+      [inputFilters]="defaultFilters"
+      (filterEventEmiter)="filter($event)"></filters-form>
+    </div>
+
+    <div id="product-table-div">
+      <ms-shops-letter-table [shops]="shops"></ms-shops-letter-table>
+    </div>
+  </div>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

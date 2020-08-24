@@ -1,0 +1,21 @@
+.section-title {
+
+  h1 {
+    font-family: TitilliumWeb;
+    font-size: 3.18rem;
+    color: rgb(48, 48, 48);
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.8em;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 1.55em;
+    }
+  }
+
+}

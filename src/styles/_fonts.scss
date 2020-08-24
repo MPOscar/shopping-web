@@ -1,0 +1,82 @@
+// ==================
+// Open Sans
+// ==================
+@font-face {
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Regular.ttf);
+}
+
+// To Delete after font refactor
+@font-face {
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-Light.ttf);
+  font-weight: 200; // lighter
+}
+
+@font-face {
+  font-family: OpenSans;
+  src: url(../assets/fonts/OpenSans/OpenSans-SemiBold.ttf);
+  font-weight: bold; // SemiBold
+}
+
+// ==================
+// Titillium Web
+// ==================
+@font-face {
+  font-family: TitilliumWeb;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-Regular.ttf);
+}
+
+@font-face {
+  font-family: TitilliumWeb;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-Italic.ttf);
+  font-style: italic;
+}
+
+// To Delete after font refactor
+@font-face {
+  font-family: TitilliumWeb;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-ExtraLight.ttf);
+  font-weight: 200; // lighter
+}
+
+@font-face {
+  font-family: TitilliumWeb;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-ExtraLightItalic.ttf);
+  font-weight: 200; // lighter
+  font-style: italic;
+}
+
+@font-face {
+  font-family: TitilliumWeb;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf);
+  font-weight: bold; // SemiBold
+}
+
+
+// New Explicit Fonts
+@font-face {
+  font-family: OpenSans-Light;
+  src: url(../assets/fonts/OpenSans/OpenSans-Light.ttf);
+}
+
+@font-face {
+  font-family: OpenSans-Semibold;
+  src: url(../assets/fonts/OpenSans/OpenSans-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: TitilliumWeb-ExtraLight;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: TitilliumWeb-ExtraLightItalic;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-ExtraLightItalic.ttf);
+  font-style: italic;
+}
+
+@font-face {
+  font-family: TitilliumWeb-SemiBold;
+  src: url(../assets/fonts/TitilliumWeb/TitilliumWeb-SemiBold.ttf);
+}

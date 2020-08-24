@@ -1,0 +1,18 @@
+#filters-div {
+  width: 100%;
+}
+
+#product-table-div {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #filters-div {
+    width: 25%;
+  }
+
+  #product-table-div {
+    width: 75%;
+  }
+}
+

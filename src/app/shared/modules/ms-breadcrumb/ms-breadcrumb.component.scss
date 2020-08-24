@@ -1,0 +1,56 @@
+#breadcrumb-div {
+  $y-padding: 15px;
+  $common-border: solid 1px rgb(236, 237, 239);
+  $text-padding: 7px;
+
+  margin-left: 1px;
+
+  padding-top: $y-padding;
+  padding-bottom: $y-padding;
+
+  box-sizing: content-box;
+
+  a {
+    font-family: TitilliumWeb;
+    font-size: 1.0625rem;
+    color: rgb(204, 204, 204);;
+  }
+
+  #last a {
+    background-color: rgb(255, 121, 40);
+    border-color: rgb(255, 121, 40) !important;
+    color: white;
+    line-height: 40px;
+  }
+
+  a {
+    line-height: 40px;
+  }
+
+  .non-last, #last {
+    height: 42px;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 576px) {
+    #last {
+      margin-right: 0 !important;
+    }
+  }
+
+  .off {
+    margin-right: -15px;
+  }
+  //#last {
+  //  margin-left: -14px;
+  //  padding-top: 0 !important;
+  //}
+  .margin-left-1-5rem {
+    margin-left: 1.5rem !important;
+  }
+
+  .margin-left-1-5rem {
+    margin-left: 1.5rem !important;
+  }
+
+}

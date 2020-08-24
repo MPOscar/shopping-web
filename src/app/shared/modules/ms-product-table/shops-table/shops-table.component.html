@@ -1,0 +1,72 @@
+<div class="d-flex flex-column">
+
+  <div class="d-flex justify-content-end mx-2 m-0 pb-1">
+
+    <div *ngIf="!disabledSort" class="d-flex align-items-center mr-3">
+      <span class="mr-1 control-label">Sort</span>
+      <span id="sortingSelect">
+        <ng-select [items]="dropdownList" bindLabel="name" class="w-100 no-shadow" (click)="changeNgSlect($event)" matNativeControl
+          [formControl]="priceSort">
+        </ng-select>
+      </span>
+    </div>
+
+    <div class="align-items-center d-flex pl-2 view-mode-div" (click)="toggleViewMode()">
+      <span class="mr-2 control-label">List view</span>
+      <span id="view-mode-icon" class="fa fa-exchange p-0"></span>
+    </div>
+  </div>
+
+  <div *ngIf="listViewMode" class="w-100 mb-1">
+    <ms-shops-list-view [itemsToShow]="itemsToShow"></ms-shops-list-view>
+  </div>
+
+  <div *ngIf="!listViewMode" class="d-flex flex-wrap justify-content-between mb-1">
+    <div *ngFor="let item of itemsToShow; let i = index" class="col-6 col-md-4 col-xl-3 mb-3 card rounded-0 p-0 cursor-pointer">
+
+      <a class="store-link" [routerLink]="['/shops/details', getRoute(item.name)]">
+        <div class="store-card">
+          <div class="store-image">
+            <div class="wrapper-div">
+              <img [src]="item.image" class="fit-cover img-fluid h-100">
+            </div>
+          </div>
+
+          <div class="font-italic w-100 text-center py-1 text-uppercase">
+            {{item.name}}
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <div id="pagination-div" class="d-inline-flex mx-auto mb-4" *ngIf="pages > 1">
+    <span class="cursor-pointer mr-3" (click)="changePage('1')">
+      <a>
+        <img src="assets/images/pagination-first.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer mr-1" (click)="changePage((actualPage - 1).toString())">
+      <a>
+        <img src="assets/images/pagination-prev.svg">
+      </a> |
+    </span>
+
+    <span *ngFor="let page of paginationArray" class="cursor-pointer mr-3" (click)="changePage(page)">
+      <a [ngClass]="{'color-black': page == actualPage}">{{page}}</a>
+    </span>
+
+    <span class="cursor-pointer mr-3" (click)="changePage((actualPage + 1).toString())">
+      |
+      <a>
+        <img src="assets/images/pagination-next.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer" (click)="changePage(pages.toString())">
+      <a>
+        <img src="assets/images/pagination-last.svg">
+      </a>
+    </span>
+  </div>
+</div>

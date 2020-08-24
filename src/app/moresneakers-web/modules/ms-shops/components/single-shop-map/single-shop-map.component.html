@@ -1,0 +1,12 @@
+<div class="d-flex flex-lg-row flex-column mt-3">
+
+  <div class="info col-lg-4 col-12 p-0 pt-5 px-2 pl-lg-4" *ngIf="shop.shippingDetails && !shop.isParent && shop.type === 'virtual'">
+    <div class="info-title">SHIPPING DETAILS</div>
+    <div class="info-content">{{shop.shippingDetails}}</div>
+  </div>
+
+  <div class="col-lg-8 col-12 p-0 pl-lg-3 map-container" *ngIf="!shop.isParent && shop.type === 'physical'">
+    <div id="map" class="map"></div>
+  </div>
+
+</div>

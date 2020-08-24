@@ -1,0 +1,366 @@
+<div class="d-flex flex-wrap py-4" id="calendar-div">
+
+  <!-- <div class="flex-column col-12 col-md-3 col-lg-3 mb-2 mb-md-0 pl-5 padding-left-0px">
+    <filters-form [isFiltersReleases]="true" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [count]="count"
+      [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
+  </div> -->
+
+  <div class="flex-column col-12 mb-2 mb-md-0 pl-5  d-flex padding-left-0px padding-right-0px min-height-250px">
+
+    <div class="d-flex flex-wrap mx-2 margin-none padding-bottom-5px">
+      <span class="flex-grow-1"></span>
+
+      <div class="align-items-center cursor-pointer display-flex">
+        View
+        <ng-select [items]="dropdownList" bindLabel="name" class="ml-2" (click)="changeNgSlect($event)" matNativeControl
+          [formControl]="montViewControl">
+        </ng-select>
+      </div>
+
+      <div class="align-items-center cursor-pointer display-flex padding-left-10px" (click)="toggleViewMode()">
+        <span class="mr-2 control-label">{{ listViewMode ? 'Portfolio view' : 'List view' }}</span>
+        <span id="calendar-icon" class="fa fa-exchange mr-3 margin-left-20px"></span>
+      </div>
+
+    </div>
+
+    <div
+      class="coming-soon-calendar d-flex height-64px justify-content-center mx-2 margin-none padding-bottom-10px padding-top-10px">
+
+      <div class="align-items-center d-flex display-flex calendar-icon flex-wrap margin-none">
+        <span id="calendar-icon" class="fa fa-calendar mr-3 font-size-3em flex-grow-1 margin-left-10px"></span>
+      </div>
+
+      <div class="d-flex margin-none">
+        <div class="align-items-center cursor-pointer display-flex" (click)="changeMonth(-1)">
+          <span id="calendar-icon" class="fa fa-angle-left mr-3 font-size-3em margin-left-20px"></span>
+        </div>
+        <span class="flex-grow-1"></span>
+        <div class="font-size-3em font-weight-light font-italic display-flex align-items-center width-300px">
+          {{month | uppercase}} {{year}}
+        </div>
+        <span class="flex-grow-1"></span>
+        <div class="align-items-center cursor-pointer display-flex" (click)="changeMonth(1)">
+          <span id="calendar-icon" class="fa fa-angle-right mr-3 font-size-3em margin-left-20px"></span>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="monthView && !listViewMode">
+      <div *ngFor="let dummy of ' '.repeat(lastDay).split(''), let x = index">
+
+        <div *ngIf="getDayToShow(AllMonthItemsByDay[x])">
+
+          <div class="strike padding-bottom-10px padding-top-20px">
+            <span>{{getDay(x) | uppercase}} {{x + 1}}</span>
+          </div>
+
+          <div class="flex-row flex-wrap align-self-center d-flex justify-content-flex-start">
+            <div *ngFor="let item of AllMonthItemsByDay[x], let i = index" class="col-12 col-md-3 col-lg-3 col-xl-3 px-1 pl-md-2 pr-md-0 pb-2 pb-md-0
+                      rounded-0 border-0 margin-top-10px">
+
+              <div class="d-flex flex-column align-content-end card rounded-0 border-0 px-0 h-100 rpc-item-card"
+                [ngClass]="{'margin-right-20px-custom': (i % 4 !== 0 || i === 0)}"
+                (mouseenter)="mouseEnter( getKey(item) )" (mouseleave)="mouseLeave( getKey(item) )">
+
+                <a [routerLink]="['/releases', item.slug]"
+                   class="w-100 text-decoration-none"
+                   data-toggle="tooltip" data-placement="bottom" [title]="item.name"
+                >
+                  <div class="d-flex flex-wrap align-items-start border-0 rpc-card-header"
+                       [ngClass]="{'release-selected': item.id === selectedReleaseId}">
+
+                    <div class="wrapper-div px-3 py-3 align-items-center">
+                      <div class="d-flex flex-grow-1 flex-wrap pb-1 align-items-center">
+                        <div class="rpc-card-title h4 w-75 pr-2">
+                          <span>{{x + 1}} {{month | uppercase}}</span>
+                        </div>
+
+                        <div class="w-25 ml-auto">
+                          <img class="img-fluid card-logo rpc-card-logo" [src]="getBrandImage(item.styleId)"
+                            [ngClass]="{'invert-color': item.id === selectedReleaseId}">
+                        </div>
+
+                      </div>
+
+                      <div class="card-date mt-auto h6 w-100 mb-1 padding-left-2px">
+                        Style Code: {{item.sku ? item.sku : 'N/A'}}
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="wrapper-div d-flex align-content-center"
+                      [style.background-color]="bodyBgColor( getKey(item) )">
+                      <img class="img-fluid card-image" [src]="item.mainImage">
+                    </div>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-start border-0 rpc-card-header"
+                    [ngClass]="{'release-selected': item.id === selectedReleaseId}">
+
+                    <div class="wrapper-div px-3 py-3">
+                      <div class="d-flex flex-grow-1 flex-wrap pb-1">
+                        <div class="rpc-card-title pr-2 text-align-center width-100pct">
+                          <div class="white-space-break-spaces">{{ item.name | textOverflow: 65 }}</div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!monthView && !listViewMode">
+      <div *ngFor="let dummy of ' '.repeat(weekRange.length).split(''), let x = index">
+
+        <div *ngIf="getDayToShow(AllMonthItemsByWeeks[x])">
+
+          <div class="strike padding-bottom-10px padding-top-20px">
+            <span>{{'Week' | uppercase}} {{x + 1}}</span>
+          </div>
+
+          <div class="flex-row flex-wrap align-self-center d-flex justify-content-flex-start">
+            <div *ngFor="let item of AllMonthItemsByWeeks[x], let i = index" class=" col-12 col-md-3 col-lg-3 col-xl-3
+              px-1 pl-md-2 pr-md-0 pb-2 pb-md-0 rounded-0 border-0 margin-top-10px">
+
+              <div class="d-flex flex-column align-content-end card rounded-0 border-0 px-0 h-100 rpc-item-card"
+                [ngClass]="{'margin-right-20px-custom': (i % 4 !== 0 || i === 0)}"
+                (mouseenter)="mouseEnter( getKey(item) )" (mouseleave)="mouseLeave( getKey(item) )">
+
+
+
+                <a [routerLink]="['/releases', item.slug]"
+                   class="w-100 text-decoration-none"
+                   data-toggle="tooltip" data-placement="bottom" [title]="item.name"
+                >
+                  <div class="d-flex flex-wrap align-items-start border-0 rpc-card-header"
+                    [ngClass]="{'release-selected': item.id === selectedReleaseId}">
+
+                    <div class="wrapper-div px-3 py-3 align-items-center">
+                      <div class="d-flex flex-grow-1 flex-wrap pb-1 align-items-center">
+                        <div class="rpc-card-title h4 w-75 pr-2">
+                          <span>{{getDayToItem(item)}} {{month | uppercase}}</span>
+                        </div>
+
+                        <div class="w-25 ml-auto">
+                          <img class="img-fluid card-logo rpc-card-logo" [src]="getBrandImage(item.styleId)"
+                            [ngClass]="{'invert-color': item.id === selectedReleaseId}">
+                        </div>
+
+                      </div>
+
+                      <div class="card-date mt-auto h6 w-100 mb-1 padding-left-2px">
+                        Style Code: {{item.sku ? item.sku : 'N/A'}}
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="wrapper-div d-flex align-content-center"
+                      [style.background-color]="bodyBgColor( getKey(item) )">
+                      <img class="img-fluid card-image" [src]="item.mainImage">
+                    </div>
+                  </div>
+                  <div class="d-flex flex-wrap align-items-start border-0 rpc-card-header"
+                    [ngClass]="{'release-selected': item.id === selectedReleaseId}">
+
+                    <div class="wrapper-div px-3 py-3">
+                      <div class="d-flex flex-grow-1 flex-wrap pb-1">
+                        <div class="rpc-card-title h4 pr-2 text-align-center width-100pct">
+                          <div class="white-space-break-spaces">{{ item.name | textOverflow: 65 }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="monthView && listViewMode">
+
+      <div *ngFor="let dummy of ' '.repeat(lastDay).split(''), let x = index">
+
+        <div *ngIf="getDayToShow(AllMonthItemsByDay[x])">
+
+          <div class="strike padding-bottom-10px padding-top-20px">
+            <span>{{getDay(x) | uppercase}} {{x + 1}}</span>
+          </div>
+
+          <div class="flex-row flex-wrap align-self-center d-flex justify-content-flex-start">
+            <table class="table">
+              <thead class="text-uppercase">
+                <th class="border-right" *ngIf="!hideImageColumn">IMAGE</th>
+                <th class="border-right" *ngIf="!hideProductNameColumn">PRODUCT NAME / STYLE CODE</th>
+                <th class="border-right" *ngIf="!hideReleaseDateColumn">RELEASE DATE</th>
+                <th class="border-right" *ngIf="!hidePriceColumn">PRICE</th>
+                <th class="border-top-0" *ngIf="!hideActionsColumn">ACTIONS</th>
+              </thead>
+              <tbody>
+
+                <tr *ngFor="let item of AllMonthItemsByDay[x]" class="col-xl-3 col-6 col-md-3 col-lg-3 px-1 pl-md-2 pr-md-0 pb-2 pb-md-0
+                        rounded-0 border-0 margin-top-10px">
+
+                  <td class="logo-div" *ngIf="!hideImageColumn">
+                    <div class="wrapper-div">
+                      <span class="helper"></span>
+                      <img [src]="item.mainImage" class="img-fluid mx-4">
+                    </div>
+
+                    <div *ngIf="item.hot" class="hot-image-div mx-4">
+                      <img src="assets/images/hot-release-fire.svg">
+                    </div>
+                  </td>
+
+                  <td class="item-name" *ngIf="!hideProductNameColumn">
+                    <div>
+                      {{item.name | textOverflow:45 }}
+                    </div>
+                    <div class="item-code"> {{item.sku ? item.sku : 'N/A'}} </div>
+                  </td>
+
+                  <td class="item-price" *ngIf="!hideReleaseDateColumn">
+                    <div>
+                      {{ item.releaseDate |  date: 'MMM,dd,yyyy' }}
+                    </div>
+                    <div [class]="getStatusClass(item)">
+                      {{ getStatusText(item) }}
+                    </div>
+                  </td>
+
+                  <td class="item-price" *ngIf="!hidePriceColumn">
+                    <div class="wrapper-div">
+                      <div class="mt-4">
+                        <div>
+                          <img [src]="getBrandImage(item.styleId)" class="mx-auto">
+                        </div>
+                        <div>
+                          {{item.priceEUR | currency:'EUR':'€' }}
+                        </div>
+                        <div>
+                          {{item.priceUSD | currency:'USD':'$' }}
+                        </div>
+                        <div>
+                          {{item.priceGBP | currency:'GBP':'‎£' }}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td *ngIf="!hideActionsColumn">
+                    <span class="align-middle d-flex flex-column">
+                      <a [routerLink]="['/releases', item.slug]">
+                        <button class="btn btn-outline-dark item-button mt-1 py-2 px-3"
+                          [class.hot-item-button]="item.hot">
+                          Details
+                        </button>
+                      </a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!monthView && listViewMode">
+
+      <div *ngFor="let dummy of ' '.repeat(weekRange.length).split(''), let x = index">
+
+        <div *ngIf="getDayToShow(AllMonthItemsByWeeks[x])">
+
+          <div class="strike padding-bottom-10px padding-top-20px">
+            <span>{{'Week' | uppercase}} {{x + 1}}</span>
+          </div>
+
+          <div class="flex-row flex-wrap align-self-center d-flex justify-content-flex-start">
+            <table class="table">
+              <thead class="text-uppercase">
+                <th class="border-right" *ngIf="!hideImageColumn">IMAGE</th>
+                <th class="border-right" *ngIf="!hideProductNameColumn">PRODUCT NAME / STYLE CODE</th>
+                <th class="border-right" *ngIf="!hideReleaseDateColumn">RELEASE DATE</th>
+                <th class="border-right" *ngIf="!hidePriceColumn">PRICE</th>
+                <th class="border-top-0" *ngIf="!hideActionsColumn">ACTIONS</th>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of AllMonthItemsByWeeks[x]" class="col-xl-3 col-6 col-md-3 col-lg-3 px-1 pl-md-2 pr-md-0 pb-2 pb-md-0
+                      rounded-0 border-0 margin-top-10px">
+
+                  <td class="logo-div" *ngIf="!hideImageColumn">
+                    <div class="wrapper-div">
+                      <span class="helper"></span>
+                      <img [src]="item.mainImage" class="img-fluid mx-4">
+                    </div>
+
+                    <div *ngIf="item.hot" class="hot-image-div mx-4">
+                      <img src="assets/images/hot-release-fire.svg">
+                    </div>
+                  </td>
+
+                  <td class="item-name" *ngIf="!hideProductNameColumn">
+                    <div>
+                      {{item.name | textOverflow:45 }}
+                    </div>
+                    <div class="item-code"> {{item.sku ? item.sku : 'N/A'}} </div>
+                  </td>
+
+                  <td class="item-price" *ngIf="!hideReleaseDateColumn">
+                    <div>
+                      {{item.releaseDate | date: 'MMM,dd,yyyy'}}
+                    </div>
+                    <div [class]="getStatusClass(item)">
+                      {{ getStatusText(item) }}
+                    </div>
+                  </td>
+
+                  <td class="item-price" *ngIf="!hidePriceColumn">
+                    <div class="wrapper-div">
+                      <div class="mt-4">
+                        <div>
+                          <img [src]="getBrandImage(item.styleId)" class="mx-auto">
+                        </div>
+                        <div>
+                          {{item.priceEUR | currency:'EUR':'€' }}
+                        </div>
+                        <div>
+                          {{item.priceUSD | currency:'USD':'$' }}
+                        </div>
+                        <div>
+                          {{item.priceGBP | currency:'GBP':'‎£' }}
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td *ngIf="!hideActionsColumn">
+                    <span class="align-middle d-flex flex-column">
+                      <a [routerLink]="['/releases', item.slug]">
+                        <button class="btn btn-outline-dark item-button mt-1 py-2 px-3"
+                          [class.hot-item-button]="item.hot">
+                          Details
+                        </button>
+                      </a>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

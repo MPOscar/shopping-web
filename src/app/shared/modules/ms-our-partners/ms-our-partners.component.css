@@ -1,0 +1,113 @@
+#our-partners-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+@media screen and (max-width: 768px) {
+  #our-partners-div h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #our-partners-div h1 {
+    font-size: 2.1em;
+  }
+}
+#our-partners-div ::ng-deep #our-partners-carousel .carousel-indicators li {
+  display: none !important;
+}
+#our-partners-div ::ng-deep #our-partners-carousel .carousel-control-prev-icon {
+  background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+}
+#our-partners-div ::ng-deep #our-partners-carousel .carousel-control-next-icon {
+  background-image: url("/assets/images/our-partners/slide-next-button.svg");
+}
+#our-partners-div ::ng-deep .nav-tabs .nav-link {
+  border: #ecedef solid 1px;
+  border-bottom-width: 0 !important;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+  font-family: TitilliumWeb;
+  font-size: 1.3rem;
+}
+#our-partners-div ::ng-deep .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+#our-partners-div ::ng-deep .nav-tabs .nav-link.active {
+  background-color: #ff7928;
+  color: white;
+  border-color: #ff7928;
+}
+#our-partners-div ::ng-deep .nav-tabs .nav-link:hover {
+  font-weight: bold;
+}
+#our-partners-div ::ng-deep ul.nav {
+  border-bottom: solid 2px black;
+}
+#our-partners-div ::ng-deep .our-partners-button {
+  color: #282828;
+  font-size: 2.5em;
+  font-family: TitilliumWeb;
+  font-weight: lighter;
+  line-height: 1;
+}
+@media screen and (max-width: 1200px) {
+  #our-partners-div ::ng-deep .our-partners-button {
+    font-size: 1.8em;
+  }
+  #our-partners-div ::ng-deep h1 {
+    font-size: 1.5em;
+  }
+  #our-partners-div ::ng-deep .carousel-caption {
+    bottom: 1.4em;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #our-partners-div ::ng-deep .our-partners-button {
+    font-size: 0.8rem;
+  }
+  #our-partners-div ::ng-deep h1 {
+    font-size: 1.5rem;
+  }
+  #our-partners-div ::ng-deep .carousel-caption {
+    bottom: 0.75rem;
+    padding-bottom: 1rem;
+  }
+  #our-partners-div ::ng-deep .nav-tabs .nav-link {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  #our-partners-div ::ng-deep .our-partners-button {
+    font-size: 0.55rem;
+  }
+  #our-partners-div ::ng-deep h1 {
+    font-size: 1.15rem;
+  }
+  #our-partners-div ::ng-deep .carousel-caption {
+    bottom: 0.3rem;
+    padding-bottom: 0;
+  }
+  #our-partners-div ::ng-deep .nav-tabs .nav-link {
+    font-size: 0.55rem;
+  }
+}
+#our-partners-div ::ng-deep .our-partners-button:hover {
+  color: white;
+  background-color: #282828;
+}
+#our-partners-div .our-partners-slide {
+  width: 100%;
+  position: relative;
+  padding-bottom: 39.634%;
+}
+
+img {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/*# sourceMappingURL=ms-our-partners.component.css.map */

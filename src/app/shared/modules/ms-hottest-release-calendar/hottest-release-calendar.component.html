@@ -1,0 +1,42 @@
+<div id="hottest-release-calendar">
+
+  <div id="our-partners-header" class="d-flex justify-content-center my-2 mt-md-3 mb-md-2">
+    <h1 class="font-weight-light mr-3">HOTTEST</h1>
+    <h1 class="font-weight-light font-italic">RELEASES</h1>
+  </div>
+
+  <div class="d-flex flex-column-reverse">
+    <ngb-carousel *ngIf="partners" id="our-partners-carousel" #ourPartnersCarousel="ngbCarousel">
+
+      <ng-container *ngFor="let partner of partners">
+        <ng-template ngbSlide id="{{partner.id}}">
+          <img class="w-100" [src]="partner.image" alt="{{partner.slogan}}}">
+          <div class="carousel-caption">
+            <a href="{{partner.link}}" target="_blank" class="mb-3">
+              <button class="btn btn-outline-dark rounded-0 mb-1 mb-md-2 mb-lg-3 md px-2 px-md-4 py-2 our-partners-button
+                            font-weight-light text-uppercase">
+                <span>{{partner.modelName}}</span>
+                <span class="ml-2 font-italic">"{{partner.slogan}}"</span>
+              </button>
+            </a>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </ngb-carousel>
+
+  </div>
+
+
+  <!--<ngb-tabset justify="fill">-->
+
+    <!--<ngb-tab *ngFor="let partner of partners">-->
+      <!--<ng-template ngbTabTitle>{{partner.name}}</ng-template>-->
+      <!--<ng-template ngbTabContent>-->
+        <!--<img class="img-fluid w-100" [src]="partner.image">-->
+      <!--</ng-template>-->
+    <!--</ngb-tab>-->
+
+  <!--</ngb-tabset>-->
+</div>
+

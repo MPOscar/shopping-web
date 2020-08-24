@@ -1,0 +1,75 @@
+#up-coming-div {
+  background-color: #f1f1f1;
+  font-family: TitilliumWeb;
+  /*.card:hover {
+    background-color: black;
+    color: white;
+  }*/
+}
+#up-coming-div .coming-soon-label {
+  line-height: 1;
+  font-size: 4.25rem;
+}
+@media (max-width: 768px) {
+  #up-coming-div .card-footer button {
+    font-size: 0.9rem;
+  }
+  #up-coming-div .coming-soon-label {
+    font-size: 3.8rem;
+  }
+}
+#up-coming-div #calendar-btn {
+  width: 11.7em;
+  border: solid 1px black;
+  color: black;
+  font-size: 1.0625em;
+  box-sizing: border-box;
+}
+#up-coming-div #calendar-btn:hover {
+  color: white;
+  background: black;
+}
+#up-coming-div #calendar-icon {
+  font-size: 2em;
+}
+#up-coming-div .card {
+  background-color: white !important;
+  box-sizing: border-box;
+  color: #3c3c3c !important;
+}
+#up-coming-div .card-header {
+  flex-grow: 100;
+  background-color: white !important;
+}
+#up-coming-div .card-title {
+  font-family: TitilliumWeb;
+  line-height: 1;
+}
+#up-coming-div .card-date {
+  font-family: OpenSans;
+  line-height: 1;
+}
+#up-coming-div .card-body, #up-coming-div .card-footer {
+  background-color: white !important;
+}
+#up-coming-div .card-footer button {
+  color: #c45a1a;
+}
+#up-coming-div .card-footer button:hover {
+  background-color: black;
+  color: white;
+}
+#up-coming-div .margin-bottom-none {
+  margin-bottom: 0px !important;
+}
+#up-coming-div .padding-bottom-none {
+  padding-bottom: 0px !important;
+}
+#up-coming-div .padding-top-none {
+  padding-top: 0px !important;
+}
+#up-coming-div .padding-top-10px {
+  padding-top: 10px !important;
+}
+
+/*# sourceMappingURL=up-coming.component.css.map */

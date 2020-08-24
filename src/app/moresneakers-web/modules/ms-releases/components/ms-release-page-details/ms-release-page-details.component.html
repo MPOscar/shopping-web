@@ -1,0 +1,72 @@
+<div class="d-flex flex-lg-row flex-column" id="ms-release-page-details-div">
+
+  <div id="gallery-div" class="col-lg-8 col-12 p-0">
+    <div class="wrapper-div">
+      <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+    </div>
+  </div>
+
+  <div class="col-lg-4 p-0 ml-lg-3">
+    <div class="text-uppercase release-name">
+      {{releasePage.name}}
+    </div>
+
+    <div class="release-details">
+      <div>
+        <span class="release-details-feature">BRAND : </span>
+        <span class="release-details-feature">
+            <a [routerLink]="['/brands', getRoute(releasePage.brand)]">{{releasePage.brand}}</a>
+          </span>
+      </div>
+      <div *ngIf="releasePage.collection && releasePage.collection!=''">
+        <span class="release-details-feature">COLLECTION : </span>
+        <span class="release-details-feature">
+            <a [routerLink]="['/collections', getRoute(releasePage.collection)]">{{releasePage.collection}}</a>
+          </span>
+      </div>
+    </div>
+
+    <div class="release-details mt-2">
+      <div class="details-header px-4 py-2">DETAILS</div>
+      <div class="px-4 pt-2">
+        <div *ngIf="releasePage.supplierColor">
+          <span class="release-details-feature">Supplier Color : </span>
+          <span>{{releasePage.supplierColor}}</span>
+        </div>
+        <div *ngIf="releasePage.sku">
+          <span class="release-details-feature">Style Code : </span>
+          <span>{{releasePage.sku}}</span>
+        </div>
+        <div *ngIf="releasePage.releaseDate">
+          <span class="release-details-feature">Release Date : </span>
+          <span>{{releasePage.releaseDate}}</span>
+        </div>
+        <div *ngIf="releaseHasPrice">
+          <span class="release-details-feature">Retail Price : </span>
+          <span>{{ releasePage.retailerPrice }} </span>
+        </div>
+        <div *ngIf="releasePage.gender">
+          <span class="release-details-feature">Gender : </span>
+          <span>{{getFullGender(releasePage.gender)}}</span>
+        </div>
+        <div *ngIf="releasePage.category">
+          <span class="release-details-feature">Category : </span>
+          <span class="release-details-feature">
+            <a [routerLink]="['/categories', getRoute(releasePage.category)]">{{releasePage.category}}</a>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="releasePage.description" class="release-details mt-2">
+      <div class="details-header px-4 py-2">DESCRIPTION</div>
+      <div class="px-4 pt-2">
+        <div class="release-description">
+          <p class="text-justify">{{releasePage.description}}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

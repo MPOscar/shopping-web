@@ -1,0 +1,74 @@
+#ms-release-page-details-div .release-details {
+  font-family: OpenSans;
+  font-size: 1.1rem;
+}
+#ms-release-page-details-div .release-details-feature {
+  color: #a0a0a0;
+}
+#ms-release-page-details-div .release-details-feature a {
+  text-decoration: underline;
+  color: #07459c;
+  font-family: OpenSans-Light;
+}
+#ms-release-page-details-div .release-description {
+  font-family: OpenSans;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+#ms-release-page-details-div .release-name {
+  font-family: TitilliumWeb;
+  font-size: 2.56rem;
+  color: #303030;
+  font-weight: lighter;
+}
+#ms-release-page-details-div .details-header {
+  font-family: OpenSans;
+  color: #303030;
+  background-color: #f6f6f6;
+  font-size: 1.1rem;
+}
+#ms-release-page-details-div #gallery-div {
+  position: relative;
+  padding-bottom: 77.4% !important;
+}
+@media (min-width: 992px) {
+  #ms-release-page-details-div #gallery-div {
+    padding-bottom: 51.4% !important;
+  }
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-thumbnails {
+  height: 17.88% !important;
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-image {
+  height: 79.13% !important;
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-thumbnails a {
+  border: #878787 solid 1px;
+}
+#ms-release-page-details-div ::ng-deep .ngx-gallery-thumbnails-wrapper {
+  width: 90% !important;
+  margin-left: 5% !important;
+}
+@media (max-width: 576px) {
+  #ms-release-page-details-div ::ng-deep .ngx-gallery-thumbnails-wrapper {
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow {
+  height: 1.75rem;
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow .fa-chevron-right {
+  background-image: url("/assets/images/release-page/img-right.svg");
+  color: transparent;
+  cursor: pointer !important;
+  height: 100%;
+}
+#ms-release-page-details-div ::ng-deep ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow .fa-chevron-left {
+  background-image: url("/assets/images/release-page/img-left.svg");
+  color: transparent;
+  cursor: pointer !important;
+  height: 100%;
+}
+
+/*# sourceMappingURL=ms-release-page-details.component.css.map */

@@ -1,0 +1,40 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeaderOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData && slidersData.slides && slidersData.slides.length > 0" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="blog-div" class="padding-bottom-1-5rem">
+  <ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl"
+             [title]="title"
+             [titleItalic]="''"
+             [text]="description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home','Blogs']"></ms-breadcrumb>
+
+  <div class="d-flex align-items-stretch flex-column flex-md-row flex-grow-1">
+
+    <blogs-table class="flex-grow-1" [disabledSort]="true">
+    </blogs-table>
+
+  </div>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeaderOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData && slidersData.slides && slidersData.slides.length > 0" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

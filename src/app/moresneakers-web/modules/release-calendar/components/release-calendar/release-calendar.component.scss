@@ -1,0 +1,43 @@
+#release-calendar-div {
+
+  ::ng-deep {
+    .carousel-item {
+      transition: opacity 1s ease-in-out !important;
+      position: absolute !important;
+      display: block !important;
+      opacity: 0
+    }
+
+    .carousel-item.active {
+      position: relative !important;
+      opacity: 1;
+    }
+
+    .carousel-control-prev {
+      justify-content: start;
+      margin-left: 1.63em;
+    }
+
+    .carousel-control-next {
+      flex-direction: row-reverse;
+      justify-content: end;
+      margin-right: 1.63em;
+    }
+
+    #full-restock-carousel .carousel-control-prev-icon {
+      background-image: url("/assets/images/slide-left-button.png");
+    }
+
+    #full-restock-carousel .carousel-control-next-icon {
+      background-image: url("/assets/images/slide-right-button.png");
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 1.62em !important;
+      height: 2.62em !important;
+
+    }
+  }
+
+}

@@ -1,0 +1,26 @@
+<div id="hottest-release-slider-div" *ngIf="hotItems.length > 0">
+
+  <div class="d-flex flex-column-reverse">
+
+          <div class="hrs-slide">
+            <div class="wrapper-div">
+
+              <img class="w-100 h-100 fit-cover" [src]="header.imgUrl" alt="{{header.link}}">
+
+              <div class="carousel-caption">
+                <a href="{{header.link}}" target="_blank" class="mb-3">
+                  <button class="btn btn-outline-dark rounded-0 mb-1 mb-md-2 mb-lg-3 md px-2 px-md-4 py-2 hrs-button
+                            font-weight-light text-uppercase">
+
+                    <span class="ml-2 font-italic">"{{header.label | textOverflow:44}}"</span>
+                  </button>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+
+  </div>
+
+</div>

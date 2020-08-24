@@ -1,0 +1,48 @@
+input[name^="search-terms"] {
+    border: 1px solid black;
+    height: 2.875em;
+    padding-left: 1em;
+    border-radius: 5px;
+    font-family: TitilliumWeb;
+  }
+
+  header div {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 576px) {
+    input[name^="search-terms"] {
+      width: 20em;
+    }
+
+    header div {
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    input[name^="search-terms"] {
+      width: 24.3em;
+    }
+  }
+
+  input[type^="image"] {
+    position: relative;
+    margin-left: -42px;
+  }
+
+  ::-webkit-input-placeholder {
+    font-style: italic;
+  }
+
+  :-moz-placeholder {
+    font-style: italic;
+  }
+
+  ::-moz-placeholder {
+    font-style: italic;
+  }
+
+  :-ms-input-placeholder {
+    font-style: italic;
+  }

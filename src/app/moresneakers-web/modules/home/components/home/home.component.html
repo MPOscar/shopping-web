@@ -1,0 +1,42 @@
+<ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl" [title]="'Home'"
+           [textTitle]="title" [text]="description">
+</ms-banner>
+
+<div class="padding-bottom-1-5rem padding-top-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="home-page-div" class="padding-bottom-1-5rem">
+
+  <ms-coming-soon></ms-coming-soon>
+
+  <!-- <ms-hottest-releases></ms-hottest-releases> -->
+
+  <ms-our-partners [pageId]="'home'" [deals]="deals" [offers]="offers" [releases]="releases" [shops]="shops">
+  </ms-our-partners>
+
+  <ms-latest-news></ms-latest-news>
+
+  <ms-social-section></ms-social-section>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

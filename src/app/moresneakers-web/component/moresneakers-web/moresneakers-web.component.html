@@ -1,0 +1,46 @@
+<div class="main-container display-flex">
+  <div class="mx-md-4">
+    <ms-page-header></ms-page-header>
+  </div>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <ms-footer></ms-footer>
+</div>
+
+<div *ngIf="cookieService.get('moresneakersCookieLaw')==='UNKNOWN'" id="hs-eu-cookie-confirmation" class="hs-cookie-notification-position-bottom can-use-gradients">
+  <div id="hs-eu-cookie-confirmation-inner">
+    <p [innerHtml]="cookieLawMessage | textOverflow:1000"></p>
+
+    <!--p id="hs-eu-cookie-disclaimer">To find out more about the
+      <a class="cursor-pointer">cookies we use</a>, see our
+      <a class="cursor-pointer" (click)="open(content)">Privacy Policy</a>. If you decline, your information won’t be tracked when you visit this website. A single cookie
+      will be used in your browser to remember your preference not to be tracked.</p-->
+    <div id="hs-en-cookie-confirmation-buttons-area">
+      <a class="cursor-pointer" id="hs-eu-confirmation-button" (click)="changeCookieLawValue(true)">Allow</a>
+      <a class="cursor-pointer" id="hs-eu-decline-button" (click)="changeCookieLawValue(false)">Decline</a>
+      <a class="cursor-pointer margin-left-12px" id="hs-eu-decline-button" (click)="open(cookieLaw)">Details</a>
+    </div>
+    <div class="icon-cross">
+      <a class="fa fa-close" (click)="changeCookieLawValue(false)"></a>
+    </div>
+  </div>
+</div>
+
+<!--Cookie Law-->
+<ng-template #cookieLaw let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Cookie Law</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body overflow-auto">
+    <div [innerHtml]="cookieLawMessage"></div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Accept</button>
+  </div>
+</ng-template>

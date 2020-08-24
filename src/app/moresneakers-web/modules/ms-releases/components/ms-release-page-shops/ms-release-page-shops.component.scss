@@ -1,0 +1,155 @@
+@import "global/_colors";
+
+#ms-release-page-shops-div {
+
+  h1 {
+    font-family: TitilliumWeb;
+    font-size: 3.18rem;
+    color: rgb(48, 48, 48);
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.8em;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 2.1em;
+    }
+  }
+
+  .shops-section {
+    background-color: rgb(246, 246, 246);
+  }
+
+  .logo-div {
+    width: 14.1%;
+    position: relative;
+    padding-bottom: 6.48% !important;
+    // margin: 50rem 0;
+    object-fit: contain;
+  }
+
+  .logo-p {
+    padding-bottom: 0rem !important;
+  }
+
+  .logo-div img {
+    height: 43% !important;
+    object-fit: contain;
+  }
+
+  .logo-text {
+    height: 100px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  .region-name {
+    font-family: TitilliumWeb;
+    font-size: 1.625rem;
+    color: black;
+  }
+
+  table {
+    background-color: white;
+  }
+
+  table td, table th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 0.5rem;
+  }
+
+  .logo {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .logo-top {
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .image-text{
+    text-align:center;
+    display:block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    margin-bottom: 0px;
+    float:none;
+  }
+
+  th {
+    background-color: rgb(60, 60, 60);
+    font-family: TitilliumWeb;
+    color: white;
+    line-height: 1;
+  }
+
+  .border-right {
+    border: 0;
+    border-right: white solid 2px;
+    border-color: white;
+  }
+
+  .link-button {
+    font-size: 1.1rem;
+    background-color: transparent;
+    border: rgb(48, 48, 48) solid 1px;
+    cursor: pointer !important;
+  }
+
+  .link-button:hover {
+    background-color: rgb(246, 246, 246);
+    text-decoration: underline;
+  }
+
+  .min-width-120px {
+    min-width: 120px;
+  }
+
+  .min-width-150px {
+    min-width: 150px;
+  }
+
+  .min-width-180px {
+    min-width: 180px;
+  }
+
+  .min-width-180px {
+    min-width: 180px;
+  }
+
+  .min-width-200px {
+    min-width: 200px;
+  }
+
+  .min-width-220px {
+    min-width: 220px;
+  }
+
+  .min-width-240px {
+    min-width: 240px;
+  }
+
+  .prev-price-span {
+    font-family: TitilliumWeb;
+    color: #000;
+    font-size: 0.9rem;
+    text-decoration: line-through;
+  }
+
+  .current-price-span {
+    font-family: TitilliumWeb;
+    color: $color-brown;
+    font-size: 0.9rem;
+    padding-right: 5px
+  }
+
+
+}

@@ -1,0 +1,40 @@
+#breadcrumb-div {
+  margin-left: 1px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  box-sizing: content-box;
+}
+#breadcrumb-div a {
+  font-family: TitilliumWeb;
+  font-size: 1.0625rem;
+  color: #cccccc;
+}
+#breadcrumb-div #last a {
+  background-color: #ff7928;
+  border-color: #ff7928 !important;
+  color: white;
+  line-height: 40px;
+}
+#breadcrumb-div a {
+  line-height: 40px;
+}
+#breadcrumb-div .non-last, #breadcrumb-div #last {
+  height: 42px;
+  box-sizing: border-box;
+}
+@media (max-width: 576px) {
+  #breadcrumb-div #last {
+    margin-right: 0 !important;
+  }
+}
+#breadcrumb-div .off {
+  margin-right: -15px;
+}
+#breadcrumb-div .margin-left-1-5rem {
+  margin-left: 1.5rem !important;
+}
+#breadcrumb-div .margin-left-1-5rem {
+  margin-left: 1.5rem !important;
+}
+
+/*# sourceMappingURL=ms-breadcrumb.component.css.map */

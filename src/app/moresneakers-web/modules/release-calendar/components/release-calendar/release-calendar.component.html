@@ -1,0 +1,46 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="release-calendar-div" class="padding-bottom-1-5rem">
+  <!--<ms-release-calendar-header></ms-release-calendar-header>-->
+  <ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl"
+             [color]="'black'"
+
+             [title]="'Release'"
+             [titleItalic]="'Calendar'"
+
+             [textTitle]="title"
+             [text]="description"></ms-banner>
+
+  <div>
+    <ms-breadcrumb [steps]="['Home','Release Calendar']" class="margin-left-1-5rem"></ms-breadcrumb>
+  </div>
+
+  <ms-calendar [shops]="shops" [styles]="styles" [brands]="brands" [categories]="categories"></ms-calendar>
+
+  <ms-up-coming></ms-up-coming>
+
+  <ms-hottest-release-slider></ms-hottest-release-slider>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

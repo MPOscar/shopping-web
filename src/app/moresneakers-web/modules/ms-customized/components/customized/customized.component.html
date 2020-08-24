@@ -1,0 +1,54 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="customized-div" class="padding-bottom-1-5rem">
+
+  <ms-banner [backgroundImage]="'assets/images/whats-new/banner.svg'"
+             [title]="'Customized'"
+             [titleItalic]="''"
+             [textTitle]="title"
+             [text]="description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home','Customized']"></ms-breadcrumb>
+
+  <div class="d-flex align-items-stretch align-items-stretch flex-column flex-md-row pt-3">
+    <div id="filters-div">
+      <filters-form [isFiltersReleases]="true" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
+    </div>
+
+    <div id="product-table-div">
+      <customized-releases [offers]="offers"
+                           [releases]="releases"
+                           [shops]="shops"
+                           [buttonText]="'CUSTOMIZE'"
+                           (sortByPriceEvent)="sortByPrice($event)"
+                           >
+      </customized-releases>
+    </div>
+  </div>
+
+  <ms-hottest-release-slider [italicTitle]="'DROPS'"></ms-hottest-release-slider>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

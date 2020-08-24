@@ -1,0 +1,45 @@
+@import "global/colors";
+
+#top5-stores-section {
+  background-color: rgb(246, 246, 246);
+
+  .col-md-2 {
+    min-width: 18.5%;
+  }
+
+  .store-card {
+    font-family: TitilliumWeb;
+    font-size: 1.1rem;
+    color: $dark-gray-text;
+    position: relative;
+  }
+
+  .store-image {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+  }
+
+  .store-link {
+    text-decoration: none;
+  }
+
+  .store-card:hover {
+    color: white;
+    background-color: black;
+  }
+
+  .t5s-store-button {
+    font-family: TitilliumWeb;
+    font-size: 1.2rem;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    color: $orange-text;
+  }
+
+  .t5s-store-button:hover {
+    background-color: black;
+    color: white;
+  }
+
+}

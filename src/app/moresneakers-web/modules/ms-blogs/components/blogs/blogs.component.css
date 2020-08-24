@@ -1,0 +1,25 @@
+#blog-div #advertisement {
+  font-family: OpenSans;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+#blog-div .w-25 {
+  width: 25% !important;
+}
+@media screen and (max-width: 768px) {
+  #blog-div h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #blog-div h1 {
+    font-size: 2.1em;
+  }
+}
+#blog-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+
+/*# sourceMappingURL=blogs.component.css.map */

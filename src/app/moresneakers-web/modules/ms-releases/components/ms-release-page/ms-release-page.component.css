@@ -1,0 +1,160 @@
+#ms-release-page-div ::ng-deep .carousel-control-prev-icon {
+  background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+  width: 1.62em !important;
+  height: 2.62em !important;
+}
+#ms-release-page-div ::ng-deep .carousel-control-next-icon {
+  background-image: url("/assets/images/our-partners/slide-next-button.svg");
+  width: 1.62em !important;
+  height: 2.62em !important;
+}
+#ms-release-page-div ::ng-deep .carousel-control-prev {
+  display: flex !important;
+  justify-content: center !important;
+  margin-left: 0px !important;
+}
+#ms-release-page-div ::ng-deep .carousel-control-prev-icon,
+#ms-release-page-div .carousel-control-next-icon {
+  width: 1.62em !important;
+  height: 2.62em !important;
+}
+#ms-release-page-div #sortingSelect {
+  width: 9.8rem;
+  background-color: #ededed;
+  border-radius: 0;
+}
+#ms-release-page-div .control-label {
+  font-family: TitilliumWeb;
+  font-size: 1.2rem;
+}
+#ms-release-page-div #pagination-div, #ms-release-page-div #pagination-div a {
+  color: #b6b6b6;
+}
+#ms-release-page-div ::ng-deep .ng-select .ng-arrow-wrapper {
+  height: 100%;
+  background: white;
+  border: 1px solid #ededed;
+  padding-left: 0.3125rem;
+  padding-top: 0.3125rem;
+}
+#ms-release-page-div ::ng-deep .ng-select .ng-select-container {
+  font-style: italic !important;
+  font-family: "Open Sans" !important;
+  font-weight: 200;
+  color: #303030 !important;
+  text-align: center;
+  background-color: #ededed;
+  border: 0;
+  padding-left: 0 !important;
+}
+#ms-release-page-div ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  font-style: italic;
+  font-weight: lighter;
+}
+#ms-release-page-div ::ng-deep .ng-input {
+  padding-left: 0 !important;
+  padding-right: 20px !important;
+}
+#ms-release-page-div ::ng-deep .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+  background-color: #ededed;
+  border: 0;
+}
+#ms-release-page-div #view-mode-icon {
+  width: 1.375rem;
+  height: 1.125rem;
+  font-size: 1.2rem;
+}
+#ms-release-page-div .view-mode-div {
+  cursor: pointer !important;
+}
+#ms-release-page-div .hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+#ms-release-page-div .item-image-div {
+  z-index: 1;
+  background-color: #ecedef;
+  position: relative;
+  width: 100%;
+  padding-bottom: 105%;
+}
+#ms-release-page-div .card {
+  border: transparent solid 1px !important;
+}
+#ms-release-page-div .card:hover {
+  border: rgba(0, 0, 0, 0.19) solid 1px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#ms-release-page-div .item-info-div {
+  font-family: "Open Sans";
+}
+#ms-release-page-div .item-name-div {
+  font-size: 1.05rem;
+  line-height: 1.3;
+  margin-bottom: 0.1rem;
+  min-height: 2.625rem;
+}
+#ms-release-page-div .item-feature-div {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+}
+#ms-release-page-div .item-price-span {
+  font-family: TitilliumWeb;
+  color: #000;
+  font-size: 0.9rem;
+}
+#ms-release-page-div .item-button {
+  width: 100%;
+  color: #b44f12;
+  font-style: italic;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+@media (max-width: 768px) {
+  #ms-release-page-div .item-button {
+    font-size: 0.9rem;
+  }
+}
+#ms-release-page-div .item-button:hover {
+  background-color: black;
+  color: white;
+}
+#ms-release-page-div .col-6 {
+  max-width: 49%;
+}
+@media (min-width: 768px) {
+  #ms-release-page-div .col-md-4 {
+    max-width: 31% !important;
+  }
+}
+@media (min-width: 1200px) {
+  #ms-release-page-div .col-xl-3 {
+    max-width: 24% !important;
+  }
+}
+#ms-release-page-div .cursor-pointer {
+  cursor: pointer !important;
+}
+#ms-release-page-div .hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+#ms-release-page-div .slogan-div {
+  position: absolute;
+  bottom: 0;
+  left: 0.7rem;
+  width: 80%;
+  z-index: 2;
+  font-family: "Open Sans";
+  font-size: 0.6rem;
+  color: black;
+}
+
+/*# sourceMappingURL=ms-release-page.component.css.map */

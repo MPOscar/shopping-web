@@ -1,0 +1,52 @@
+<div *ngIf="shops">
+
+  <div class="d-flex flex-wrap mb-3">
+    <div *ngFor="let letter of letters; let index = index; let last = last"
+         class="letter-box"
+         [class.last-letter-box]="last" [class.empty]="shopsByLetter[index].length == 0">
+      <div class="wrapper-div d-flex">
+        <a [href]="'shops#' + localIDForLinks[index]" class="d-inline-block w-100 text-center">
+          {{letter}}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div *ngFor="let groupOfShopsByLetter of shopsByLetter; let index = index; let last = last">
+    <div *ngIf="groupOfShopsByLetter.length > 0" [id]="localIDForLinks[index]"
+         class="d-flex flex-wrap justify-content-left mb-1">
+
+      <div class="w-100 mt-3 mb-4 d-flex flex-row">
+        <span class="mr-3 header-letter" [class.last-letter-header]="last"> {{letters[index]}} </span>
+        <hr class="letter-line-separator">
+      </div>
+
+      <div *ngFor="let shop of groupOfShopsByLetter"
+           class="ml-1 col-md-4 items-per-row-4 ml-lg-3 p-0 mb-3 shop-card">
+
+        <a class="text-decoration-none cursor-pointer h-100 mx-auto" [routerLink]="['/shops/details', getRoute(shop.name)]">
+
+          <div class="text-center shop-name align-middle">{{shop.name}}</div>
+
+          <div class="shop-image-div">
+
+            <div class="wrapper-div">
+              <img [src]="shop.mainImage">
+            </div>
+
+            <div class="d-flex shop-btn-div">
+              <a class="text-decoration-none h-100 mx-auto">
+                <button class="button shop-btn" [routerLink]="['/shops/details', getRoute(shop.name)]">
+                  Visit Store
+                </button>
+              </a>
+            </div>
+          </div>
+
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</div>

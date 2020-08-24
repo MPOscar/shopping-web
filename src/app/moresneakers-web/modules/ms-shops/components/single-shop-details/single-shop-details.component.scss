@@ -1,0 +1,88 @@
+@import 'global/colors';
+
+#shop-main-image {
+  position: relative;
+  padding-bottom: 42.93% !important;
+}
+
+@media (min-width: 992px) {
+  #shop-main-image {
+    padding-bottom: 28.51% !important;
+  }
+}
+
+h1.shop-name {
+  font-family: TitilliumWeb;
+  font-size: 3.75rem;
+  font-weight: lighter;
+  text-transform: uppercase;
+
+  position: relative;
+  top: -.6rem;
+  margin-bottom: 0 !important;
+
+  line-height: 1;
+  height: 100%;
+
+  color: rgb(48, 48, 48);
+}
+
+@media screen and (max-width: 768px) {
+  h1.shop-name {
+    font-size: 3.35em;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  h1.shop-name {
+    font-size: 2.6em;
+  }
+}
+
+.shop-description {
+  font-family: OpenSans;
+  font-size: .9rem;
+  font-weight: lighter;
+}
+
+$info-color: #eceef0;
+
+.shop-info {
+  border: 1px solid $info-color;
+  width: 48%;
+  font-family: OpenSans;
+}
+
+.shop-info-title {
+  background-color: $info-color;
+  text-align: center !important;
+  padding-top: .25rem;
+  padding-bottom: .5rem;
+  color: $dark-gray-text;
+  font-weight: lighter;
+}
+
+.shop-info-content {
+  font-family: OpenSans-Semibold;
+  font-size: .9rem;
+}
+
+.shop-info-hour {
+  text-align: center;
+}
+
+.shop-info-hour-header {
+  color: #949396;
+}
+
+.shop-info-hour-content {
+  color: black;
+  font-family: OpenSans-Semibold;
+}
+
+.shop-image {
+  position: relative;
+  width: 100%;
+  padding-bottom: 18.8%;
+}
+

@@ -1,0 +1,58 @@
+.fs-12 {
+    font-size: 12px;
+}
+
+.margin-left-1-5rem {
+    margin-left: 1.5rem !important;
+}
+
+.justify-content-center {
+    justify-content: center !important;
+}
+
+.flex-grow-1 {
+    flex-flow: 1 !important;
+}
+
+.align-items-center {
+  align-items: center !important;
+}
+
+.pl-10px {
+  padding-left: 10px !important;
+}
+
+.pr-10px {
+  padding-right: 10px !important;
+}
+
+.ml-10px {
+  margin-left: 10px !important;
+}
+
+.mr-10px {
+  margin-right: 10px !important;
+}
+
+.background-transparent {
+  background: transparent !important;
+}
+
+.padding-top-1-5rem {
+  padding-top: 1.5rem !important;
+}
+
+.padding-top-5px {
+  padding-top: 5px;
+}
+
+.moving-clouds {
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 250.625em;
+  height: 43.75em;
+  -webkit-animation: cloudLoop 80s linear infinite;
+  animation: cloudLoop 80s linear infinite;
+}

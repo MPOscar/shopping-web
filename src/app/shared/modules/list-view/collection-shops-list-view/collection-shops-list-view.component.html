@@ -1,0 +1,56 @@
+<div class="d-flex flex-column">
+  <table class="table">
+    <thead class="text-uppercase">
+      <th class="border-right">Shop</th>
+      <th class="border-right">Country</th>
+      <th class="border-right">Shipping</th>
+      <th class="border-top-0 border-bottom-0">ACTIONS</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of itemsToShow">
+        <td class="col-sm-2" style="width: 150px;height: 150px;">
+          <img class="img-fluid logo-text" src="{{item.image}}" alt=""/>
+          <p style="margin-bottom: 0rem !important;">{{item.name}}</p>
+        </td>
+
+        <td class="item-name">
+          <span>{{ item.country}}</span>
+        </td>
+
+        <td class="item-name">
+          <span>{{ item.shipping}}</span>
+        </td>
+
+        <td *ngIf="!showDetails">
+              <span *ngIf="item.linkText" class="align-middle d-flex flex-column">
+                <span class="py-1">
+                  <a [href]="item.linkUrl" target="_blank">
+                   <button class="link-button font-italic text-uppercase py-2 px-3">
+                     {{item.linkText}}
+                   </button>
+                  </a>
+                </span>
+              </span>
+        </td>
+
+        <td *ngIf="showDetails">
+          <div class="">
+            <div class="dropdown">
+              <ng-container>
+                <div class="display-flex align-items-center flex-direction-column">
+                  <a [routerLink]="['/shops/details', getRoute(item.name)]">
+                    <button class="btn btn-outline-dark item-button mt-1 py-2 px-3">
+                      {{ buttonText }}
+                    </button>
+                  </a>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

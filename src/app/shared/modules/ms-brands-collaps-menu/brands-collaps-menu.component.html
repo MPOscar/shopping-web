@@ -1,0 +1,87 @@
+<div id="brands-collaps-menu-div"
+  class="collaps-menu-div position-relative"
+  [class.collapsed]="!visible" [class.visible]="visible">
+
+  <span class="collapse-menu-close-btn" (click)="hideMenu()">
+    <img src="assets/images/collapsible-menu-close.svg">
+  </span>
+
+  <div class="d-flex flex-column flex-lg-row align-items-stretch">
+
+    <div *ngIf="brandsToShow" class="d-flex flex-column flex-md-row main-brands">
+
+      <div *ngFor="let brand of brandsToShow" class="brand-card px-0">
+
+        <div class="cursor-pointer" [routerLink]="['/brands', getRouterName(brand.name)]">
+
+          <div class="bcm-logo-div">
+            <div class="wrapper-div">
+              <img [src]="brand.logo" class="center fill-cover h-100">
+            </div>
+          </div>
+
+          <div class="brand-line my-3"></div>
+        </div>
+
+        <div>
+          <div *ngFor="let product of brand.items" class="px-1 mb-1">
+            <a class="cursor-pointer" (click)="showBrandCollectionPage(product)">
+              {{ product.name | textOverflow:35 }}
+            </a>
+          </div>
+        </div>
+
+        <div class="cursor-pointer" [routerLink]="['/brands', getRouterName(brand.name)]">
+          <button class="font-italic btn btn-outline-dark collaps-menu-see-btn
+                           rounded-0 mt-2 ml-1 text-left pl-3" (click)="seeAllItem(brand, true)">
+            SEE ALL
+            <span class="float-right mr-2 ml-4">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </button>
+        </div>
+
+        <div *ngIf="brand.showAllItems">
+          <button class="font-italic btn btn-outline-dark collaps-menu-see-btn
+                         rounded-0 mt-2 ml-1 text-left pl-3" (click)="seeAllItem(brand, false)">
+            SHOW LESS
+            <span class="float-right mr-2 ml-4">
+              <i class="fas fa-chevron-right"></i>
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="more-brands" *ngIf="moreBrands">
+      <div *ngIf="moreBrands.length > 0" class="font-weight-bold more-brands-title mb-2">MORE BRANDS</div>
+
+      <div *ngFor="let brand of moreBrandsToShow" class="mb-1">
+        <a class="text-uppercase cursor-pointer" [routerLink]="['/brands', getRouterName(brand.name)]">
+          {{brand.name}}
+        </a>
+      </div>
+
+      <div>
+        <button *ngIf="moreBrands.length > 10 && !showAllBrands"
+                class="font-italic btn btn-outline-dark collaps-menu-see-btn
+                           rounded-0 mt-3 text-left pl-3" (click)="showMoreBrands(true)">
+          SEE ALL
+          <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </button>
+
+        <button *ngIf="showAllBrands" class="font-italic btn btn-outline-dark collaps-menu-see-btn
+                           rounded-0 mt-3 text-left pl-3" (click)="showMoreBrands(false)">
+          SHOW LESS
+          <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>

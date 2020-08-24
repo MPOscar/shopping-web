@@ -1,0 +1,75 @@
+<div class="table-responsive">
+
+  <table class="table">
+    <thead class="text-uppercase">
+    <th class="border-right" *ngIf="!hideImageColumn">IMAGE</th>
+    <th class="border-right" *ngIf="!hideProductNameColumn">PRODUCT NAME</th>
+    <th class="border-right" *ngIf="!hideStyleCodeColumn">STYLE CODE</th>
+    <th class="border-right" *ngIf="!hideReleaseDateColumn">RELEASE DATE</th>
+    <th class="border-right" *ngIf="!hidePriceColumn">PRICE</th>
+    <th class="border-top-0 border-bottom-0" *ngIf="!hideActionsColumn">ACTIONS</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of itemsToShow">
+      <td class="logo-div" *ngIf="!hideImageColumn">
+        <div class="wrapper-div">
+          <span class="helper"></span>
+          <img [src]="item.image" class="img-fluid mx-4 image-custom-width">
+        </div>
+
+        <div *ngIf="item.hot" class="hot-image-div mx-4">
+          <img src="assets/images/hot-release-fire.svg">
+        </div>
+      </td>
+
+      <td class="item-name" *ngIf="!hideProductNameColumn">
+        {{item.name | textOverflow:45 }}
+      </td>
+
+      <td class="item-code" *ngIf="!hideStyleCodeColumn">
+        {{item.styleCode ? item.styleCode : 'N/A'}}
+      </td>
+
+      <td class="item-price" *ngIf="!hideReleaseDateColumn">
+        <div>
+          {{item.releaseDate | date: 'MMM,dd,yyyy'}}
+        </div>
+        <div>
+          <span [class]="getStatusClass(item)">{{ item.status ? item.status : 'Coming Soon'  }}</span>
+        </div>
+      </td>
+
+      <td class="item-price" *ngIf="!hidePriceColumn">
+        <div class="align-middle">
+          <div>
+            <div>
+              <img [src]="item.brandLogo" class="mx-auto">
+            </div>
+            <div *ngIf="item.priceEUR">
+              {{item.priceEUR | currency:'EUR':'€' }}
+            </div>
+            <div *ngIf="item.priceUSD">
+            {{item.priceUSD | currency:'USD':'$' }}
+            </div>
+            <div *ngIf="item.priceGBP">
+            {{item.priceGBP | currency:'GBP':'‎£' }}
+            </div>
+
+          </div>
+        </div>
+      </td>
+
+      <td *ngIf="!hideActionsColumn">
+        <span class="align-middle d-flex flex-column">
+          <a [routerLink]="['/releases', item.slug]">
+            <button class="btn btn-outline-dark item-button mt-1 py-2 px-3"
+                    [class.hot-item-button]="item.hot">
+             {{buttonText}}
+            </button>
+          </a>
+        </span>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

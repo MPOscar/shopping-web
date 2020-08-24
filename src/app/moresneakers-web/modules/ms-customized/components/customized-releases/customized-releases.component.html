@@ -1,0 +1,156 @@
+<div class="d-flex flex-column" id="customized-releases-div">
+
+  <div class="d-flex justify-content-end mx-2 m-0 pb-1">
+
+    <div class="d-flex align-items-center mr-3">
+      <span class="mr-1 control-label">Sort</span>
+      <span id="sortingSelect">
+        <ng-select
+            [items]="dropdownList"
+            bindLabel="name"
+            class="w-100 no-shadow"
+            (click)="changeNgSlect($event)"
+            matNativeControl
+            [formControl]="priceSort">
+        </ng-select>
+      </span>
+    </div>
+
+    <div class="align-items-center cursor-pointer display-flex padding-left-10px" (click)="toggleViewMode()">
+      <span class="mr-2 control-label">{{ listViewMode ? 'Portfolio view' : 'List view' }}</span>
+      <span id="view-mode-icon" class="fa fa-exchange p-0"></span>
+    </div>
+  </div>
+
+  <!-- This is the items table -->
+  <div class="d-flex flex-wrap justify-content-between mb-1" *ngIf="!listViewMode">
+    <div *ngFor="let item of itemsToShow; let i = index"
+      class="item-card pb-2 mb-4 card rounded-0 p-0 cursor-pointer ml-3">
+
+      <div class="image-container-div">
+        <div *ngIf="item.hot" class="hot-image-div">
+          <img src="assets/images/hot-release-fire.svg">
+        </div>
+
+        <div class="item-image-div wrapper-div d-flex align-content-center">
+          <img class="img-fluid w-100 fit-contain" [src]="item.image">
+        </div>
+      </div>
+      <div class="item-name-div">{{item.name | textOverflow:45 }}</div>
+
+      <div class="d-flex flex-column item-info-div px-3 py-2">
+        <div class="dropdown">
+          <button class="dropdown-toggle btn btn-outline-dark item-button mt-2" [id]="'button' + i"
+            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{buttonText}}
+          </button>
+          <div class="dropdown-menu" [attr.aria-labelledby]="'button' + i">
+            <div class="dropdown-title mt-2 ml-3 pl-2">
+              <h5>Create now</h5>
+            </div>
+            <div class="d-flex h-100 flex-wrap mx-3 px-2 justify-content-between pt-3">
+              <div *ngFor="let link of item.links" class="dropdown-btn-div">
+                <a href="{{link.url}}" target="_blank" class="text-decoration-none">
+                  <button class="btn btn-dark">{{link.text}}</button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-wrap justify-content-between mb-1" *ngIf="listViewMode">
+    <table class="table">
+      <thead class="text-uppercase">
+        <th class="border-right" *ngIf="!hideImageColumn">IMAGE</th>
+        <th class="border-right" *ngIf="!hideProductNameColumn">PRODUCT NAME</th>
+        <th class="border-right" *ngIf="!hideStyleCodeColumn">STYLE CODE</th>
+        <th class="border-right" *ngIf="!hideReleaseDateColumn">STATUS</th>
+        <th class="border-top-0 border-bottom-0" *ngIf="!hideActionsColumn">ACTIONS</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of itemsToShow; let i = index">
+          <td class="logo-div" *ngIf="!hideImageColumn">
+            <div class="wrapper-div">
+              <span class="helper"></span>
+              <img [src]="item.image" class="img-fluid mx-4">
+            </div>
+
+            <div *ngIf="item.hot" class="hot-image-div mx-4">
+              <img src="assets/images/hot-release-fire.svg">
+            </div>
+          </td>
+
+          <td class="item-name" *ngIf="!hideProductNameColumn">
+            {{item.name | textOverflow:45 }}
+          </td>
+
+          <td class="item-code" *ngIf="!hideStyleCodeColumn">
+            {{item.styleCode}}
+          </td>
+
+          <td class="item-price" *ngIf="!hideReleaseDateColumn">
+            <div>
+              {{item.releaseDate | date: 'MMM,dd,yyyy'}}
+            </div>
+            <div>
+              {{item.status }}
+            </div>
+          </td>
+
+          <td *ngIf="!hideActionsColumn">
+            <div class="dropdown">
+              <button class="dropdown-toggle btn btn-outline-dark item-button mt-2" [id]="'button' + i"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{buttonText}}
+              </button>
+              <div class="dropdown-menu" [attr.aria-labelledby]="'button' + i">
+                <div class="dropdown-title mt-2 ml-3 pl-2">
+                  <h5>Create now</h5>
+                </div>
+                <div class="d-flex h-100 flex-wrap mx-3 px-2 justify-content-between pt-3">
+                  <div *ngFor="let link of item.links" class="dropdown-btn-div">
+                    <a href="{{link.url}}" target="_blank" class="text-decoration-none">
+                      <button class="btn btn-dark">{{link.text}}</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div id="pagination-div" class="d-inline-flex mx-auto mb-4" *ngIf="page > 1">
+    <span class="cursor-pointer mr-3" (click)="changePage('1')">
+      <a>
+        <img src="assets/images/pagination-first.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer mr-1" (click)="changePage((actualPage - 1).toString())">
+      <a>
+        <img src="assets/images/pagination-prev.svg">
+      </a> |
+    </span>
+
+    <span *ngFor="let page of paginationArray" class="cursor-pointer mr-3" (click)="changePage(page)">
+      <a>{{page}}</a>
+    </span>
+
+    <span class="cursor-pointer mr-3" (click)="changePage((actualPage + 1).toString())">
+      |
+      <a>
+        <img src="assets/images/pagination-next.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer" (click)="changePage(paginationNumber.toString())">
+      <a>
+        <img src="assets/images/pagination-last.svg">
+      </a>
+    </span>
+  </div>
+</div>

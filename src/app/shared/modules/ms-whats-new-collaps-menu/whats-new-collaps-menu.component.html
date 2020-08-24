@@ -1,0 +1,32 @@
+<div id="whats-new-collaps-menu-div"
+     class="collaps-menu-div position-relative"
+     [class.collapsed]="!visible" [class.visible]="visible">
+
+  <span class="collapse-menu-close-btn" (click)="hideMenu()">
+    <img src="assets/images/collapsible-menu-close.svg">
+  </span>
+  <div *ngIf="allStatus" class="d-flex flex-column status-list">
+
+    <div>
+      <div *ngFor="let statusItem of status" class="mb-1">
+        <a class="text-uppercase cursor-pointer" [routerLink]="['/whats-new', getRouteFromId(statusItem.id)]">
+          {{statusItem.name}}
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <button class="font-italic btn btn-outline-dark collaps-menu-see-btn
+                       rounded-0 mt-3 text-left pl-3" (click)="seeAllItem(true)" [routerLink]="['/whats-new']">
+          SEE ALL
+          <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+          </span>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

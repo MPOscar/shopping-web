@@ -1,0 +1,62 @@
+@import 'global/colors';
+
+.shop-card {
+  position: relative;
+  width: 100%;
+  padding-bottom: 96.5%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.middle-padding {
+  padding-left: 0.46875rem;
+  padding-right: 0.46875rem;
+}
+
+.shop-name {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
+  font-family: TitilliumWeb;
+  font-size: 1.33rem;
+  text-transform: uppercase;
+
+  height: 3.4375rem;
+  line-height: 3.4375rem;
+}
+
+.shop-btn-div {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 2.875rem;
+
+  margin-bottom: 0.8rem;
+
+  a {
+    width: 86%;
+  }
+}
+
+.shop-btn {
+  cursor: pointer !important;
+  height: 100%;
+  font-size: 1.25rem;
+  border: solid 1px gray;
+  width: 100%;
+  font-family: TitilliumWeb;
+  color: $orange-background;
+  text-transform: uppercase;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.shop-btn:hover {
+  color: white;
+}

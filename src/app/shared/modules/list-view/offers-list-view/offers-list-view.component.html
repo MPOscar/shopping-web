@@ -1,0 +1,113 @@
+<div class="table-responsive">
+
+  <table class="table">
+    <thead class="text-uppercase">
+    <th class="border-right">SHOP</th>
+    <th class="border-right">IMAGE</th>
+    <th class="border-right">PRODUCT NAME / STYLE CODE</th>
+    <th class="border-right">STATUS</th>
+    <th class="border-right">PRICE</th>
+    <th class="border-top-0 border-bottom-0">LINKS</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of itemsToShow">
+      <td class="shop-logo">
+        <div>
+          <img [src]="getImageStore(item.store)" class="mx-auto">
+        </div>
+        <span>{{ item.store ? item.store.name : '' }}</span>
+      </td>
+
+      <td class="logo-div">
+        <div class="wrapper-div">
+          <span class="helper"></span>
+          <img [src]="item.image" class="img-fluid mx-4 image-custom-width">
+        </div>
+
+        <div *ngIf="item.hot" class="hot-image-div mx-4">
+          <img src="assets/images/hot-release-fire.svg">
+        </div>
+      </td>
+
+      <td class="item-name">
+        <div class="d-flex flex-column">
+          <div>
+            <a class="item-name" [routerLink]="['/releases', item.slug]">
+              {{ item.name | textOverflow:45 }}
+            </a>
+          </div>
+          <small>
+            {{item.styleCode}}
+          </small>
+        </div>
+      </td>
+
+      <td class="item-price">
+          <div>
+            {{ item.releaseDate |  date: 'MMM,dd,yyyy' }}
+          </div>
+          <div [class]="getStatusClass(item)">
+            {{ getStatusText(item) }}
+          </div>
+      </td>
+
+      <td class="item-price">
+        <div>
+          <div *ngIf="item.priceAfterDiscount < 0" class="item-feature-div justify-content-center">
+            <div class="current-price-span color-black">{{item['price' + displayCurrency(item)] | currency:displayCurrency(item):currencySymbol(item) }}</div>
+            <div *ngIf="!hasPrice(item)" class="current-price-span color-black">TBA</div>
+          </div>
+
+          <div *ngIf="item.priceAfterDiscount >= 0" class="item-feature-div justify-content-center">
+            <div class="prev-price-span mr-1">{{item['price' + displayCurrency(item)] | currency:displayCurrency(item):currencySymbol(item) }}</div>
+            <div class="current-price-span">{{item.priceAfterDiscount | currency:displayCurrency(item):currencySymbol(item) }}</div>
+            <div *ngIf="!hasPrice(item)" class="current-price-span color-black">TBA</div>
+          </div>
+          </div>
+      </td>
+
+      <td>
+        <div>
+
+            <ng-container *ngIf="item.links.length === 0 && item.store && item.store.trackingListBaseUrl">
+              <a href="{{ item.store.trackingListBaseUrl + '#' }}" target="_blank">
+                <button class="btn btn-outline-dark item-button btn-block mt-1 py-2 px-3"
+                        [class.hot-item-button]="item.hot">
+                  {{ buttonText }}
+                </button>
+              </a>
+            </ng-container>
+
+            <ng-container *ngIf="item.links.length === 1">
+              <a href="{{item.links[0].bitlyUrl || item.links[0].trackedUrl}}" target="_blank">
+                <button class="btn btn-outline-dark item-button btn-block mt-1 py-2 px-3"
+                        [class.hot-item-button]="item.hot">
+                  {{ item.links[0].text }}
+                </button>
+              </a>
+            </ng-container>
+
+            <ng-container *ngIf="item.links.length > 1">
+              <button [class.hot-item-button]="item.hot" class="dropdown-toggle btn btn-outline-dark item-button mt-2"
+                      [id]="'button' + i" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ buttonText }}
+              </button>
+              <div class="dropdown-menu" [attr.aria-labelledby]="'button' + i">
+                <div>
+                  <div *ngFor="let link of item.links" class="dropdown-btn-div px-1">
+                    <a href="{{ link.bitlyUrl || link.trackedUrl }}" target="_blank" class="text-decoration-none">
+                      <button class="btn btn-outline-dark item-button btn-block mt-1 py-2 px-3">{{ link.text }}</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+
+        </div>
+
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>

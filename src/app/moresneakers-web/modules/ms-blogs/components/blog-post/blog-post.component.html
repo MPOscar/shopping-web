@@ -1,0 +1,118 @@
+<div *ngIf="blog">
+
+  <ms-breadcrumb [steps]="['Home','Blog',blog.type, blog.title]"></ms-breadcrumb>
+
+  <div class="post-title">
+    <h1 class="font-weight-light text-uppercase">
+      {{blog.title}}
+    </h1>
+  </div>
+
+  <div class="post-meta pb-2">
+    <span>by {{blog.author}}</span> |
+    <span>{{blog.updatedAt | date: 'MMM,dd,yyyy'}}</span> |
+    <span>{{blog.type}}</span>
+  </div>
+
+  <div class="post-header mb-5">
+    <div class="wrapper-div">
+      <img class="header-image img-fluid h-100 fit-cover" [src]="blog.imgUrl">
+
+      <img class="type-triangle" src="assets/images/blog/left-black-triangle.svg">
+
+      <span class="type-text text-uppercase text-white mt-3 ml-4">{{blog.type}}</span>
+    </div>
+  </div>
+
+  <div class="post-text px-4 font-weight-light mx-4">
+    <div class="w-100" [innerHTML]="blog.body | safeHtml"></div>
+  </div>
+
+  <div class=" px-0" *ngIf="blogImageResponce">
+    <div class="row">
+      <div class="col-lg-6 col-sm-12">
+        <div *ngFor="let imageBlog of blogImageResponceM1">
+          <div class="padding-bottom-30px">
+            <div class="">
+              <img class="h-100 w-100" [src]="imageBlog.imgUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 col-sm-12">
+        <div *ngFor="let imageBlog of blogImageResponceM2">
+          <div class="padding-bottom-30px">
+            <div class="">
+              <img class="h-100 w-100" [src]="imageBlog.imgUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="container-fluid px-0" *ngIf="blogImageResponce">
+    <div *ngFor="let imageBlog of ' '.repeat(length).split(''), let x = index">
+      <div class="row mx-0 w-100">
+        <div class="col-lg-8 pl-0">
+          <div class="row" *ngIf="blogImageResponce.length > (x * 6)">
+            <div class="col-lg-12">
+              <div class="cell cell-large">
+                <div class="wrapper-div">
+                  <img class="h-100 w-100" [src]="blogImageResponce[(x * 6)].imgUrl">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mx-0">
+            <div class="col-lg-6 pl-0" *ngIf="blogImageResponce.length > ((x * 6) + 1)">
+              <div class="cell cell-square">
+                <div class="wrapper-div">
+                  <img class="h-100 w-100" [src]="blogImageResponce[((x * 6) + 1)].imgUrl">
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 pr-0" *ngIf="blogImageResponce.length > ((x * 6) + 2)">
+              <div class="cell cell-square">
+                <div class="wrapper-div">
+                  <img class="h-100 w-100" [src]="blogImageResponce[((x * 6) + 2)].imgUrl">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 pr-0" *ngIf="blogImageResponce.length > ((x * 6) + 3)">
+          <div class="cell cell-tall">
+            <div class="wrapper-div">
+              <img class="h-100 w-100" [src]="blogImageResponce[((x * 6) + 3)].imgUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4 mx-0 w-100">
+        <div class="col-lg-4 pl-0 pr-4" *ngIf="blogImageResponce.length > ((x * 6) + 4)">
+          <div class="cell cell-square">
+            <div class="wrapper-div">
+              <img class="h-100 w-100" [src]="blogImageResponce[((x * 6) + 4)].imgUrl">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8 pr-0 pl-2">
+          <div class="cell cell-large" *ngIf="blogImageResponce.length > ((x * 6) + 5)">
+            <div class="wrapper-div">
+              <img class="h-100 w-100" [src]="blogImageResponce[((x * 6) + 5)].imgUrl">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div> -->
+</div>

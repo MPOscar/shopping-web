@@ -1,0 +1,135 @@
+<div class="d-flex flex-column" id="releases-table">
+
+  <div class="d-flex justify-content-end mx-2 m-0 pb-1">
+
+    <div *ngIf="!disabledSort" class="d-flex align-items-center mr-3">
+      <span class="mr-1 control-label">Sort</span>
+      <span id="sortingSelect">
+        <ng-select [items]="dropdownList" bindLabel="name" class="w-100 no-shadow" matNativeControl
+          [formControl]="priceSort">
+        </ng-select>
+      </span>
+    </div>
+
+    <div class="align-items-center d-flex pl-2 view-mode-div" (click)="toggleViewMode()">
+      <span class="mr-2 control-label">{{ listViewMode ? 'Portfolio view' : 'List view' }}</span>
+      <span id="view-mode-icon" class="fa fa-exchange p-0"></span>
+    </div>
+  </div>
+
+  <!-- This is the items table -->
+  <div *ngIf="!listViewMode" class="d-flex flex-wrap mb-1">
+    <div *ngFor="let item of itemsToShow; let i = index" [routerLink]="['/releases', item.slug]"
+      class="col-12 col-md-6 col-lg-4 mb-3"
+      [class.items-per-row-4]="itemsPerRow == 4"
+      [class.items-per-row-5]="itemsPerRow == 5">
+      <div class="card rounded-0 p-0 cursor-pointer">
+        <a [routerLink]="['/releases', item.slug]" class="text-decoration-none color-black">
+
+          <div class="image-container-div">
+            <div *ngIf="item.hot" class="hot-image-div">
+              <img src="assets/images/hot-release-fire.svg">
+            </div>
+
+            <div class="item-image-div wrapper-div d-flex align-content-center">
+              <img class="img-fluid w-100 fit-contain" [src]="item.image">
+            </div>
+          </div>
+
+          <div *ngIf="!categoryPage; else elseCategoryPage" class="d-flex flex-column item-info-div px-3 py-2">
+
+            <div class="item-feature-div d-flex">
+              <div class="">
+                <div class="item-name-div" data-toggle="tooltip" data-placement="bottom" [title]="item.name">
+                  {{item.name | textOverflow:45 }}</div>
+                <!--              <div class="item-feature-div" *ngIf="item.store">Store: {{item.store}}</div>-->
+                <div>Style Code: <span data-toggle="tooltip" data-placement="bottom"
+                    [title]="item.styleCode ? item.styleCode : 'N/A'">{{item.styleCode ? (item.styleCode | textOverflow:12)  : 'N/A'}}</span>
+                </div>
+                <div class="item-feature-div d-flex">
+                  <span [class]="getStatusClass(item)">Status: {{ item.status ? item.status : 'Coming Soon'  }}</span>
+                </div>
+              </div>
+
+              <div class=" d-inline-block mt-auto ml-auto text-center flex-column d-flex">
+                <div *ngIf="item.brandLogo" class="pb-1">
+                  <img [src]="item.brandLogo" class="fit-cover" style="width: 50px">
+                </div>
+                <div *ngIf="item.priceEUR" class="item-price-span">{{ item.priceEUR | currency:'EUR':'€' }}</div>
+                <div *ngIf="!item.priceEUR" class="item-price-span">{{ item.priceGBP | currency:'GBP':'£' }}</div>
+                <div *ngIf="!item.priceEUR && !item.priceGBP" class="item-price-span">
+                  {{ item.priceUSD | currency:'USD':'$' }}</div>
+              </div>
+            </div>
+
+
+          </div>
+
+          <ng-template #elseCategoryPage>
+            <div class="d-flex flex-column item-info-div px-3 py-2">
+              <div class="item-name-div" data-toggle="tooltip" data-placement="bottom" [title]="item.name">
+                {{item.name | textOverflow:45 }}</div>
+              <div class="item-feature-div">Style Code: <span data-toggle="tooltip" data-placement="bottom"
+                  [title]="item.styleCode ? item.styleCode : 'N/A'">{{item.styleCode ? (item.styleCode | textOverflow:12) : 'N/A'}}</span>
+              </div>
+              <div class="item-feature-div d-flex">
+                <div *ngIf="item.priceEUR" class="item-price-span">{{ item.priceEUR | currency:'EUR':'€' }}</div>
+                <div *ngIf="!item.priceEUR && item.priceGBP" class="item-price-span">
+                  {{ item.priceGBP | currency:'GBP':'£' }}</div>
+                <div *ngIf="!item.priceEUR && !item.priceGBP" class="item-price-span">
+                  {{ item.priceUSD | currency:'USD':'$' }}</div>
+                <div class="d-inline-block ml-auto os-logo-span">
+                  <div class="wrapper-div">
+                    <img [src]="item.brandLogo" class="w-100 h-100 fit-contain">
+                  </div>
+                </div>
+              </div>
+              <div>
+
+                <button class="btn btn-outline-dark item-button mt-1 py-2">
+                  {{buttonText}}
+                </button>
+
+              </div>
+            </div>
+          </ng-template>
+
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!--This is the Items List-->
+  <div *ngIf="listViewMode" class="w-100 mb-1">
+    <ms-categories-list-view [itemsToShow]="itemsToShow"></ms-categories-list-view>
+  </div>
+
+  <div id="pagination-div" class="d-inline-flex mx-auto mb-4" *ngIf="pages > 1">
+    <span class="cursor-pointer mr-3" (click)="changePage('1')">
+      <a>
+        <img src="assets/images/pagination-first.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer mr-1" (click)="changePage((actualPage - 1).toString())">
+      <a>
+        <img src="assets/images/pagination-prev.svg">
+      </a> |
+    </span>
+
+    <span *ngFor="let page of paginationArray" class="cursor-pointer mr-3" (click)="changePage(page)">
+      <a [ngClass]="{'color-black': page == actualPage}">{{page}}</a>
+    </span>
+
+    <span class="cursor-pointer mr-3" (click)="changePage((actualPage + 1).toString())">
+      |
+      <a>
+        <img src="assets/images/pagination-next.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer" (click)="changePage(pages.toString())">
+      <a>
+        <img src="assets/images/pagination-last.svg">
+      </a>
+    </span>
+  </div>
+</div>

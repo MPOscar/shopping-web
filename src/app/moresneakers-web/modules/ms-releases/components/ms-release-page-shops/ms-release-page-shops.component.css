@@ -1,0 +1,69 @@
+#ms-release-page-shops-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+@media screen and (max-width: 768px) {
+  #ms-release-page-shops-div h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #ms-release-page-shops-div h1 {
+    font-size: 2.1em;
+  }
+}
+#ms-release-page-shops-div .shops-section {
+  background-color: #f6f6f6;
+}
+#ms-release-page-shops-div .logo-div {
+  width: 14.1%;
+  position: relative;
+  padding-bottom: 6.48% !important;
+  object-fit: contain;
+}
+#ms-release-page-shops-div .logo-div img {
+  height: 43% !important;
+  object-fit: contain;
+}
+#ms-release-page-shops-div .region-name {
+  font-family: TitilliumWeb;
+  font-size: 1.625rem;
+  color: black;
+}
+#ms-release-page-shops-div table {
+  background-color: white;
+}
+#ms-release-page-shops-div table td, #ms-release-page-shops-div table th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.5rem;
+}
+#ms-release-page-shops-div .logo {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#ms-release-page-shops-div th {
+  background-color: #3c3c3c;
+  font-family: TitilliumWeb;
+  color: white;
+  line-height: 1;
+}
+#ms-release-page-shops-div .border-right {
+  border: 0;
+  border-right: white solid 2px;
+  border-color: white;
+}
+#ms-release-page-shops-div .link-button {
+  font-size: 1.1rem;
+  background-color: transparent;
+  border: #303030 solid 1px;
+  cursor: pointer !important;
+}
+#ms-release-page-shops-div .link-button:hover {
+  background-color: #f6f6f6;
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=ms-release-page-shops.component.css.map */

@@ -1,0 +1,44 @@
+<div id="ms-hottest-releases-div">
+
+  <div id="hottest-release-header" class="d-flex justify-content-center my-2 mt-md-3 mb-md-2 align-items-baseline">
+    <h1 class="font-weight-light mr-3 text-uppercase">Hottest</h1>
+    <h1 class="font-weight-light font-italic text-uppercase">Releases</h1>
+
+    <img id="hot-image" class="ml-3" src="assets/images/hot-release-fire-big.svg"/>
+
+  </div>
+  <ngb-carousel id="hottest-release-carousel" #hottestReleaseCarousel>
+
+    <ng-container *ngFor="let page of getHotPagesList()">
+      <ng-template ngbSlide class="mb-3">
+
+        <div class="d-flex flex-wrap mb-5 justify-content-left">
+
+          <div *ngFor="let item of getHotItems(page); let i = index"
+               class="col-6 col-md-3 col-xl-2 mx-1 mb-3 card rounded-0 p-0 mr-2">
+            <div class="hr-card">
+              <div class="wrapper-div">
+                <a [routerLink]="['/releases', item.slug]" class="h-100 w-100">
+                  <div class="d-flex flex-column h-100 w-100">
+                    <div class="item-image-div">
+                      <img class="w-100 h-100 fit-contain" [src]="item.image">
+                    </div>
+
+                    <div class="slogan-div mx-auto">
+                      <p>
+                        Release Date: {{item.releaseDate? (item.releaseDate | date) : 'N/A'}} <br>
+                        {{item.slogan | textOverflow:57 }}
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </ng-template>
+    </ng-container>
+  </ngb-carousel>
+
+</div>

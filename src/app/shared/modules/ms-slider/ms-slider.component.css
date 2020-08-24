@@ -1,0 +1,163 @@
+#hottest-release-slider-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+#hottest-release-slider-div #hot-image {
+  width: 1.875rem;
+  height: 2.5rem;
+}
+@media screen and (max-width: 768px) {
+  #hottest-release-slider-div h1 {
+    font-size: 2.8em;
+  }
+  #hottest-release-slider-div #hot-image {
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  #hottest-release-slider-div h1 {
+    font-size: 2.1em;
+  }
+  #hottest-release-slider-div #hot-image {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+}
+#hottest-release-slider-div ::ng-deep #hrs-carousel .carousel-indicators li {
+  display: none !important;
+}
+#hottest-release-slider-div ::ng-deep #hrs-carousel .carousel-control-prev-icon {
+  background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+}
+#hottest-release-slider-div ::ng-deep #hrs-carousel .carousel-control-next-icon {
+  background-image: url("/assets/images/our-partners/slide-next-button.svg");
+}
+#hottest-release-slider-div ::ng-deep .nav-tabs .nav-link {
+  border: #ecedef solid 1px;
+  border-bottom-width: 0 !important;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+  font-family: TitilliumWeb;
+  font-size: 1.3rem;
+}
+#hottest-release-slider-div ::ng-deep .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+#hottest-release-slider-div ::ng-deep .nav-tabs .nav-link.active {
+  background-color: #ff7928;
+  color: white;
+  border-color: #ff7928;
+}
+#hottest-release-slider-div ::ng-deep .nav-tabs .nav-link:hover {
+  font-weight: bold;
+}
+#hottest-release-slider-div ::ng-deep ul.nav {
+  border-bottom: solid 2px black;
+}
+#hottest-release-slider-div ::ng-deep .hrs-button {
+  color: #282828;
+  font-size: 2.5em;
+  font-family: TitilliumWeb;
+  font-weight: lighter;
+  line-height: 1;
+  background-color: rgba(255, 255, 255, 0.75);
+}
+@media screen and (max-width: 1200px) {
+  #hottest-release-slider-div ::ng-deep .hrs-button {
+    font-size: 1.8em;
+  }
+  #hottest-release-slider-div ::ng-deep h1 {
+    font-size: 1.5em;
+  }
+  #hottest-release-slider-div ::ng-deep .carousel-caption {
+    bottom: 1.4em;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hottest-release-slider-div ::ng-deep .hrs-button {
+    font-size: 0.8rem;
+  }
+  #hottest-release-slider-div ::ng-deep h1 {
+    font-size: 1.5rem;
+  }
+  #hottest-release-slider-div ::ng-deep .carousel-caption {
+    bottom: 0.75rem;
+    padding-bottom: 1rem;
+  }
+  #hottest-release-slider-div ::ng-deep .nav-tabs .nav-link {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  #hottest-release-slider-div ::ng-deep .hrs-button {
+    font-size: 0.55rem;
+  }
+  #hottest-release-slider-div ::ng-deep h1 {
+    font-size: 1.15rem;
+  }
+  #hottest-release-slider-div ::ng-deep .carousel-caption {
+    bottom: 0.3rem;
+    padding-bottom: 0;
+  }
+  #hottest-release-slider-div ::ng-deep .nav-tabs .nav-link {
+    font-size: 0.55rem;
+  }
+}
+#hottest-release-slider-div ::ng-deep .hrs-button:hover {
+  color: white;
+  background-color: #282828;
+}
+#hottest-release-slider-div ::ng-deep #hrs-carousel .carousel-inner {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+#hottest-release-slider-div .hrs-slide {
+  width: 100%;
+  position: relative;
+  padding-bottom: 39.634% !important;
+}
+#hottest-release-slider-div #hrs-carousel {
+  width: 100%;
+  position: relative;
+  padding-bottom: 39.634% !important;
+}
+#hottest-release-slider-div ::ng-deep .carousel-control-prev-icon,
+#hottest-release-slider-div ::ng-deep .carousel-control-next-icon {
+  width: 1.62rem !important;
+  height: 2.62rem !important;
+}
+@media screen and (max-width: 768px) {
+  #hottest-release-slider-div ::ng-deep .carousel-control-prev-icon,
+#hottest-release-slider-div ::ng-deep .carousel-control-next-icon {
+    width: 1.2075rem !important;
+    height: 1.965rem !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  #hottest-release-slider-div ::ng-deep .carousel-control-prev-icon,
+#hottest-release-slider-div ::ng-deep .carousel-control-next-icon {
+    width: 0.81rem !important;
+    height: 1.31rem !important;
+  }
+}
+
+.hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+
+.height-50px {
+  height: 50px !important;
+}
+
+/*# sourceMappingURL=ms-hottest-release-slider.component.css.map */

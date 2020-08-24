@@ -1,0 +1,59 @@
+<div class="">
+  <table class="table">
+    <thead class="text-uppercase">
+      <th class="border-right">SHOP</th>
+      <th class="border-right">IMAGE</th>
+      <th class="border-right">COUNTRY</th>
+      <th class="border-right">TYPE</th>
+
+      <th class="border-top-0 border-bottom-0">ACTIONS</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of itemsToShow">
+        <td class="item-name">
+          <span>{{ item.name}}</span>
+        </td>
+
+        <td class="logo-div">
+          <div class="wrapper-div">
+            <span class="helper"></span>
+            <img [src]="item.mainImage" class="img-fluid mx-4">
+          </div>
+        </td>
+
+        <td class="item-name">
+          <span>{{ item.country}}</span>
+        </td>
+
+        <td class="item-name">
+          <span>{{ item.type}}</span>
+        </td>
+
+        <td>
+          <div class="">
+            <div class="dropdown">
+
+              <ng-container>
+                <div class="display-flex align-items-center flex-direction-column">
+                  <div *ngIf="item.type === 'physical' && item.lat && item.lon" class="">
+                    <a href="https://www.google.com.sa/maps/search/{{item.lat}},{{item.lon}},12.21z?hl=en"
+                      target="_blank">
+                      <img src="assets/images/marker-blue.png" width="30">
+                    </a>
+                  </div>
+                  <a [routerLink]="['/shops/details', getRoute(item.name)]">
+                    <button class="btn btn-outline-dark item-button mt-1 py-2 px-3">
+                      {{ buttonText }}
+                    </button>
+                  </a>
+                </div>
+              </ng-container>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

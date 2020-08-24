@@ -1,0 +1,51 @@
+<div class="padding-bottom-1-5rem">
+
+  <ms-breadcrumb [steps]="['Home', 'Shops', shopName]"></ms-breadcrumb>
+
+  <ms-advertisement></ms-advertisement>
+
+  <ms-single-shop-details *ngIf="showPageDetails" [shop]="shop"></ms-single-shop-details>
+
+  <div class="mb-5">
+    <ms-single-shop-map *ngIf="showPageDetails" [shop]="shop"></ms-single-shop-map>
+  </div>
+
+  <ms-section-title class = "" [title]="'Shop now at'" [titleItalic]="shopName" *ngIf="!shop.isParent && shop.type === 'virtual'">
+  </ms-section-title>
+
+  <ms-section-title [title]="'Sub Shops'" [titleItalic]="" *ngIf="shop.isParent">
+  </ms-section-title>
+
+  <div class="d-flex align-items-stretch flex-column flex-md-row" *ngIf="!shop.isParent && shop.type === 'virtual'">
+    <div *ngIf="showFilter" id="filters-div">
+      <filters-form [isFiltersOffers]="true"  [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true"
+        (filterEventEmiter)="filter($event)" [inputFilters]="filters" ></filters-form>
+    </div>
+
+    <div id="product-table-div">
+      <ms-product-table
+        [brands]="brands"
+        [listViewMode]="true"
+        [offers]="offers"
+        [releases]="releases"
+        [shops]="shops"
+        [styles]="styles"
+        [buttonText]="'GET THEM NOW'"
+        (sortByPriceEvent)="sortByPrice($event)">
+      </ms-product-table>
+    </div>
+
+  </div>
+
+  <div id="" *ngIf="shop.isParent">
+    <shops-table-parent
+      [listViewMode]="true"
+      [parentId]="shop.id"
+      [shops]="shops"
+      [disabledSort]="true">
+    </shops-table-parent>
+  </div>
+
+
+
+</div>

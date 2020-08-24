@@ -1,0 +1,73 @@
+<div id="ms-release-page-div" class="padding-bottom-1-5rem">
+
+  <ms-breadcrumb *ngIf="collectionName" [steps]="['Home', 'Releases', brandName,
+                         collectionName, releaseName]"></ms-breadcrumb>
+
+  <ms-breadcrumb *ngIf="!collectionName" [steps]="['Home', 'Releases', brandName,
+                         releaseName]"></ms-breadcrumb>
+  <div>
+    <ms-advertisement></ms-advertisement>
+  </div>
+
+  <div>
+    <ms-release-page-details [releasePage]="releasePage"></ms-release-page-details>
+  </div>
+
+  <div>
+    <ms-release-page-shops [shops]="shops" ></ms-release-page-shops>
+  </div>
+
+  <div *ngIf="relatedReleases && relatedReleases.length > 0">
+    <ms-section-title [title]="'Shop More'" [titleItalic]="collection ? collection.name : ''">
+    </ms-section-title>
+
+    <ngb-carousel id="related-releases" #relatedReleases class="padding-top-25px" (slide)="onSlide($event)">
+
+      <ng-container *ngFor="let page of [1,2,3]">
+        <ng-template ngbSlide class="mb-3">
+
+          <div class="d-flex flex-wrap mb-5 justify-content-center">
+
+            <div *ngFor="let item of hotItems; let i = index"
+              class="col-6 col-md-3 col-xl-2 mb-3 card rounded-0 p-0 margin-right-10px">
+
+              <a [routerLink]="['/releases', item.slug]" class="text-decoration-none color-black">
+
+                <div class="position-relative">
+                  <div *ngIf="item.hot" class="hot-image-div">
+                    <img src="assets/images/hot-release-fire.svg">
+                  </div>
+
+                  <div class="item-image-div">
+                    <div class="wrapper-div">
+                      <img class="img-fluid" [src]="item.image">
+                    </div>
+                  </div>
+
+                  <div class="slogan-div">
+                    <p>
+                      {{item.slogan | textOverflow:57 }}
+                    </p>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-column px-3 py-2">
+                  <div class="item-name-div">{{'Get ' + item.slogan | textOverflow:40 }}</div>
+                </div>
+                <div class="px-2 pb-3 border-0">
+
+                  <button class="btn btn-outline-dark w-100 rounded-0 font-italic">
+                    SEE MORE DETAILS
+                  </button>
+                </div>
+
+              </a>
+            </div>
+          </div>
+
+        </ng-template>
+      </ng-container>
+    </ngb-carousel>
+  </div>
+
+</div>

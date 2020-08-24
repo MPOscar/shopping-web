@@ -1,0 +1,67 @@
+#release-calendar-header-div {
+
+  background-image: url('/assets/images/home-shoe-pattern.svg');
+  font-family: TitilliumWeb;
+
+  // Small and Medium devices
+  //@media (max-width: 768px) {
+  //  #coming-soon-header {
+  //    justify-content: center !important;
+  //  }
+  //}
+
+  .coming-soon-label {
+    line-height: 1;
+    font-size: 4.25em;
+  }
+
+  #calendar-btn {
+    width: 11.70em;
+    border: solid 1px black;
+    color: black;
+    font-size: 1.0625em;
+    box-sizing: border-box;
+  }
+
+  #calendar-btn:hover {
+    color: white;
+    background: black;
+  }
+
+  #calendar-icon {
+    font-size: 2em;
+  }
+
+  .card {
+    background-color: rgb(236, 237, 239);
+    box-sizing: border-box;
+  }
+
+  .card-header {
+    flex-grow: 100;
+  }
+
+  .card:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .card-title {
+    font-family: TitilliumWeb;
+    line-height: 1;
+  }
+
+  .card-date {
+    font-family: OpenSans;
+    line-height: 1;
+  }
+
+  .card-body, .card-footer {
+    background-color: rgb(236, 237, 239);
+  }
+
+  .card-footer button:hover {
+    background-color: black;
+  }
+
+}

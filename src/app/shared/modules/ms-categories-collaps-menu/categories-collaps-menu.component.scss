@@ -1,0 +1,57 @@
+@import "global/colors";
+
+@media (min-width: 768px) {
+
+  #categories-collaps-menu-div.visible {
+
+  }
+
+}
+
+@media (min-width: 768px) {
+  .menu-item {
+    width: 25% !important;
+    min-width: 25% !important;
+  }
+}
+
+@media (max-width: 500px) {
+  .menu-item {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+}
+
+.categories-list {
+  width: 95%;
+
+  a {
+    font-family: TitilliumWeb;
+    font-size: 1.1rem;
+    color: $dark-gray-text;
+    text-transform: capitalize;
+  }
+}
+
+@media (min-width: 992px) {
+  .categories-list {
+    margin-right: 5.5rem;
+    width: 22% !important;
+  }
+}
+
+.width-25-pct {
+  width: 50%;
+}
+
+.min-width-25-pct {
+  min-width: 50%;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap !important;
+}
+
+::ng-deep ms-categories-collaps-menu{
+  background: transparent !important;
+}

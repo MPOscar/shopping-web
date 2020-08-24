@@ -1,0 +1,75 @@
+.banner-div {
+  min-height: 17rem;
+}
+
+.banner-title {
+  font-family: TitilliumWeb;
+  font-weight: lighter;
+  font-size: 4.25rem;
+  line-height: 1;
+  box-sizing: border-box;
+}
+
+.item-image-div {
+  position: relative;
+  width: 100%;
+  padding-bottom: 50%;
+}
+
+.banner-text {
+  font-family: OpenSans;
+  font-weight: 400;
+  font-size: 0.9rem;
+  width: 50% !important;
+}
+
+.msb-subtitle {
+  font-size: 1.75rem;
+  font-family: TitilliumWeb;
+}
+
+.mr-lg-10 {
+  margin-right: 23rem;
+}
+
+@media (max-width: 1200px) {
+  .banner-title {
+    min-width: 38% !important;
+    max-width: 38% !important;
+  }
+}
+@media (max-width: 992px) {
+  .banner-title {
+    font-size: 3rem;
+  }
+
+  .banner-text {
+    width: 87% !important;
+  }
+
+  .msb-subtitle {
+    font-size: 1.4rem;
+    font-family: TitilliumWeb;
+  }
+}
+@media (max-width: 760px) {
+  .banner-title {
+    font-size: 2.2rem;
+    min-width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .msb-subtitle {
+    font-size: 1.2rem;
+    font-family: TitilliumWeb;
+  }
+
+  .banner-text {
+    margin: auto !important;
+  }
+}
+.text-title {
+  font-size: 1.1rem;
+}
+
+/*# sourceMappingURL=ms-banner.component.css.map */

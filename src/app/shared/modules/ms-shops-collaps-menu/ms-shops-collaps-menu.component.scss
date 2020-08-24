@@ -1,0 +1,27 @@
+@import "global/colors";
+
+@media (min-width: 768px) {
+
+  #shops-collaps-menu-div.visible {
+    max-height: 15.875rem !important; // TODO: Set it dynamic, based on the amount of categories
+  }
+
+}
+
+.shops-list {
+  width: 95%;
+
+  a {
+    font-family: TitilliumWeb;
+    font-size: 1.1rem;
+    color: $dark-gray-text;
+    text-transform: capitalize;
+  }
+}
+
+@media (min-width: 992px) {
+  .shops-list {
+    margin-right: 5.5rem;
+    width: 22% !important;
+  }
+}

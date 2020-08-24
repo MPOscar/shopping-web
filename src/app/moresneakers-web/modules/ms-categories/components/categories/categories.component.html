@@ -1,0 +1,55 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="categories-div" class="padding-bottom-1-5rem">
+
+  <ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl ? imgUrl : category.imgUrl"
+             [title]="'Categories'"
+             [titleItalic]="''"
+             [textTitle]="title ? title : category.name"
+             [text]="description ? description : category.description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home','Categories',categoryName]"></ms-breadcrumb>
+
+  <div class="d-flex align-items-stretch align-items-stretch flex-column flex-md-row pt-3">
+    <div id="filters-div">
+      <filters-form *ngIf="showFilter" [isFiltersReleases]="true" [inputFilters]="filters" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true" (filterEventEmiter)="filter($event)">
+      </filters-form>
+    </div>
+
+    <div id="product-table-div">
+      <releases-table   [brands]="brands"
+                        [categoryPage]="true"
+                        [releases]="releases"
+                        [shops]="shops"
+                        [styles]="styles"
+                        (sortByPriceEvent)="sortByPrice($event)">
+      </releases-table>
+    </div>
+  </div>
+
+  <ms-hottest-release-slider [categoryId]="categoryId"></ms-hottest-release-slider>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

@@ -1,0 +1,94 @@
+#hottest-release-calendar h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+@media screen and (max-width: 768px) {
+  #hottest-release-calendar h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #hottest-release-calendar h1 {
+    font-size: 2.1em;
+  }
+}
+#hottest-release-calendar ::ng-deep #our-partners-carousel .carousel-control-prev-icon {
+  background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+}
+#hottest-release-calendar ::ng-deep #our-partners-carousel .carousel-control-next-icon {
+  background-image: url("/assets/images/our-partners/slide-next-button.svg");
+}
+#hottest-release-calendar ::ng-deep .nav-tabs .nav-link {
+  border: #ecedef solid 1px;
+  border-bottom-width: 0 !important;
+  border-radius: 0;
+  text-transform: uppercase;
+  font-style: italic;
+  color: black;
+  font-family: TitilliumWeb;
+  font-size: 1.3rem;
+}
+#hottest-release-calendar ::ng-deep .nav-tabs .nav-item {
+  margin-bottom: 0;
+}
+#hottest-release-calendar ::ng-deep .nav-tabs .nav-link.active {
+  background-color: #ff7928;
+  color: white;
+  border-color: #ff7928;
+}
+#hottest-release-calendar ::ng-deep .nav-tabs .nav-link:hover {
+  font-weight: bold;
+}
+#hottest-release-calendar ::ng-deep ul.nav {
+  border-bottom: solid 2px black;
+}
+#hottest-release-calendar ::ng-deep .our-partners-button {
+  color: #282828;
+  font-size: 2.5em;
+  font-family: TitilliumWeb;
+  font-weight: lighter;
+  line-height: 1;
+}
+@media screen and (max-width: 1025px) {
+  #hottest-release-calendar ::ng-deep .our-partners-button {
+    font-size: 2.3em;
+  }
+  #hottest-release-calendar ::ng-deep h1 {
+    font-size: 1.5em;
+  }
+  #hottest-release-calendar ::ng-deep .carousel-caption {
+    bottom: 1.4em;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (max-width: 768px) {
+  #hottest-release-calendar ::ng-deep .our-partners-button {
+    font-size: 1.3em;
+  }
+  #hottest-release-calendar ::ng-deep h1 {
+    font-size: 1.5em;
+  }
+  #hottest-release-calendar ::ng-deep .carousel-caption {
+    bottom: 0.75em;
+    padding-bottom: 1em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #hottest-release-calendar ::ng-deep .our-partners-button {
+    font-size: 0.75em;
+  }
+  #hottest-release-calendar ::ng-deep h1 {
+    font-size: 1.15em;
+  }
+  #hottest-release-calendar ::ng-deep .carousel-caption {
+    bottom: 0.3em;
+    padding-bottom: 0;
+  }
+}
+#hottest-release-calendar ::ng-deep .our-partners-button:hover {
+  color: white;
+  background-color: #282828;
+}
+
+/*# sourceMappingURL=hottest-release-calendar.component.css.map */

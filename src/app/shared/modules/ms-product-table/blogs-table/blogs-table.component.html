@@ -1,0 +1,119 @@
+<div class="d-flex flex-column" id="blogs-table">
+
+  <div *ngFor="let new of itemsToShow; let odd = odd; let even = even" class="news-div mb-4 position-relative ">
+    <div class="wrapper-div position-relative">
+      <div *ngIf="odd" class="background-left h-100 d-none d-lg-block">
+        <img class="img-blogs" src="assets/images/blog/left-trapecius.svg">
+      </div>
+      <div *ngIf="odd" class="triangle right-triangle h-100">
+        <img class="img-triangle" src="assets/images/blog/right-black-triangle.svg">
+      </div>
+      <div *ngIf="odd" class="triangle-text right-triangle-text mr-4">
+        <h3 class="text-uppercase text-white">{{new.type}}</h3>
+      </div>
+
+      <div *ngIf="even" class="background-right h-100 d-none d-lg-block">
+        <img class="img-blogs" src="assets/images/blog/right-trapecius.svg">
+      </div>
+      <div *ngIf="even" class="triangle left-triangle h-100">
+        <img class="img-triangle" src="assets/images/blog/left-black-triangle.svg">
+      </div>
+      <div *ngIf="even" class="triangle-text left-triangle-text ml-3">
+        <h3 class="text-uppercase text-white">{{new.type}}</h3>
+      </div>
+
+
+      <!--These have the image at left-->
+      <div *ngIf="even" class="d-flex flex-column flex-lg-row pr-0 pr-lg-3 conflictive">
+        <div class="img-div position-relative">
+          <div class="wrapper-div">
+            <img class="img-blogs" [src]="new.image">
+          </div>
+        </div>
+
+        <div class="news-body ml-lg-auto ml-2 ml-lg-0 mr-lg-3 pt-3 pt-lg-4 text-right d-flex flex-column">
+          <div class="text-uppercase news-title mt-0 mt-lg-3">
+            {{new.title | textOverflow:36}}
+          </div>
+          <div class="news-date mb-2">
+            {{new.date}} by {{new.author}}
+          </div>
+
+          <div class="news-resume" innerHTML="{{new.resume | cleanHtml | textOverflow:700 }}">
+          </div>
+
+          <div class="mb-4 mt-auto mr-2 mr-lg-0">
+            <a [routerLink]="['/blog/', getSlugFromBlog(new)]">
+              <button class="btn btn-outline-dark text-uppercase news-button">
+                Read More
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!--These have the image at right-->
+      <div *ngIf="odd" class="d-flex flex-column-reverse flex-lg-row pl-0 pl-lg-3 conflictive">
+
+        <div class="news-body ml-2 ml-lg-3 pt-3 pt-lg-4 text-right text-lg-left d-flex flex-column">
+          <div class="text-uppercase news-title mt-0 mt-lg-3">
+            {{new.title | textOverflow:36 }}
+          </div>
+
+          <div class="news-date mb-2">
+            {{new.date}} by {{new.author}}
+          </div>
+
+          <div class="news-resume" innerHTML="{{new.resume | cleanHtml | textOverflow:700}}">
+          </div>
+
+          <div class="mb-4 mt-auto mr-2 mr-lg-0">
+            <a [routerLink]="['/blog/', getSlugFromBlog(new)]">
+              <button class="btn btn-outline-dark text-uppercase news-button">
+                Read More
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <div class="img-div position-relative">
+          <div class="wrapper-div">
+            <img class="img-blogs" [src]="new.image">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-center">
+  <div id="pagination-div" class="d-inline-flex mx-auto mb-4" *ngIf="pages > 1">
+    <span class="cursor-pointer mr-3" (click)="changePage('1')">
+      <a>
+        <img src="assets/images/pagination-first.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer mr-1" (click)="changePage((actualPage - 1).toString())">
+      <a>
+        <img src="assets/images/pagination-prev.svg">
+      </a> |
+    </span>
+
+    <span *ngFor="let page of paginationArray" class="cursor-pointer mr-3" (click)="changePage(page)">
+      <a [ngClass]="{'color-black': page == actualPage}">{{page}}</a>
+    </span>
+
+    <span class="cursor-pointer mr-3" (click)="changePage((actualPage + 1).toString())">
+      |
+      <a>
+        <img src="assets/images/pagination-next.svg">
+      </a>
+    </span>
+    <span class="cursor-pointer" (click)="changePage(pages.toString())">
+      <a>
+        <img src="assets/images/pagination-last.svg">
+      </a>
+    </span>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+<div id="coming-soon-div" class="d-flex flex-wrap py-4">
+
+  <div class="mr-lg-4 col-12 col-md-8 col-lg-3 mb-2 mb-md-0 pl-5 align-self-center d-flex"
+       id="coming-soon-header">
+    <div class="ml-2 py-4 d-inline-flex flex-column">
+      <div class="ml-1 coming-soon-label font-weight-light">COMING</div>
+      <div class="ml-2 coming-soon-label font-weight-light font-italic">SOON</div>
+      <button class="btn btn-outline-dark font-italic font ml-1 mt-4
+                     d-flex align-items-center rounded-0"
+              id="calendar-btn" [routerLink]="['/release-calendar']">
+        <span id="calendar-icon" class="fa fa-calendar mr-3"></span>
+        <span class="pb-1">SEE CALENDAR</span>
+      </button>
+    </div>
+  </div>
+
+  <div *ngFor="let item of comingItems; let i = index"
+       class="col-xl-2 col-6 col-md-4 col-lg-2 px-1 pl-md-2 pr-md-0 pb-2 pb-md-0 rounded-0 border-0">
+    <a [routerLink]="['/releases', item.slug]" class="text-decoration-none color-black">
+
+      <div class="d-flex flex-column align-content-end card rounded-0 border-0 px-0 h-100 w-100"
+           (mouseenter)="mouseEnter(i)" (mouseleave)="mouseLeave(i)">
+
+        <div class="d-flex flex-column align-items-start px-3 py-3 card-header border-0">
+          <div class="card-title pb-2 mb-auto font-weight-normal">{{ item.name | textOverflow: 46 }}</div>
+          <div class="card-date mt-auto h6 small mb-0 font-weight-bold text-uppercase">
+            {{item.releaseDate | date: 'MMMM d'}}
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="wrapper-div d-flex align-content-center" [style.background-color]="bodyBgColor(i)">
+            <img class="img-fluid card-image" [src]="item.mainImage">
+          </div>
+        </div>
+
+        <div class="card-footer px-2 pb-2 border-0" [style.background-color]="bodyBgColor(i)">
+
+          <button class="btn btn-outline-dark w-100 rounded-0 font-italic"
+                  [style.background-color]="buttonBgColor(i)"
+                  [style.color]="textColor(i)">
+            SEE MORE DETAILS
+          </button>
+
+        </div>
+      </div>
+
+    </a>
+  </div>
+
+</div>
+

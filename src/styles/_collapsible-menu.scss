@@ -1,0 +1,53 @@
+.collaps-menu-div.visible {
+  width: 100%;
+  background-color: #9b9b9bf5 !important;
+  // margin-bottom: 0.9375rem;
+  padding-bottom: 2.1875rem;
+  padding-top: 2.5625rem;
+  padding-left: 3.375rem;
+  padding-right: 3.375rem;
+  color: black !important;
+  height: auto !important;
+  transition: max-height 0.3s ease-out;
+}
+
+.collaps-menu-div.collapsed {
+  overflow:hidden;
+  max-height: 0;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  transition: max-height 0.3s,
+  padding-bottom 0.3s ease-in,
+  padding-top 0.3s ease-in,
+  padding-left 0.3s ease-in,
+  margin-bottom 0.3s ease-in;
+  box-sizing: border-box;
+}
+
+.collapse-menu-close-btn {
+  position: absolute;
+  right: 0.5rem;
+  top: 0;
+  padding-top: 0.4rem;
+  cursor: pointer !important;
+}
+
+.collaps-menu-see-btn {
+  color: black !important;
+  font-size: 1.1rem !important;
+  font-family: TitilliumWeb !important;
+}
+
+.collaps-menu-see-btn:hover {
+  background-color: black !important;
+  color: white !important;
+}
+
+.collaps-menu-see-btn i {
+  color: darkgray !important;
+  font-size: 0.9rem;
+}
+
+.collaps-menu-see-btn:hover i {
+  color: white !important;
+}

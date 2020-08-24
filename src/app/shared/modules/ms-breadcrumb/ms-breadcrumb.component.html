@@ -1,0 +1,33 @@
+<div id="breadcrumb-div" class="d-flex flex-wrap align-items-stretch">
+
+  <div *ngFor="let step of steps; let first = first; let last = last"
+    class="mb-2 d-flex">
+    <div *ngIf="first" class="non-last d-flex off">
+      <a class="px-3 border border-right-0">{{step}}</a>
+      <span>
+        <img src="assets/images/breadcrumb-middle-peak.svg">
+      </span>
+    </div>
+
+    <div *ngIf="!last && !first" class="non-last d-flex off">
+      <span>
+        <img src="assets/images/breadcrumb-middle-tail.svg">
+      </span>
+      <a class="border border-right-0 border-left-0 px-3">{{step}}</a>
+      <span>
+        <img src="assets/images/breadcrumb-middle-peak.svg">
+      </span>
+    </div>
+
+    <div *ngIf="last" id="last" class="d-flex off">
+      <span>
+        <img src="assets/images/breadcrumb-last-tail.svg"/>
+      </span>
+      <a class="text-white border border-right-0 border-left-0 px-3">{{step}}</a>
+      <span>
+        <img src="assets/images/breadcrumb-last-peak.svg"/>
+      </span>
+    </div>
+
+  </div>
+</div>

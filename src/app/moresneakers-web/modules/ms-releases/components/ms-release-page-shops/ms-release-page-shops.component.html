@@ -1,0 +1,196 @@
+
+<div *ngIf="!hasOffers">
+  <div class="d-flex justify-content-center my-2 mt-md-4 mb-md-4">
+    <h1 class="font-weight-light mr-3 text-uppercase">Lists of retailers coming soon</h1>
+  </div>
+</div>
+
+<div *ngIf="hasOffers" class="shops-section" id="ms-release-page-shops-div">
+
+  <div *ngIf="showRegions || (releasePage.raffles.length + releasePage.marketplaces.length) > 0">
+
+    <div id="shops-main-header" class="d-flex justify-content-center my-2 mt-md-3 mb-md-2">
+      <h1 class="font-weight-light mr-3 text-uppercase">Where</h1>
+      <h1 class="font-weight-light font-italic text-uppercase">to Buy</h1>
+    </div>
+
+  </div>
+
+  <div *ngIf="releasePage.regions.length > 0">
+    <div *ngFor="let region of releasePage.regions">
+
+      <div class="d-flex flex-column table-responsive" *ngIf="region.regionShops.length > 0">
+        <div class="mx-auto text-uppercase region-name">
+          {{region.region}} shops
+        </div>
+        <table class="table" multiTemplateDataRows>
+          <thead class="text-uppercase">
+          <th class="border-right">Store</th>
+          <th class="border-right">Status</th>
+          <th class="border-right">Price</th>
+          <th class="border-right">Shipping</th>
+          <th>Link</th>
+          </thead>
+          <tbody>
+
+            <ng-container *ngFor="let groupOffer of region.regionShops;">
+
+                <tr *ngFor="let offer of groupOffer.offers;let i=index">
+
+                  <td  style="width: 180px;height: 150px;" class="col-sm-2 min-width-150px">
+                    <img *ngIf="i === 0" class="img-fluid logo-text" src="{{groupOffer.logo}}" alt=""/>
+                    <p *ngIf="i === 0" style="margin-bottom: 0rem !important;">{{groupOffer.shopName}}</p>
+                  </td>
+
+                  <td class="min-width-120px" [class]="getStatusClass(offer)">
+                    {{offer.status}}
+                  </td>
+
+                  <td *ngIf="offer.priceAfterDiscount === undefined" class="min-width-120px">
+                    {{offer.price}}
+                  </td>
+
+                  <td *ngIf="offer.priceAfterDiscount !== undefined && offer.priceAfterDiscount >= 0" class="min-width-120px">
+                    <div class="align-middle d-flex flex-column">
+                      <span class="prev-price-span mr-1">{{offer['price' + displayCurrency(offer)] | currency:displayCurrency(offer):currencySymbol(offer) }}</span>
+                      <span class="current-price-span">{{offer.priceAfterDiscount | currency:displayCurrency(offer):currencySymbol(offer) }}</span>
+                    </div>
+                  </td>
+
+                  <td class="min-width-180px">
+                    {{offer.shipping}}
+                  </td>
+
+                  <td class="min-width-200px">
+                    <span class="align-middle d-flex flex-column">
+                      <span *ngFor="let link of offer.links" class="py-1">
+                        <a [href]="link.url" target="_blank">
+                         <button [style.color]="link.color"
+                                 class="link-button font-italic text-uppercase py-2 px-3">
+                           {{link.label}}
+                         </button>
+                        </a>
+                      </span>
+                    </span>
+                  </td>
+
+                </tr>
+
+            </ng-container>
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="releasePage.raffles.length > 0">
+    <div
+      class="d-flex flex-column table-responsive">
+      <div class="mx-auto text-uppercase region-name">
+        Raffles
+      </div>
+      <table class="table">
+        <thead class="text-uppercase">
+        <th class="border-right">Store</th>
+        <th class="border-right">Pick-up</th>
+        <th class="border-right">Date</th>
+        <th class="border-right">Price</th>
+        <th class="border-right">Shipping</th>
+        <th class="border-right">Status</th>
+        <th>Link</th>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let groupOffer of releasePage.raffles;">
+
+            <tr *ngFor="let raffle of groupOffer.offers;let ir=index">
+              <td class="col-sm-2" style="width: 150px;height: 150px;">
+                <img *ngIf="ir === 0" class="img-fluid logo-text" src="{{groupOffer.logo}}" alt=""/>
+                <p *ngIf="ir === 0" style="margin-bottom: 0rem !important;">{{groupOffer.shopName}}</p>
+              </td>
+
+              <td>
+                {{raffle.pickUp}}
+              </td>
+
+              <td>
+                {{raffle.date}}
+              </td>
+
+              <td>
+                {{raffle.price}}
+              </td>
+
+              <td>
+                {{raffle.shipping}}
+              </td>
+
+              <td [class]="getStatusClass(raffle)">
+                {{raffle.status}}
+              </td>
+
+              <td>
+                  <span class="align-middle d-flex flex-column">
+                    <span *ngFor="let link of raffle.links" class="py-1">
+                      <a [href]="link.url"  target="_blank">
+                       <button [style.color]="link.color"
+                               class="link-button font-italic text-uppercase py-2 px-3">
+                         {{link.label}}
+                       </button>
+                      </a>
+                    </span>
+                  </span>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="releasePage.marketplaces.length > 0">
+    <div class="d-flex flex-column">
+      <div class="mx-auto text-uppercase region-name">
+        Marketplaces
+      </div>
+      <table class="table">
+        <thead class="text-uppercase">
+        <th class="border-right">Store</th>
+        <th class="border-right">Status</th>
+        <th class="border-right">Shipping</th>
+        <th>Link</th>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let groupOffer of releasePage.marketplaces;">
+          <tr *ngFor="let marketplace of groupOffer.offers; let im = index">
+            <td class="col-sm-2" style="width: 150px;height: 150px;">
+              <img *ngIf="im === 0" class="img-fluid logo-text" src="{{groupOffer.logo}}" alt=""/>
+              <p *ngIf="im === 0" style="margin-bottom: 0rem !important;">{{groupOffer.shopName}}</p>
+            </td>
+
+            <td [class]="getStatusClass(marketplace)">
+              {{marketplace.status}}
+            </td>
+            <td>
+              {{marketplace.shipping}}
+            </td>
+            <td>
+                <span class="align-middle d-flex flex-column">
+                  <span *ngFor="let link of marketplace.links" class="py-1">
+                    <a [href]="link.url"  target="_blank">
+                     <button [style.color]="link.color"
+                             class="link-button font-italic text-uppercase py-2 px-3">
+                       {{link.label}}
+                     </button>
+                    </a>
+                  </span>
+                </span>
+            </td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

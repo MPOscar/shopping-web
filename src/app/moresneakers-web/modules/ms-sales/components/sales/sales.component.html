@@ -1,0 +1,191 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div id="sales-page-div" class="padding-bottom-1-5rem">
+
+  <ms-breadcrumb [steps]="['Home','Sales']"></ms-breadcrumb>
+
+  <ms-advertisement></ms-advertisement>
+
+  <ms-banner *ngIf="displayHeadingOnPage" [backgroundImage]="imgUrl"
+             [title]="'Sales'"
+             [titleItalic]="''"
+             [textTitle]="title"
+             [text]="description">
+  </ms-banner>
+
+  <div class="our-selection-div">
+    <div class="mt-4">
+      <ms-section-title title="Our" titleItalic="Selection"></ms-section-title>
+    </div>
+
+    <ngb-carousel #relatedReleases [interval]="10000" (slide)="onSlide($event)"
+                  [showNavigationIndicators]="false">
+
+      <ng-container *ngFor="let page of [1,2,3]">
+        <ng-template ngbSlide class="mb-3">
+          <div class="our-selection-slide">
+            <div class="wrapper-div">
+              <div class="d-flex flex-wrap mb-5 justify-content-between os-items-table">
+
+                <div *ngFor="let item of hotItems; let i = index"
+                     class="col-6 col-md-4 col-xl-3 mb-3 card rounded-0 p-0">
+                  <a href="{{item.link}}" target="_blank" class="text-decoration-none">
+
+                    <div class="image-container-div">
+                      <div *ngIf="item.hot" class="hot-image-div">
+                        <img src="assets/images/hot-release-fire.svg">
+                      </div>
+
+                      <div class="item-image-div wrapper-div d-flex align-content-center">
+                        <img class="img-fluid w-100 fit-contain" [src]="item.image">
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-column item-info-div px-3 py-2">
+                      <div class="item-name-div" data-toggle="tooltip" data-placement="bottom" [title]="item.name">{{item.name | textOverflow:45 }}</div>
+                      <div class="item-feature-div">Store: {{item.store}}</div>
+                      <div class="item-feature-div">Style Code: {{item.styleCode}}</div>
+                      <div class="item-feature-div d-flex">
+                        <span class="prev-price-span mr-1">{{item.priceEUR | currency:'EUR':'€' }}</span>
+                        <span class="current-price-span">{{item.priceAfterDiscount | currency:'EUR':'€' }}</span>
+                        <div class="d-inline-block ml-auto os-logo-span">
+                          <div class="wrapper-div">
+                            <img [src]="item.brandLogo" class="w-100 h-100 fit-cover">
+                          </div>
+                        </div>
+                      </div>
+
+                      <div>
+
+                        <button class="btn btn-outline-dark item-button mt-1 py-2">
+                          {{buttonText}}
+                        </button>
+
+                      </div>
+                    </div>
+
+                  </a>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </ngb-carousel>
+  </div>
+
+  <div class="latest-deals-div item-image-div py-4">
+
+    <div class="mt-4">
+      <ms-section-title title="LATEST" titleItalic="DEALS"></ms-section-title>
+    </div>
+
+    <ngb-carousel #relatedDeals (slide)="onSlideDeals($event)" [showNavigationIndicators]="false">
+
+      <ng-container *ngFor="let page of [1,2,3]">
+        <ng-template ngbSlide class="mb-3">
+          <div class="latest-deals-slide">
+            <div class="wrapper-div">
+
+              <div class="d-flex flex-wrap justify-content-center">
+
+                <div *ngFor="let item of dealsItems.slice(0, 4); let i = index"
+                     class="col-6 col-md-3 col-xl-2 mb-3 card rounded-0 p-0 margin-right-10px store-item-div">
+                  <a class="store-link" [href]="item.url" target="_blank">
+                    <div class="store-card">
+
+                      <div class="store-image">
+                        <div class="wrapper-div">
+                          <img [src]="item.image" class="fit-cover img-fluid h-100">
+                        </div>
+                        <div *ngIf="item.promoCode" class="promo-code">
+                          <span>Promo Code: </span>{{item.promoCode | textOverflow:20}}
+                        </div>
+
+                      </div>
+                      <div class="font-italic w-100 text-center py-1 text-uppercase">
+                        {{item.shopName | textOverflow:32}} DEAL
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+
+              <div class="d-flex flex-wrap justify-content-center">
+
+                <div *ngFor="let item of dealsItems.slice(4, 8); let i = index"
+                     class="col-6 col-md-3 col-xl-2 mb-3 card rounded-0 p-0 margin-right-10px store-item-div">
+                  <a class="store-link" [href]="item.url" target="_blank">
+                    <div class="store-card">
+                      <div class="store-image">
+                        <div class="wrapper-div">
+                          <img [src]="item.image" class="fit-cover img-fluid h-100">
+                        </div>
+                        <div *ngIf="item.promoCode" class="promo-code">
+                          <span>Promo Code: </span>{{item.promoCode | textOverflow:20}}
+                        </div>
+                      </div>
+                      <div class="font-italic w-100 text-center py-1 text-uppercase store-name">
+                        {{item.shopName | textOverflow:32}} DEAL
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </ngb-carousel>
+  </div>
+
+  <div>
+    <div class="mt-4">
+      <ms-section-title title="LATEST RELEASES" titleItalic="ON SALE"></ms-section-title>
+    </div>
+
+    <div class="d-flex align-items-stretch align-items-stretch flex-column flex-md-row pt-3">
+      <div id="filters-div">
+        <filters-form [isFiltersOffers]="true" [isStatusDisabled]="true" [inputFilters]="filters" (filterEventEmiter)="filter($event)" [shops]="shops" [styles]="styles" [categories]="categories" [samePage]="true" (filterEventEmiter)="filter($event)"
+                      [brands]="brands"></filters-form>
+      </div>
+
+      <div id="product-table-div">
+        <ms-product-table [brands]="brands"
+                          [offers]="offers"
+                          [releases]="releases"
+                          [listViewMode] = "true"
+                          [shops]="shops"
+                          [styles]="styles"
+                          (sortByPriceEvent)="sortByPrice($event)">
+        </ms-product-table>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

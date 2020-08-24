@@ -1,0 +1,164 @@
+.image-container-div {
+  position: relative;
+  width: 100% !important;
+  padding-bottom: 100%;
+}
+
+#sortingSelect {
+  width: 9.8rem;
+  background-color: rgb(237, 237, 237);
+  border-radius: 0;
+}
+
+.control-label {
+  font-family: TitilliumWeb;
+  font-size: 1.2rem;
+}
+
+#pagination-div, #pagination-div a {
+  color: rgb(182, 182, 182);
+}
+
+::ng-deep {
+  .ng-select .ng-arrow-wrapper {
+    height: 100%;
+    background: white;
+    border: 1px solid rgb(237,237,237);
+    padding-left: 0.3125rem;
+    padding-top: 0.3125rem;
+  }
+
+  .ng-select .ng-select-container {
+    font-style: italic !important;
+    font-family: OpenSans !important;
+    font-weight: 200;
+    color: rgb(48, 48, 48) !important;
+    text-align: center;
+    background-color: rgb(237, 237, 237);
+    border: 0;
+    padding-left: 0 !important;
+  }
+
+  .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    font-style: italic;
+    font-weight: lighter;
+  }
+
+  .ng-input {
+    padding-left: 0 !important;
+    padding-right: 20px !important;
+  }
+
+  .ng-select.ng-select-opened.ng-select-bottom>.ng-select-container {
+    background-color: rgb(237, 237, 237);
+    border: 0;
+  }
+}
+
+#view-mode-icon {
+  width: 1.375rem;
+  height: 1.125rem;
+  font-size: 1.2rem;
+}
+
+.view-mode-div {
+  cursor: pointer !important;
+}
+
+.hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+
+.item-image-div {
+  z-index: 1;
+  background-color: #ecedef;
+}
+
+.card {
+  border: transparent solid 1px !important;
+}
+
+.card:hover {
+  border: rgba(0, 0, 0, 0.19) solid 1px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.item-info-div {
+  font-family: OpenSans;
+}
+
+.item-name-div {
+  font-size: .95rem;
+  line-height: 1.3;
+  margin-bottom: 0.1rem;
+  min-height: 2.625rem;
+}
+
+.item-feature-div {
+  font-size: .9rem;
+  color: rgb(140, 140, 140);
+}
+
+.item-price-span {
+  font-family: TitilliumWeb;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.item-button {
+  width: 100%;
+  color: rgb(180, 79, 18);
+  font-style: italic;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+
+@media (max-width: 768px) {
+  .item-button {
+    font-size: 0.9rem;
+  }
+}
+
+.item-button:hover {
+  background-color: black;
+  color: white;
+}
+
+// Just for Mobiles
+.col-6 {
+  max-width: 49%;
+}
+
+// Just for Tablets size
+@media (min-width: 768px) {
+  .col-md-4 {
+    max-width: 31% !important;
+  }
+}
+
+// Just for Extra Large Screens
+@media (min-width: 1200px) {
+  #releases-table .items-per-row-4 {
+    max-width: 23.35% !important;
+  }
+
+  #releases-table .items-per-row-5 {
+    max-width: 18.35% !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer !important;
+}
+
+.os-logo-span {
+  width: 20%;
+  padding-bottom: 10%;
+  position: relative;
+}

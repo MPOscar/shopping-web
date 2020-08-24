@@ -1,0 +1,98 @@
+#ms-release-page-details-div {
+
+  .release-details {
+    font-family: OpenSans;
+    font-size: 1.1rem;
+  }
+
+  .release-details-feature {
+    color: rgb(160, 160, 160);
+  }
+
+  .release-details-feature a {
+    text-decoration: underline;
+    color: #07459c;
+    font-family: OpenSans-Light;
+  }
+
+  .release-description {
+    font-family: OpenSans;
+    font-weight: 200;
+    font-size: 0.9rem;
+  }
+
+  .release-name {
+    font-family: TitilliumWeb;
+    font-size: 2.56rem;
+    color: rgb(48, 48, 48);
+    font-weight: lighter;
+  }
+
+  .details-header {
+    font-family: OpenSans;
+    color: rgb(48, 48, 48);
+    background-color: rgb(246, 246, 246);
+    font-size: 1.1rem;
+  }
+
+  // ================================
+  // Gallery
+  // ================================
+
+  #gallery-div {
+    position: relative;
+    padding-bottom: 77.4% !important;
+  }
+
+  @media (min-width: 992px) {
+    #gallery-div {
+      padding-bottom: 51.4% !important;
+    }
+  }
+
+  ::ng-deep {
+    ngx-gallery ngx-gallery-thumbnails {
+      height: 17.88% !important;
+    }
+
+    ngx-gallery ngx-gallery-image {
+      height: 79.13% !important;
+    }
+
+    ngx-gallery ngx-gallery-thumbnails a {
+      border: rgb(135, 135, 135) solid 1px;
+    }
+
+    .ngx-gallery-thumbnails-wrapper {
+      width: 90% !important;
+      margin-left: 5% !important;
+    }
+
+    @media (max-width: 576px) {
+      .ngx-gallery-thumbnails-wrapper {
+        width: 80% !important;
+        margin-left: 10% !important;
+      }
+    }
+
+    ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow {
+      height: 1.75rem;
+    }
+
+    ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow .fa-chevron-right {
+      background-image: url('/assets/images/release-page/img-right.svg');
+      color: transparent;
+      cursor: pointer !important;
+      height: 100%;
+    }
+
+    ngx-gallery ngx-gallery-thumbnails .ngx-gallery-arrow .fa-chevron-left {
+      background-image: url('/assets/images/release-page/img-left.svg');
+      color: transparent;
+      cursor: pointer !important;
+      height: 100%;
+    }
+
+  }
+
+}

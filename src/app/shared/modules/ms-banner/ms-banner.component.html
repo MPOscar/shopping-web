@@ -1,0 +1,80 @@
+<div id="banner-div"
+     [ngStyle]="{
+                  'background-image': 'url(' + backgroundImage + ')',
+                  'color': color,
+                  'background-repeat': 'no-repeat',
+                  'background-size': 'cover'
+                }"
+     class="d-flex flex-lg-row flex-column pt-3 pl-md-4 py-md-5 py-xl-5
+         banner-div w-100 filter-color-orange align-items-center justify-content-center" filter-color="orange">
+
+  <div class="d-flex flex-column pl-2 pt-xl-4 pb-xl-3 pl-md-4 ml-md-2 mr-5 banner-title
+              justify-content-lg-start" [class.w-25]="isBrand">
+
+    <div *ngIf="!isBrand" class="text-uppercase mr-2 mr-lg-0">{{title}}</div>
+
+    <div *ngIf="isBrand" class="item-image-div d-flex align-content-center">
+      <div class="wrapper-div">
+        <img class="img-fluid h-100 fit-contain" [src]="imageUrl">
+      </div>
+    </div>
+
+    <div *ngIf="titleItalic" class="text-uppercase font-italic">{{titleItalic}}</div>
+
+    <div *ngIf="(!titleItalic && subtitleLine1)" class="text-capitalize font-italic msb-subtitle mt-1 pt-1 ml-2">
+      {{subtitleLine1}}
+    </div>
+
+    <div *ngIf="(!titleItalic && subtitleLine2)" class="text-capitalize font-italic msb-subtitle pt-1 ml-2">
+      {{subtitleLine2}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column pt-xl-4 pb-3
+              mt-2 mt-md-0 ml-2 mr-2 mr-md-5 mr-lg-10
+              banner-text">
+    <div class="text-uppercase text-title mt-1">{{textTitle}}</div>
+
+    <div class="text-justify font-weight-light text-body">{{text | textOverflow:380}}</div>
+  </div>
+
+</div>
+
+<!--<div id="banner-div" class="page-header clear-filter" filter-color="orange">
+  <div class="page-header-image rellax-header" data-rellax-speed="-7"  [ngStyle]="{
+                  'background-image': 'url(' + backgroundImage + ')',
+                  'color': color,
+                  'background-repeat': 'no-repeat',
+                  'background-size': '100%'
+                }">
+  </div>
+  <div class="d-flex flex-column pl-2 pt-xl-4 pb-xl-3 pl-md-4 ml-md-2 mr-5 banner-title
+              justify-content-lg-start" [class.w-25]="isBrand">
+
+    <div *ngIf="!isBrand" class="text-uppercase mr-2 mr-lg-0">{{title}}</div>
+
+    <div *ngIf="isBrand" class="item-image-div d-flex align-content-center">
+      <div class="wrapper-div">
+        <img class="img-fluid h-100 fit-contain" [src]="imageUrl">
+      </div>
+    </div>
+
+    <div *ngIf="titleItalic" class="text-uppercase font-italic">{{titleItalic}}</div>
+
+    <div *ngIf="(!titleItalic && subtitleLine1)" class="text-capitalize font-italic msb-subtitle mt-1 pt-1 ml-2">
+      {{subtitleLine1}}
+    </div>
+
+    <div *ngIf="(!titleItalic && subtitleLine2)" class="text-capitalize font-italic msb-subtitle pt-1 ml-2">
+      {{subtitleLine2}}
+    </div>
+  </div>
+
+  <div class="d-flex flex-column pt-xl-4 pb-3
+              mt-2 mt-md-0 ml-2 mr-2 mr-md-5 mr-lg-10
+              banner-text">
+    <div class="text-uppercase text-title mt-1">{{textTitle}}</div>
+
+    <div class="text-justify font-weight-light text-body">{{text | textOverflow:380}}</div>
+  </div>
+</div>-->

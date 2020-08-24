@@ -1,0 +1,92 @@
+@import 'global/colors';
+
+#rcms-hottest-releases-div {
+
+  h1 {
+    font-family: TitilliumWeb;
+    font-size: 3.18rem;
+    color: $dark-gray-text;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.8em;
+    }
+  }
+
+  // Just for Mobiles
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 2.1em;
+    }
+  }
+
+  .hot-image-div {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.3rem;
+    z-index: 2;
+  }
+
+  .item-image-div {
+    z-index: 1;
+  }
+
+  .slogan-div {
+    position: absolute;
+    bottom: 0;
+    left: 0.7rem;
+    width: 80%;
+    z-index: 2;
+    font-family: OpenSans, sans-serif;
+    font-size: 0.6rem;
+    color: black;
+  }
+
+  // Just for Mobiles
+  .col-6 {
+    max-width: 49%;
+  }
+
+  // Just for Tablets size
+  @media (min-width: 768px) {
+    .col-md-3 {
+      max-width: 24% !important;
+    }
+  }
+
+  // Just for Extra Large Screens
+  @media (min-width: 1200px) {
+    .col-xl-2 {
+      max-width: 15.5% !important;
+    }
+  }
+
+  .card {
+    border: transparent solid 1px !important;
+  }
+
+  .card:hover {
+    border: black solid 1px !important;
+  }
+
+  ::ng-deep {
+    .carousel-indicators {
+      list-style: none;
+      bottom: -5px;
+    }
+
+    .carousel-indicators li {
+      width: 11px;
+      height: 11px;
+      background-color: black;
+      position: relative;
+      margin: 10px;
+    }
+
+    .carousel-indicators li.active {
+      background-color: white;
+      border: black solid 2.5px;
+    }
+  }
+}

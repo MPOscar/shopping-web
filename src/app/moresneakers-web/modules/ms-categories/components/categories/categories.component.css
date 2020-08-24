@@ -1,0 +1,34 @@
+#categories-div #advertisement {
+  font-family: OpenSans;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+#categories-div #filters-div {
+  width: 25%;
+}
+#categories-div #product-table-div {
+  width: 75%;
+}
+@media screen and (max-width: 768px) {
+  #categories-div h1 {
+    font-size: 2.8em;
+  }
+  #categories-div #filters-div {
+    width: 100%;
+  }
+  #categories-div #product-table-div {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  #categories-div h1 {
+    font-size: 2.1em;
+  }
+}
+#categories-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+
+/*# sourceMappingURL=categories.component.css.map */

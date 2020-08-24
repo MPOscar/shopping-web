@@ -1,0 +1,76 @@
+@import "global/colors";
+
+@media (min-width: 768px) {
+
+  #brands-collaps-menu-div.visible {
+    max-height: 33rem !important;
+  }
+
+}
+
+.main-brands {
+  width: 85%;
+}
+
+.more-brands {
+  width: 15%;
+}
+
+@media (max-width: 992px) {
+  .main-brands {
+    width: 100%;
+  }
+
+  .more-brands {
+    width: 100%;
+  }
+}
+
+.bcm-logo-div {
+  position: relative;
+  width: 100%;
+  padding-bottom: 51%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fill-cover {
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+}
+
+.brand-line {
+  height: 2px;
+  width: 100%;
+  background-color: black;
+}
+
+.brand-card {
+  width: 95%;
+
+  a {
+    font-family: TitilliumWeb;
+    font-size: 1.0rem;
+    color: $dark-gray-text;
+    text-transform: capitalize;
+  }
+}
+
+.more-brands a,
+.more-brands-title {
+  font-family: TitilliumWeb;
+  font-size: 1.0rem;
+  color: $dark-gray-text;
+}
+
+@media (min-width: 992px) {
+  .brand-card {
+    margin-right: 1.5rem;
+    width: 22% !important;
+  }
+}

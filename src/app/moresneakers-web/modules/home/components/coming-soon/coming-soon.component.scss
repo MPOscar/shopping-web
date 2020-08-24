@@ -1,0 +1,92 @@
+#coming-soon-div {
+  background-image: url('/assets/images/home-shoe-pattern.svg');
+  font-family: TitilliumWeb;
+
+  justify-content: center !important;
+
+  @media (min-width: 1200px) {
+    justify-content: flex-start !important;
+  }
+
+  @media (min-width: 1024px) {
+    .col-xl-2, .col-lg-2 {
+      flex: 0 0 18.28%;
+      max-width: 18.28%;
+    }
+  }
+
+  .coming-soon-label {
+    line-height: 1;
+    font-size: 4.25em;
+  }
+
+  #calendar-btn {
+    width: 11.70em;
+    border: solid 1px black;
+    color: black;
+    font-size: 1.0625em;
+    box-sizing: border-box;
+  }
+
+  #calendar-btn:hover {
+    color: white;
+    background: black;
+  }
+
+  #calendar-icon {
+    font-size: 2em;
+  }
+
+  .card {
+    background-color: rgb(236, 236, 224);
+    box-sizing: border-box;
+  }
+
+  .card-header {
+    flex-grow: 100;
+    background-color: transparent;
+  }
+
+  .card:hover {
+    background-color: black;
+    color: white;
+  }
+
+  .card-title {
+    font-family: TitilliumWeb;
+    line-height: 1;
+    font-size: 1.35rem;
+  }
+
+  .card-date {
+    font-family: OpenSans;
+    line-height: 1;
+  }
+
+  .card-body {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    padding-bottom: 100%;
+  }
+
+  .card-body, .card-footer {
+    background-color: rgb(236, 236, 224);
+  }
+
+  .card-footer button {
+    font-size: 0.9rem;
+  }
+
+  .card-footer button:hover {
+    font-weight: bold;
+  }
+
+  .card-image {
+    object-fit: cover !important;
+  }
+
+  @media (min-width: 768px) {
+    // height: ;
+  }
+}

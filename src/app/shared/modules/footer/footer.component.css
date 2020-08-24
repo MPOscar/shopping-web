@@ -1,0 +1,27 @@
+#footer-div {
+  font-family: OpenSans;
+  background: black;
+  color: white;
+}
+#footer-div a {
+  color: white;
+  font-size: 0.875rem;
+}
+#footer-div .footer-item {
+  height: 3rem;
+  line-height: 3rem;
+}
+@media screen and (min-width: 480px) {
+  #footer-div .footer-item {
+    height: 4.375rem;
+    line-height: 4.375rem;
+  }
+  #footer-div a {
+    font-size: 1rem;
+  }
+}
+#footer-div #copy-span {
+  font-size: 0.875rem;
+}
+
+/*# sourceMappingURL=footer.component.css.map */

@@ -1,0 +1,143 @@
+@import "global/colors";
+
+.letter-box {
+  position: relative;
+  border: solid 1px #e1e1e1;
+  font-family: TitilliumWeb;
+  font-size: 1.15rem;
+  line-height: 2.25rem;
+
+  width: 2.25rem;
+  padding-bottom: 2.25rem;
+
+  a {
+    text-decoration: none;
+    color: #e1e1e1;
+  }
+
+  a:hover {
+    color: white;
+    background-color: $orange-background;
+  }
+}
+
+.last-letter-box, .last-letter-header {
+  width: 4.5rem !important;
+}
+
+.letter-box:hover {
+  border-color: $orange-background;
+}
+
+.empty {
+  border-color: $light-gray-background;
+
+  a {
+    color: $light-gray-background;
+    background-color: transparent !important;
+  }
+
+  a:hover {
+    color: $light-gray-background;
+    cursor: default;
+  }
+}
+
+.empty:hover {
+  border-color: $light-gray-background !important;
+}
+
+.header-letter {
+  display: inline-block;
+  width: 2.25rem;
+  height: 2.25rem;
+  text-align: center;
+  line-height: 2.25rem;
+
+  background-color: $dark-gray-text;
+  border: solid 1px $dark-gray-text;
+
+  color: white;
+  font-family: TitilliumWeb;
+  font-size: 1.15rem;
+}
+
+.letter-line-separator {
+  background-color: $dark-gray-text;
+  flex-grow: 100;
+}
+
+@media (min-width: 768px) {
+  .shop-card {
+    max-width: 48% !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .shop-card {
+    max-width: 23% !important;
+  }
+}
+
+.shop-card {
+  position: relative;
+}
+
+.shop-card:hover {
+  border: rgba(0, 0, 0, 0.19) solid 1px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.shop-image-div {
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.shop-name {
+  width: 100%;
+  background-color: $dark-gray-text;
+  color: white;
+  font-family: TitilliumWeb;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+
+  height: 2.6875rem;
+  line-height: 2.6875rem;
+}
+
+.shop-btn-div {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  height: 2.875rem;
+
+  margin-bottom: 0.8rem;
+
+  a {
+    width: 86%;
+  }
+}
+
+.shop-btn {
+  cursor: pointer !important;
+  height: 100%;
+  font-size: 1.15rem;
+  border: solid 1px gray;
+  width: 100%;
+  font-family: TitilliumWeb;
+  color: white;
+  text-transform: uppercase;
+  font-style: italic;
+  background-color: rgba(0, 0, 0, .7);
+}
+
+.shop-btn:hover {
+  background-color: rgba(0, 0, 0, .9);
+}

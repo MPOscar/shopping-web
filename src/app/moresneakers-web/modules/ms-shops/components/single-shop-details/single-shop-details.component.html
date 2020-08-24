@@ -1,0 +1,52 @@
+<div class="d-flex flex-lg-row flex-column" *ngIf="shop">
+
+  <div id="shop-main-image" class="col-lg-6 col-12 p-0">
+    <div class="wrapper-div">
+
+      <img [src]="shop.mainImage" class="w-100 h-100 fit-cover">
+
+    </div>
+  </div>
+
+  <div class="d-flex flex-column col-lg-6 p-0 pl-lg-3">
+    <div>
+      <h1 class="shop-name align-top">{{shop.name}}</h1>
+    </div>
+
+    <div class="shop-description" *ngIf="shop.description">
+      {{shop.description}}
+    </div>
+
+    <div class="mt-auto d-flex justify-content-between" *ngIf="!shop.isParent && shop.type === 'physical'">
+
+      <div class="d-flex flex-column shop-info mr-2" *ngIf="today.openHour">
+        <div class="shop-info-title">
+          WORKING HOURS
+        </div>
+        <div class="flex-grow-2 shop-info-content d-flex justify-content-center mt-3">
+          <div class="shop-info-hour mr-4">
+            <div class="shop-info-hour-header">Start</div>
+            <div class="shop-info-hour-content">{{today.openHour}}</div>
+          </div>
+
+          <div class="shop-info-hour">
+            <div class="shop-info-hour-header">End</div>
+            <div class="shop-info-hour-content">{{today.closeHour}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column shop-info" *ngIf="shop.address">
+        <div class="shop-info-title">
+          ADDRESS
+        </div>
+        <div class="flex-grow-2 shop-info-content p-3 pl-4">
+          {{shop.address}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

@@ -1,0 +1,186 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/bootstrap.scss";
+@import "../assets/sass/now-ui-kit";
+@import "../assets/css/demo.css";
+@import "spinner";
+@import "utils";
+@import "rtl";
+@import "responsive";
+@import "fonts";
+@import "text";
+@import "collapsible-menu";
+
+:root {
+  --font-family-monospace: OpenSans;
+}
+
+@media print {
+    .breadcrumb {
+        display: none !important;
+    }
+}
+
+body {
+  max-width: 1366px !important;
+  padding: 0 !important;
+}
+
+.cursor-pointer{
+  cursor: pointer !important;
+}
+
+:focus {outline:0 !important;}
+
+.margin-top-0px{
+  margin-top: 0px !important;
+}
+
+.margin-top-10px{
+    margin-top: 10px !important;
+}
+
+.margin-bottom-10px{
+  margin-bottom: 10px !important;
+}
+
+.padding-bottom-10px{
+  padding-bottom: 10px !important;
+}
+
+.wrapper-div {
+  position: absolute !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+
+.font-light {
+  font-weight: 200 !important;
+}
+
+.img-fluid {
+    width: 100% !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1 !important;
+}
+
+.flex-grow-2 {
+  flex-grow: 2 !important;
+}
+
+.flex-grow-3 {
+  flex-grow: 3 !important;
+}
+
+.flex-wrap-wrap {
+  flex-wrap: wrap !important;
+}
+
+.font-weight-bold{
+  font-weight:bold !important;
+}
+
+.color-black{
+  color: black !important;
+
+}
+.padding-top-10px {
+    padding-top: 10px !important;
+}
+
+.margin-right-10px {
+    margin-right: 10px !important;
+}
+
+.btn {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.fit-contain {
+  object-fit: contain !important;
+}
+
+.fit-cover {
+  object-fit: cover !important;
+}
+
+.justify-content-center {
+  justify-content: center !important;
+}
+
+.padding-top-25px {
+  padding-top: 25px !important;
+}
+
+::ng-deep {
+
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 1.62rem !important;
+    height: 2.62rem !important;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 1.2075rem !important;
+      height: 1.965rem !important;
+
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 0.81rem !important;
+      height: 1.31rem !important;
+
+    }
+  }
+
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+.padding-bottom-1-5rem{
+  padding-bottom: 1.5rem !important;
+}
+
+.text-green {
+  color: green !important;
+}
+
+.text-red {
+  color: red !important
+}
+
+.text-orange {
+  color: orange !important
+}
+
+.text-blue {
+  color: blue !important
+}
+
+.text-gray {
+  color:  gray !important
+}
+
+/*html{
+  background: url(https://s3.us-east-2.amazonaws.com/shopping.uy/1597922955706.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative;
+  background-attachment: fixed;
+  background-color: transparent;
+}*/
+
+footer{
+  background-color: #365577 !important;
+}

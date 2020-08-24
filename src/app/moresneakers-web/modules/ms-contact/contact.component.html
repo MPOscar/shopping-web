@@ -1,0 +1,89 @@
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'top'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'top'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'top'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>
+
+<div>
+  <ms-banner [backgroundImage]="imgUrl" [title]="'CONTACT'" [titleItalic]="'US'"
+    [textTitle]="title" [text]="description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home','Contact us']"></ms-breadcrumb>
+
+  <div class="d-flex flex-wrap-wrap padding-bottom-1-5rem">
+
+    <div class="col-12 col-lg-8">
+      <form class="mx-auto w-75" [formGroup]="formGroup" novalidate role="form" (ngSubmit)="submitClicked()"
+        autocomplete="off" inputFocus>
+        <div class="form-group">
+          <label for="name" class="ml-2">NAME</label>
+          <input type="text" class="form-control" id="name" formControlName="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email" class="ml-2">EMAIL</label>
+          <input type="email" class="form-control" id="email" formControlName="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="subject" class="ml-2">SUBJECT</label>
+          <input type="text" class="form-control" id="subject" formControlName="subject" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description" class="ml-2">MESSAGE</label>
+          <textarea class="form-control" id="description" formControlName="description" rows="5" required></textarea>
+        </div>
+
+        <re-captcha formControlName="captcha" required></re-captcha>
+
+        <button type="submit" class="btn btn-outline-dark submit-button mt-1">
+          SUBMIT
+        </button>
+      </form>
+    </div>
+
+    <div class="col-12 col-lg-4">
+      <div class="w-70 ml-4 mx-auto social">
+
+        <div class="info-title mt-4 pt-2">
+          CONTACT US ON OUR
+          <br> SOCIAL NETWORKS
+        </div>
+
+        <div class="info-icons mt-3 d-flex align-items-center width-200px">
+          <a href="{{data.socialFacebook}}" target="_blank" class="mr-3">
+            <img class="fb-img" src="assets/images/social/facebook-2.svg">
+          </a>
+          <span class="flex-grow-1"></span>
+          <a href="{{data.socialTwitter}}" class="padding-right-15px" target="_blank">
+            <img class = "socials-width-42px" src="assets/images/social/twitter-blue.svg">
+          </a>
+          <span class="flex-grow-1"></span>
+          <a href="{{data.socialInstagram}}" target="_blank">
+            <img class = "socials-width-35px" src="assets/images/instagram.png">
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHeadertOnPage && headerDisplay === 'bottom'">
+  <ms-header *ngIf="header" [header]="header"></ms-header>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displaySlidersOnPage && slideDisplay === 'bottom'">
+  <ms-slider *ngIf="slidersData" [sliders]="slidersData.slides"></ms-slider>
+</div>
+
+<div class="padding-bottom-1-5rem" *ngIf="displayHottestOnPage && hottestDisplay === 'bottom'">
+  <ms-hottest-releases></ms-hottest-releases>
+</div>

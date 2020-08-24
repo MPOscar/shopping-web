@@ -1,0 +1,75 @@
+.post-title h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.5rem;
+}
+@media screen and (max-width: 768px) {
+  .post-title h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  .post-title h1 {
+    font-size: 2.1em;
+  }
+}
+
+.post-meta {
+  color: #9c9898;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.post-header {
+  position: relative;
+  width: 100%;
+  padding-bottom: 39.3%;
+}
+
+.type-triangle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60% !important;
+}
+
+.type-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  font-family: TitilliumWeb;
+}
+
+.post-text {
+  font-family: OpenSans-Light;
+  position: relative;
+  overflow-x: hidden;
+  max-width: 97%;
+}
+
+.cell {
+  position: relative;
+  width: 100%;
+}
+.cell img {
+  object-fit: cover;
+}
+
+.cell-square {
+  padding-bottom: 100%;
+}
+
+.cell-large {
+  padding-bottom: 47.68%;
+}
+
+.cell-tall {
+  padding-bottom: 201.15%;
+}
+
+.header-image {
+  object-fit: cover;
+  height: 100% !important;
+}
+
+/*# sourceMappingURL=blog-not-found.component.css.map */

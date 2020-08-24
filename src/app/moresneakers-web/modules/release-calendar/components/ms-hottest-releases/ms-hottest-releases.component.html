@@ -1,0 +1,39 @@
+<div class="mx-md-4 mx-2" id="rcms-hottest-releases-div">
+
+  <div id="hottest-release-header " class="d-flex justify-content-center my-2 mt-md-3 mb-md-2">
+    <h1 class="font-weight-light mr-3 text-uppercase">Hottest</h1>
+    <h1 class="font-weight-light font-italic text-uppercase">Releases</h1>
+  </div>
+
+  <ngb-carousel *ngIf="hotItems" id="hottest-release-carousel" #hottestReleaseCarousel>
+    <ng-container *ngFor="let page of getHotPagesList()">
+      <ng-template ngbSlide class="mb-3">
+
+        <div class="d-flex flex-wrap justify-content-left mr-3 mb-5">
+          <div *ngFor="let item of getHotItems(page); let i = index"
+               class="col-6 col-md-3 col-xl-2 mb-3 card rounded-0 p-0">
+              <a href="{{'//' + item.link}}">
+                <div class="position-relative">
+                  <div *ngIf="item.hot" class="hot-image-div">
+                    <img src="assets/images/hot-release-fire.svg">
+                  </div>
+
+                  <div class="item-image-div">
+                    <img class="img-fluid"  [src]="item.image">
+                  </div>
+
+                  <div class="slogan-div">
+                    <p>
+                      {{item.slogan}}
+                    </p>
+                  </div>
+                </div>
+              </a>
+          </div>
+        </div>
+
+      </ng-template>
+    </ng-container>
+  </ngb-carousel>
+
+</div>

@@ -1,0 +1,46 @@
+#home-page-div ::ng-deep .carousel-item {
+  transition: opacity 1s ease-in-out !important;
+  position: absolute !important;
+  display: block !important;
+  opacity: 0;
+}
+#home-page-div ::ng-deep .carousel-item.active {
+  position: relative !important;
+  opacity: 1;
+}
+#home-page-div ::ng-deep .carousel-control-prev {
+  justify-content: start;
+  margin-left: 1.63em;
+}
+#home-page-div ::ng-deep .carousel-control-next {
+  flex-direction: row-reverse;
+  justify-content: end;
+  margin-right: 1.63em;
+}
+#home-page-div ::ng-deep .carousel-control-prev-icon,
+#home-page-div ::ng-deep .carousel-control-next-icon {
+  width: 1.62rem !important;
+  height: 2.62rem !important;
+}
+@media screen and (max-width: 768px) {
+  #home-page-div ::ng-deep .carousel-control-prev-icon,
+#home-page-div ::ng-deep .carousel-control-next-icon {
+    width: 1.2075rem !important;
+    height: 1.965rem !important;
+  }
+}
+@media screen and (max-width: 576px) {
+  #home-page-div ::ng-deep .carousel-control-prev-icon,
+#home-page-div ::ng-deep .carousel-control-next-icon {
+    width: 0.81rem !important;
+    height: 1.31rem !important;
+  }
+}
+#home-page-div ::ng-deep #full-restock-carousel .carousel-control-prev-icon {
+  background-image: url("/assets/images/slide-left-button.png");
+}
+#home-page-div ::ng-deep #full-restock-carousel .carousel-control-next-icon {
+  background-image: url("/assets/images/slide-right-button.png");
+}
+
+/*# sourceMappingURL=home.component.css.map */

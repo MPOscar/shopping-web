@@ -1,0 +1,26 @@
+<div id="categories-collaps-menu-div"
+     class="collaps-menu-div position-relative top-80px"
+     [class.collapsed]="!visible" [class.visible]="visible">
+
+  <span class="collapse-menu-close-btn" (click)="hideMenu()">
+    <img src="assets/images/collapsible-menu-close.svg">
+  </span>
+  <div *ngIf="allCategoriesToShow" class="d-flex flex-column">
+
+    <div *ngIf="showAllItems" class="d-flex flex-grow-1 flex-wrap-wrap">
+      <div *ngFor="let category of allCategoriesToShow" class="mb-1 min-width-25-pct width-25-pct menu-item">
+        <div class="text-uppercase cursor-pointer" [routerLink]="['/categories', getRouterName(category.name)]">
+          {{category.name}}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!showAllItems">
+      <div *ngFor="let category of allCategoriesToShow" class="mb-1">
+        <div class="text-uppercase cursor-pointer" [routerLink]="['/categories', getRouterName(category.name)]">
+          {{category.name}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

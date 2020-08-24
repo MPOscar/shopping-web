@@ -1,0 +1,131 @@
+#brands-div #advertisement {
+  font-family: OpenSans;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+#brands-div .w-25 {
+  width: 25% !important;
+}
+@media screen and (max-width: 768px) {
+  #brands-div h1 {
+    font-size: 2.8em;
+  }
+}
+@media screen and (max-width: 576px) {
+  #brands-div h1 {
+    font-size: 2.1em;
+  }
+}
+#brands-div h1 {
+  font-family: TitilliumWeb;
+  font-size: 3.18rem;
+  color: #303030;
+}
+#brands-div .shops-section {
+  background-color: #f6f6f6;
+}
+#brands-div .item-image-div {
+  z-index: 1;
+}
+#brands-div .card {
+  border: transparent solid 1px !important;
+}
+#brands-div .card:hover {
+  border: rgba(0, 0, 0, 0.19) solid 1px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#brands-div .item-info-div {
+  font-family: OpenSans;
+}
+#brands-div .item-name-div {
+  font-family: OpenSans;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #3c3c3c;
+  line-height: 1.3;
+  margin-bottom: 0.1rem;
+}
+#brands-div .item-feature-div {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+}
+#brands-div .item-price-span {
+  font-family: TitilliumWeb;
+  color: #000;
+  font-size: 0.9rem;
+}
+#brands-div .item-button {
+  width: 100%;
+  font-family: TitilliumWeb;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+#brands-div .item-button-show {
+  font-family: TitilliumWeb;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+  color: #c45a1a;
+}
+#brands-div .item-button-show:hover {
+  background-color: black;
+  color: white;
+}
+@media (max-width: 768px) {
+  #brands-div .item-button {
+    font-size: 0.9rem;
+  }
+}
+#brands-div .item-button:hover {
+  background-color: black;
+  color: white;
+}
+#brands-div .col-6 {
+  max-width: 49%;
+}
+@media (min-width: 768px) {
+  #brands-div .col-md-4 {
+    max-width: 31% !important;
+  }
+}
+@media (min-width: 1200px) {
+  #brands-div .col-xl-3 {
+    max-width: 24% !important;
+  }
+}
+#brands-div .cursor-pointer {
+  cursor: pointer !important;
+}
+#brands-div .image-container-div {
+  position: relative;
+  width: 100% !important;
+  padding-bottom: 100%;
+}
+#brands-div .border-none {
+  border: none !important;
+}
+#brands-div #filters-div {
+  width: 100%;
+}
+#brands-div #product-table-div {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #brands-div #filters-div {
+    width: 25%;
+  }
+  #brands-div #product-table-div {
+    width: 75%;
+  }
+}
+
+/*# sourceMappingURL=brands.component.css.map */

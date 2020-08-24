@@ -1,0 +1,100 @@
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner {
+    background: #fff;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 1.5rem !important;
+    margin-right: 1.5rem !important;
+}
+
+div#hs-eu-cookie-confirmation.hs-cookie-notification-position-bottom {
+    position: fixed !important;
+    border-bottom: 0;
+    bottom: 0;
+    top: auto;
+    box-shadow: 0 -1px 3px #eaf0f6;
+}
+
+div#hs-eu-cookie-confirmation {
+    background: #fff;
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000 !important;
+    border-bottom: 1px solid #cbd6e2;
+    border-top: 1px solid #cbd6e2;
+    box-shadow: 0 1px 5px #eaf0f6;
+    color: #33475b;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+    font-size: 12px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 18px;
+}
+
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-confirmation-button {
+    background-color: #000000 !important;
+    border: 1px solid #000000 !important;
+    margin-right: 12px !important;
+    color: #fff;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+    padding: 5px !important;
+}
+
+div#hs-eu-cookie-confirmation div#hs-eu-cookie-confirmation-inner a#hs-eu-decline-button {
+    border: 1px solid #000000 !important;
+    color: #000000;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal !important;
+    margin-right: 12px !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+    padding: 5px !important;
+}
+
+a#hs-eu-decline-button:hover {
+    color: white !important;
+    background-color: black !important;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: normal !important;
+    line-height: inherit;
+    text-align: left;
+    text-shadow: none !important;
+    padding: 5px !important;
+}
+
+.overflow-auto {
+    overflow: auto !important;
+}
+
+::ng-deep .modal-dialog{
+    max-width: none !important;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+}
+
+::ng-deep .modal-content .btn {
+    border-radius: 0px !important;
+}
+
+
+.icon-cross {
+    position: absolute !important;
+    right:5px !important;
+    top: 5px !important;
+    cursor: pointer !important;
+}

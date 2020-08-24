@@ -1,0 +1,48 @@
+<div id="collections-div" class="padding-bottom-1-5rem">
+  <ms-banner [backgroundImage]="'assets/images/whats-new/banner.svg'"
+    [title]="'Styles'"
+    [subtitleLine1]="style ? style.name : ''"
+
+    [textTitle]=""
+    [text]="style.description">
+  </ms-banner>
+
+  <ms-breadcrumb [steps]="['Home',brandName,style.name]"></ms-breadcrumb>
+
+  <div class="d-flex align-items-stretch flex-column flex-md-row flex-grow-1">
+
+    <ngb-tabset [destroyOnHide]=false class="flex-grow-1" id="collectios-tabset" justify="justified">
+
+      <ngb-tab>
+        <ng-template ngbTabTitle>SHOP BY RELEASE</ng-template>
+        <ng-template ngbTabContent>
+
+          <div>
+
+            <releases-table [showPrice]="false" [itemsPerRow]="5" [releases]="releases" [shops]="shops" [styles]="styles" [brands]="brands" [disabledSort]="true" (sortByPriceEvent)="sortByPrice($event)">
+            </releases-table>
+
+          </div>
+
+        </ng-template>
+
+      </ngb-tab>
+
+      <ngb-tab>
+
+        <ng-template ngbTabTitle>SHOP BY STORE</ng-template>
+        <ng-template ngbTabContent>
+          <div>
+
+            <collection-shops-table [showDetails]="true" [offers]="offers" [releases]="releases" [shops]="shops" [disabledSort]="true" (sortByPriceEvent)="sortByPrice($event)">
+            </collection-shops-table>
+
+          </div>
+        </ng-template>
+      </ngb-tab>
+
+    </ngb-tabset>
+
+
+  </div>
+</div>

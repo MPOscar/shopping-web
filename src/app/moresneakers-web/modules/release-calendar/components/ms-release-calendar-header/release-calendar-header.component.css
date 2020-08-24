@@ -1,0 +1,49 @@
+#release-calendar-header-div {
+  background-image: url("/assets/images/home-shoe-pattern.svg");
+  font-family: TitilliumWeb;
+}
+#release-calendar-header-div .coming-soon-label {
+  line-height: 1;
+  font-size: 4.25em;
+}
+#release-calendar-header-div #calendar-btn {
+  width: 11.7em;
+  border: solid 1px black;
+  color: black;
+  font-size: 1.0625em;
+  box-sizing: border-box;
+}
+#release-calendar-header-div #calendar-btn:hover {
+  color: white;
+  background: black;
+}
+#release-calendar-header-div #calendar-icon {
+  font-size: 2em;
+}
+#release-calendar-header-div .card {
+  background-color: #ecedef;
+  box-sizing: border-box;
+}
+#release-calendar-header-div .card-header {
+  flex-grow: 100;
+}
+#release-calendar-header-div .card:hover {
+  background-color: black;
+  color: white;
+}
+#release-calendar-header-div .card-title {
+  font-family: TitilliumWeb;
+  line-height: 1;
+}
+#release-calendar-header-div .card-date {
+  font-family: OpenSans;
+  line-height: 1;
+}
+#release-calendar-header-div .card-body, #release-calendar-header-div .card-footer {
+  background-color: #ecedef;
+}
+#release-calendar-header-div .card-footer button:hover {
+  background-color: black;
+}
+
+/*# sourceMappingURL=release-calendar-header.component.css.map */

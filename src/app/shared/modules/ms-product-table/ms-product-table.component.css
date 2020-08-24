@@ -1,0 +1,157 @@
+#ms-product-table-div .image-container-div {
+  position: relative;
+  width: 100% !important;
+  padding-bottom: 100%;
+}
+#ms-product-table-div #sortingSelect {
+  width: 9.8rem;
+  background-color: #ededed;
+  border-radius: 0;
+}
+#ms-product-table-div .control-label {
+  font-family: TitilliumWeb;
+  font-size: 1.2rem;
+}
+#ms-product-table-div #pagination-div, #ms-product-table-div #pagination-div a {
+  color: #b6b6b6;
+}
+#ms-product-table-div ::ng-deep .ng-select .ng-arrow-wrapper {
+  height: 100%;
+  background: white;
+  border: 1px solid #ededed;
+  padding-left: 0.3125rem;
+  padding-top: 0.3125rem;
+}
+#ms-product-table-div ::ng-deep .ng-select .ng-select-container {
+  font-style: italic !important;
+  font-family: OpenSans !important;
+  font-weight: 200;
+  font-size: 0.95rem;
+  color: #303030 !important;
+  text-align: center;
+  background-color: #ededed;
+  border: 0;
+  border-radius: 0 !important;
+  padding-left: 0rem !important;
+}
+#ms-product-table-div ::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container,
+#ms-product-table-div ::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  padding-left: 0.2rem !important;
+  overflow: visible !important;
+}
+#ms-product-table-div ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  font-style: italic;
+  font-weight: lighter;
+}
+#ms-product-table-div ::ng-deep .ng-input {
+  padding-left: 0 !important;
+  padding-right: 20px !important;
+}
+#ms-product-table-div ::ng-deep .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+  background-color: #ededed;
+  border: 0;
+}
+#ms-product-table-div ::ng-deep .ng-select .ng-clear-wrapper .ng-clear {
+  display: none !important;
+}
+#ms-product-table-div #view-mode-icon {
+  width: 1.375rem;
+  height: 1.125rem;
+  font-size: 1.2rem;
+}
+#ms-product-table-div .view-mode-div {
+  cursor: pointer !important;
+}
+#ms-product-table-div .hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+#ms-product-table-div .item-image-div {
+  z-index: 1;
+  background-color: #ecedef;
+}
+#ms-product-table-div .card {
+  border: transparent solid 1px !important;
+}
+#ms-product-table-div .card:hover {
+  border: rgba(0, 0, 0, 0.19) solid 1px !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#ms-product-table-div .item-info-div {
+  font-family: OpenSans;
+}
+#ms-product-table-div .item-name-div {
+  font-family: OpenSans;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #3c3c3c;
+  line-height: 1.3;
+  margin-bottom: 0.1rem;
+  min-height: 2.375rem;
+}
+#ms-product-table-div .item-feature-div {
+  font-size: 0.8rem;
+  color: #8c8c8c;
+}
+#ms-product-table-div .item-price-span {
+  font-family: TitilliumWeb;
+  color: #000;
+  font-size: 0.9rem;
+}
+#ms-product-table-div .prev-price-span {
+  font-family: TitilliumWeb;
+  color: #000;
+  font-size: 0.9rem;
+  text-decoration: line-through;
+}
+#ms-product-table-div .current-price-span {
+  font-family: TitilliumWeb;
+  color: #c45a1a;
+  font-size: 0.9rem;
+}
+#ms-product-table-div .os-logo-span {
+  width: 20%;
+  padding-bottom: 10%;
+  position: relative;
+}
+#ms-product-table-div .item-button {
+  width: 100%;
+  font-family: TitilliumWeb;
+  color: #c45a1a;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+@media (max-width: 768px) {
+  #ms-product-table-div .item-button {
+    font-size: 0.9rem;
+  }
+}
+#ms-product-table-div .item-button:hover {
+  background-color: black;
+  color: white;
+}
+#ms-product-table-div .col-6 {
+  max-width: 49%;
+}
+@media (min-width: 768px) {
+  #ms-product-table-div .col-md-4 {
+    max-width: 31% !important;
+  }
+}
+@media (min-width: 1200px) {
+  #ms-product-table-div .col-xl-3 {
+    max-width: 24% !important;
+  }
+}
+#ms-product-table-div .cursor-pointer {
+  cursor: pointer !important;
+}
+
+/*# sourceMappingURL=ms-product-table.component.css.map */

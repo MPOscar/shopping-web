@@ -1,0 +1,453 @@
+#calendar-div {
+
+  .item-button {
+    font-family: TitilliumWeb;
+    font-size: 1.2rem;
+  }
+
+  #coming-soon-div {
+    background-image: url('/assets/images/home-shoe-pattern.svg');
+    font-family: TitilliumWeb;
+  }
+
+  .coming-soon-calendar {
+    background-image: url('/assets/images/calendar_background.png');
+    font-family: TitilliumWeb;
+    filter: brightness(1);
+    color: white !important;
+  }
+
+  ::ng-deep .ng-select .ng-clear-wrapper .ng-clear {
+    display: none !important;
+  }
+
+  // Small and Medium devices
+  //@media (max-width: 768px) {
+  //  #coming-soon-header {
+  //    justify-content: center !important;
+  //  }
+  //}
+
+  .coming-soon-label {
+    line-height: 1;
+    font-size: 4.25em;
+  }
+
+  #calendar-btn {
+    width: 11.70em;
+    border: solid 1px black;
+    font-size: 1.0625em;
+    box-sizing: border-box;
+  }
+
+  #calendar-btn:hover {
+    color: white;
+    background: black;
+  }
+
+  #calendar-icon {
+    font-size: 2em;
+  }
+
+  .card {
+    background-color: rgb(236, 236, 224);
+    box-sizing: border-box;
+
+    a {
+      color: black;
+    }
+  }
+
+  .rpc-card-header {
+    position: relative;
+    width: 100% !important;
+    padding-bottom: 30% !important;
+    background-color: transparent;
+  }
+
+  .card:hover {
+    background-color: black;
+
+    a {
+      color: white;
+    }
+  }
+
+  .rpc-card-title {
+    font-family: TitilliumWeb;
+    font-size: 1rem;
+    line-height: 1.3;
+    margin-bottom: 0;
+  }
+
+  .card-date {
+    font-family: OpenSans;
+    font-size: .9rem;
+    line-height: 1;
+  }
+
+  .card-body {
+    position: relative;
+    width: 100%;
+    padding-bottom: 80%;
+  }
+
+  .card-body, .card-footer {
+    background-color: rgb(236, 236, 224);
+  }
+
+  .card-image {
+    object-fit: contain;
+  }
+
+  .rpc-card-footer {
+    padding: 0 1.5rem;
+    padding-bottom: 1.1rem;
+  }
+
+  .rpc-card-footer button:hover {
+    background-color: black;
+  }
+
+  .margin-none {
+    margin: 0px !important;
+  }
+
+  .padding-bottom-10px {
+    padding-bottom: 10px !important;
+  }
+
+  .padding-top-20px {
+    padding-top: 20px;
+  }
+
+  .padding-top-10px {
+    padding-top: 10px !important;
+  }
+
+  .font-size-3em {
+    font-size: 3em !important;
+  }
+
+  .margin-left-20px {
+    margin-left: 20px !important;
+  }
+
+  .margin-left-10px {
+    margin-left: 10px !important;
+  }
+
+  .border-1px-solid {
+    border: 1px solid #e5e6e8 !important;
+  }
+
+  .padding-10px {
+    padding: 10px !important;
+  }
+
+  .padding-left-0px {
+    padding-left: 0px !important;
+  }
+
+  .padding-left-10px {
+    padding-left: 10px !important;
+  }
+
+  .padding-right-10px {
+    padding-right: 10px !important;
+  }
+
+  .strike {
+    display: block;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .strike > span {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+    background-color: #e5e6e8;
+    min-width: 150px;
+  }
+
+  .strike > span:before,
+  .strike > span:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 9999px;
+    height: 1px;
+    background: #e5e6e8;
+  }
+
+  .strike > span:before {
+    right: 100%;
+    margin-right: 15px;
+  }
+
+  .strike > span:after {
+    left: 100%;
+    margin-left: 15px;
+  }
+
+  .display-flex {
+    display: flex;
+  }
+
+  .align-items-center {
+    align-items: center;
+    justify-content: center !important;
+  }
+
+  .justify-content-center {
+    justify-content: center !important;
+  }
+
+  .flex-grow-1 {
+    flex-grow: 1 !important;
+  }
+
+  .color-white {
+    color: #fff !important;
+  }
+
+  .justify-content-flex-start {
+    justify-content: flex-start !important;
+  }
+
+  .height-64px {
+    height: 64px;
+  }
+
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+
+  .padding-left-0px {
+    padding-left: 0px !important;
+  }
+
+  .padding-right-0px {
+    padding-right: 0px !important;
+  }
+
+  .calendar-icon {
+    position: absolute;
+    left: 0px;
+    top: 8px;
+  }
+
+  ng-select {
+    width: 120px !important;
+    border-radius: 0px !important;
+  }
+
+  ::ng-deep .ng-select-container {
+    border-radius: 0px !important;
+    background-color: #e5e6e8 !important;
+  }
+
+  .padding-bottom-5px {
+    padding-bottom: 5px !important;
+  }
+
+  ::ng-deep .ng-arrow-wrapper {
+    padding: 5px;
+    background-color: white !important;
+  }
+
+  ::ng-deep .ng-option-marked .ng-option-selected {
+    background-color: #e5e6e8 !important;
+  }
+
+  .font-size-1rem {
+    font-size: 1rem !important;
+  }
+
+  .width-100pct {
+    width: 100% !important;
+  }
+
+  .width-70pct {
+    width: 70% !important;
+  }
+
+  .width-30pct {
+    width: 30% !important;
+  }
+
+  .padding-10px {
+    padding: 10px !important;
+  }
+
+  .width-300px {
+    width: 300px !important;
+  }
+
+  .rpc-item-card:hover .rpc-card-logo {
+    -webkit-filter: invert(1);
+    filter: invert(1);
+  }
+
+}
+
+.card-logo {
+  height: 45px !important;
+  width: auto !important;
+}
+
+.release-selected{
+  color: white !important;
+  background: black !important;
+}
+
+.invert-color{
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+
+//---------------------------------------------------------
+
+@import "global/_colors";
+
+.border-right {
+  border: 0;
+  border-right: white solid 2px;
+  border-color: white;
+}
+
+.logo-div {
+  width: 15%;
+  position: relative;
+  padding-bottom: 9.5% !important;
+  object-fit: contain;
+}
+
+.logo-div img {
+  width: 60% !important;
+  object-fit: cover;
+}
+
+.hot-image-div {
+  position: absolute;
+  right: 0.45rem;
+  top: 0.2rem;
+  z-index: 2;
+
+  img {
+    width: 80% !important;
+  }
+}
+
+.helper {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+table {
+  background-color: white;
+}
+
+table td, table th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.25rem;
+}
+
+th {
+  background-color: rgb(60, 60, 60);
+  font-family: TitilliumWeb;
+  color: white;
+  line-height: 1;
+}
+
+.wrapper-div {
+  white-space: nowrap;
+}
+
+.item-name {
+  font-family: OpenSans;
+  font-size: 0.95rem;
+  width: 30%;
+}
+
+.item-code {
+  font-family: OpenSans;
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+.item-price {
+  position: relative;
+  font-family: OpenSans;
+  font-size: 0.8rem;
+  width: 15%;
+
+  img {
+    width: 30%;
+    object-fit: contain;
+  }
+}
+
+.item-button {
+  font-style: italic;
+  font-family: TitilliumWeb;
+  font-size: 1.15rem;
+  text-transform: uppercase;
+  border: black 1px solid;
+  border-radius: 0;
+  background: transparent;
+}
+
+.hot-item-button {
+  color: rgb(180, 79, 18);
+}
+
+@media (max-width: 768px) {
+  .item-button {
+    font-size: 0.9rem;
+  }
+}
+
+.item-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.padding-left-5px {
+  padding-left: 5px;
+}
+
+.padding-left-2px {
+  padding-left: 2px;
+}
+
+.min-height-250px {
+  min-height: 250px;
+}
+
+.column {
+  width: 33%;
+  word-wrap: break-word;
+}
+
+.white-space-break-spaces {
+  white-space: break-spaces;
+}
+
+@media screen and (min-width: 900px) {
+  .margin-right-20px-custom {
+    margin-right: 20px;
+  }
+}
+
+.height-100pct {
+  height: 100%;
+}

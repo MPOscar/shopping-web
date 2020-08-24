@@ -1,0 +1,122 @@
+#filters-form-div .margin-none {
+  margin: 0px !important;
+}
+#filters-form-div .padding-bottom-10px {
+  padding-bottom: 10px !important;
+}
+#filters-form-div .margin-bottom-10px {
+  margin-bottom: 10px !important;
+}
+#filters-form-div .padding-top-10px {
+  padding-top: 10px !important;
+}
+#filters-form-div .font-size-3em {
+  font-size: 3em !important;
+}
+#filters-form-div .margin-left-20px {
+  margin-left: 20px !important;
+}
+#filters-form-div .border-1px-solid {
+  border: 1px solid #e5e6e8 !important;
+}
+#filters-form-div .padding-10px {
+  padding: 10px !important;
+}
+#filters-form-div .padding-left-0px {
+  padding-left: 0px !important;
+}
+#filters-form-div .padding-left-10px {
+  padding-left: 10px !important;
+}
+#filters-form-div .form-control {
+  background-color: #f1f1f1 !important;
+}
+#filters-form-div .align-items-center {
+  align-items: center !important;
+}
+#filters-form-div .width-80px {
+  width: 80px !important;
+}
+#filters-form-div .margin-left-10px {
+  margin-left: 10px !important;
+}
+#filters-form-div .padding-top-10px {
+  padding-top: 10px !important;
+}
+#filters-form-div .filter-header {
+  font-family: TitilliumWeb !important;
+  line-height: 1 !important;
+  font-size: 1.35rem !important;
+  color: #3c3c3c;
+}
+#filters-form-div .filter-text {
+  font-family: OpenSans !important;
+  font-weight: 200 !important;
+  color: black !important;
+}
+#filters-form-div .form-control {
+  border-radius: 0px !important;
+}
+#filters-form-div .height-30px {
+  height: 30px !important;
+}
+#filters-form-div #colorsSelect, #filters-form-div #shopsSelect {
+  width: 9.8rem;
+  background-color: #ededed;
+  border-radius: 0;
+}
+#filters-form-div #colorsSelect ::ng-deep .ng-select .ng-arrow-wrapper,
+#filters-form-div #shopsSelect ::ng-deep .ng-select .ng-arrow-wrapper {
+  height: 2.25rem !important;
+}
+#filters-form-div ::ng-deep .mat-icon {
+  color: darkgray !important;
+  font-size: 1.4rem !important;
+}
+#filters-form-div ::ng-deep .mat-checkbox-frame {
+  border-radius: 0 !important;
+  border: solid 1px black !important;
+}
+#filters-form-div ::ng-deep .ng-select .ng-arrow-wrapper {
+  background: white !important;
+  border: 1px solid #ededed !important;
+  padding-left: 0.3125rem !important;
+  padding-top: 0.3125rem !important;
+}
+#filters-form-div ::ng-deep .ng-select .ng-select-container {
+  font-style: italic !important;
+  font-family: OpenSans !important;
+  font-weight: 200 !important;
+  font-size: 0.95rem !important;
+  color: #303030 !important;
+  text-align: center !important;
+  background-color: #ededed !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding-left: 0rem !important;
+}
+#filters-form-div ::ng-deep .ng-value-container {
+  padding-top: 0 !important;
+}
+#filters-form-div ::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container,
+#filters-form-div ::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-value {
+  padding-left: 0.2rem !important;
+  overflow: visible !important;
+}
+#filters-form-div ::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+  font-style: italic !important;
+  font-weight: lighter !important;
+}
+#filters-form-div ::ng-deep .ng-input {
+  padding-left: 0 !important;
+  padding-right: 20px !important;
+}
+#filters-form-div ::ng-deep .ng-select.ng-select-opened.ng-select-bottom > .ng-select-container {
+  background-color: #ededed !important;
+  border: 0 !important;
+}
+#filters-form-div ::ng-deep .ng-select .ng-clear-wrapper .ng-clear {
+  display: none !important;
+}
+
+/*# sourceMappingURL=filters-form.component.css.map */

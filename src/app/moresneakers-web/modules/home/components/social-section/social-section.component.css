@@ -1,0 +1,66 @@
+#social-section-div #instagram-div {
+  width: 66%;
+  position: relative;
+}
+#social-section-div #twitter-div {
+  width: 33%;
+  overflow-y: scroll;
+  max-height: 82rem;
+}
+#social-section-div .instagram-post {
+  width: 48%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+@media (max-width: 992px) {
+  #social-section-div #instagram-div {
+    width: 100%;
+  }
+  #social-section-div #twitter-div {
+    width: 100%;
+  }
+  #social-section-div .instagram-post {
+    width: 49%;
+    position: relative;
+    height: 100%;
+  }
+}
+#social-section-div #twitter-widget-0 {
+  width: 100% !important;
+}
+#social-section-div blockquote {
+  min-width: 0 !important;
+  max-height: 100%;
+  position: relative;
+}
+#social-section-div #twitter-bar {
+  background-color: #f6f6f6;
+  font-size: 1.05rem;
+  font-family: OpenSans;
+}
+@media (max-width: 768px) {
+  #social-section-div #twitter-bar {
+    font-size: 0.9rem;
+  }
+}
+#social-section-div a.follow-button, #social-section-div #follow-button {
+  font-family: TitilliumWeb;
+  background-color: white;
+  color: black;
+  text-transform: uppercase;
+  font-style: italic;
+  border: solid black 1px;
+  cursor: pointer !important;
+  padding: 0.5rem 2rem;
+}
+#social-section-div a.follow-button:hover, #social-section-div #follow-button:hover {
+  color: white;
+  background-color: black;
+  text-decoration: none;
+}
+#social-section-div .EmbeddedMediaImage {
+  object-fit: cover !important;
+}
+
+/*# sourceMappingURL=social-section.component.css.map */

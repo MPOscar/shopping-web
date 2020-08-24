@@ -1,0 +1,219 @@
+<div id="filters-form-div">
+
+  <div *ngIf="count >= 0"
+    class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+    <div class="ml-2 filter-header">FILTERS</div>
+    <div class="ml-2 padding-top-10px font-light">{{count}} matches found</div>
+  </div>
+
+  <form [formGroup]="formGroup">
+    <div class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">CATEGORY</span>
+          </div>
+          <div *ngFor="let category of sortedCategories()" class="height-30px filter-text">
+            <mat-checkbox (change)="updateCategory(category.id)" [checked]="isCategorySelected(category.id)">
+              {{category.name}}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers || isFiltersReleases"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">SKU</span>
+          </div>
+          <div filter-text>
+            <input class="form-control" formControlName="sku">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">BRAND</span>
+          </div>
+          <styles-parent [brandstyles]="brandstyles" [inputBrands]="inputBrands" [inputStyles]="inputStyles"
+            (stylesSlected)="updateStyles($event)">
+          </styles-parent>
+        </div>
+
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers || isFiltersReleases"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">GENDER</span>
+          </div>
+          <div *ngFor="let gender of genders" class="height-30px filter-text">
+            <mat-checkbox (change)="updateGender(gender.id)">{{gender.name}}</mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers || isFiltersReleases"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">COLOR</span>
+          </div>
+          <span id="colorsSelect">
+            <ng-select [items]="colors" bindLabel="name" [multiple]="true" formControlName="color"
+              class="w-100 no-shadow">
+            </ng-select>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers || isFiltersShops"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">SHOP</span>
+          </div>
+          <span id="shopsSelect">
+            <ng-select [items]="dropdownList" bindLabel="name" bindValue="id" [multiple]="true" formControlName="shopId"
+              class="w-100 no-shadow">
+            </ng-select>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersShops && false"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">COUNTRY REGION</span>
+          </div>
+          <div *ngFor="let showOnRegion of showOnRegions" class="height-30px filter-text">
+            <mat-checkbox [checked]="isShowOnRegionSelected(showOnRegion.id)"
+              (change)="updateShowOnRegions(showOnRegion.id)">{{showOnRegion.name}}</mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers || isFiltersShops"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">SHIPPING</span>
+          </div>
+          <div *ngFor="let shippingCountry of shippingCountries" class="height-30px filter-text">
+            <mat-checkbox [checked]="isShippingSelected(shippingCountry.id)"
+              (change)="updateShippingCountries(shippingCountry.id)">{{shippingCountry.name}}</mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!isFiltersOffers && isCheckedSelectCountry"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">SELECT COUNTRIES</span>
+          </div>
+          <span id="countrySelect">
+            <ng-select [items]="shopCountries" bindLabel="country" [multiple]="true" (change)="changeCountries($event)"
+              formControlName="country" class="w-100 no-shadow">
+            </ng-select>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="isFiltersOffers"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">STATUS</span>
+          </div>
+          <div *ngFor="let statu of status" class="height-30px filter-text">
+            <mat-checkbox [disabled]="isStatusDisabled" [checked]="isStatusSelected(statu.id)" (change)="updateStatus(statu.id)">{{statu.name}}
+            </mat-checkbox>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <div *ngIf="isFiltersOffers || isFiltersReleases" class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px padding-bottom-10px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <div class="margin-bottom-10px">
+            <span class="filter-header">CURRENCY</span>
+          </div>
+          <span id="currencySelect">
+          <ng-select
+            [items]="currencies"
+            bindLabel="name"
+            [multiple]="false"
+            formControlName="currency"
+            class="w-100 no-shadow">
+          </ng-select>
+        </span>
+        </div>
+      </div>
+    </div> -->
+
+    <div *ngIf="isFiltersOffers || isFiltersReleases"
+      class="flex-column col-12 col-md-12 col-lg-12 mb-2 mb-md-0 pl-5 padding-left-0px">
+      <div class="border-1px-solid">
+        <div class="padding-10px">
+          <span class="filter-header">PRICE</span>
+
+          <div class="d-flex padding-top-10px row">
+            <div type="number" class="col-4 filter-text align-items-center d-flex">
+              Currency
+            </div>
+            <div class="col-8">
+              <ng-select [items]="currencies" bindLabel="name" [multiple]="false" formControlName="currency"
+                class="no-shadow border-select">
+              </ng-select>
+            </div>
+          </div>
+
+          <div class="padding-top-10px row">
+            <div class="col-4 filter-text align-items-center d-flex">
+              Min
+            </div>
+            <div class=" col-8 ">
+              <input type="number" class="form-control" formControlName="minPrice">
+            </div>
+          </div>
+
+          <div class="d-flex padding-top-10px row">
+            <div type="number" class="col-4 filter-text align-items-center d-flex ">
+              Máx
+            </div>
+            <div class="col-8">
+              <input type="number" class="form-control" formControlName="maxPrice">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>

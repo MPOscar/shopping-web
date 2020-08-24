@@ -1,0 +1,87 @@
+@import "global/colors";
+
+#collections-div {
+
+  #advertisement {
+    font-family: OpenSans;
+    font-weight: 200;
+    font-size: 0.9rem;
+  }
+
+  .w-25 {
+    width: 25% !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.8em;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 2.1em;
+    }
+  }
+
+  h1 {
+    font-family: TitilliumWeb;
+    font-size: 3.18rem;
+    color: rgb(48, 48, 48);
+  }
+
+  ::ng-deep {
+    //ms-banner .banner-title {
+    //  font-size: 3.25rem;
+    //}
+    //
+    //ms-banner .msb-subtitle {
+    //  font-size: 1.25rem;
+    //}
+
+    #collectios-tabset {
+      .nav-tabs .nav-link {
+        border: 0;
+        border-radius: 0;
+        text-transform: uppercase;
+        color: black;
+        font-family: TitilliumWeb-ExtraLight;
+        font-style: normal;
+        font-size: 1.3rem;
+      }
+
+      .nav-tabs .nav-item {
+        margin-bottom: 0;
+        border: rgb(236, 237, 239) solid 1px;
+        border-bottom: 0 !important;
+      }
+
+      .nav-tabs .nav-link.active {
+        background-color: $light-gray-background;
+        border-color: $light-gray-background;
+        border-bottom: solid 5px black !important;
+      }
+
+      .nav-tabs .nav-link:hover {
+        font-weight: bold;
+      }
+
+      ul.nav {
+        border-bottom: solid 1px black;
+      }
+
+      @media screen and (max-width: 768px) {
+        .nav-tabs .nav-link {
+          font-size: 0.7rem;
+        }
+      }
+
+      @media screen and (max-width: 576px) {
+        .nav-tabs .nav-link {
+          font-size: 0.55rem;
+        }
+      }
+    }
+  }
+
+}

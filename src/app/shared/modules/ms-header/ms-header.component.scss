@@ -1,0 +1,207 @@
+#hottest-release-slider-div {
+
+  h1 {
+    font-family: TitilliumWeb;
+    font-size: 3.18rem;
+    color: rgb(48, 48, 48);
+  }
+
+  #hot-image {
+    width: 1.875rem;
+    height: 2.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    h1 {
+      font-size: 2.8em;
+    }
+
+    #hot-image {
+      width: 2.8rem;
+      height: 2.8rem;
+    }
+  }
+
+  // Just for Mobiles
+  @media screen and (max-width: 576px) {
+    h1 {
+      font-size: 2.1em;
+    }
+
+    #hot-image {
+      width: 2.1rem;
+      height: 2.1rem;
+    }
+  }
+
+  ::ng-deep {
+    #hrs-carousel .carousel-indicators li {
+      display: none !important;
+    }
+
+    #hrs-carousel .carousel-control-prev-icon {
+      background-image: url("/assets/images/our-partners/slide-prev-button.svg");
+    }
+
+    #hrs-carousel .carousel-control-next-icon {
+      background-image: url("/assets/images/our-partners/slide-next-button.svg");
+    }
+
+    .nav-tabs .nav-link {
+      border: rgb(236, 237, 239) solid 1px;
+      border-bottom-width: 0 !important;
+      border-radius: 0;
+      text-transform: uppercase;
+      font-style: italic;
+      color: black;
+      font-family: TitilliumWeb;
+      font-size: 1.3rem;
+    }
+
+    .nav-tabs .nav-item {
+      margin-bottom: 0;
+    }
+
+    .nav-tabs .nav-link.active {
+      background-color: rgb(255, 121, 40);
+      color: white;
+      border-color: rgb(255, 121, 40);
+    }
+
+    .nav-tabs .nav-link:hover {
+      font-weight: bold;
+    }
+
+    ul.nav {
+      border-bottom: solid 2px black;
+    }
+
+    .hrs-button {
+      color: rgb(40, 40, 40);
+      font-size: 2.5em;
+      font-family: TitilliumWeb;
+      font-weight: lighter;
+      line-height: 1;
+      background-color: rgba(255, 255, 255, 0.75);
+    }
+
+    @media screen and (max-width: 1200px) {
+      .hrs-button {
+        font-size: 1.8em;
+      }
+
+      h1 {
+        font-size: 1.5em;
+      }
+
+      .carousel-caption {
+        bottom: 1.4em;
+        padding-bottom: 1em;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .hrs-button {
+        font-size: 0.8rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .carousel-caption {
+        bottom: 0.75rem;
+        padding-bottom: 1rem;
+      }
+
+      .nav-tabs .nav-link {
+        font-size: 0.7rem;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .hrs-button {
+        font-size: 0.55rem;
+      }
+
+      h1 {
+        font-size: 1.15rem;
+      }
+
+      .carousel-caption {
+        bottom: 0.3rem;
+        padding-bottom: 0;
+      }
+
+      .nav-tabs .nav-link {
+        font-size: 0.55rem;
+      }
+    }
+
+    .hrs-button:hover {
+      color: white;
+      background-color: rgb(40, 40, 40);
+    }
+
+    #hrs-carousel .carousel-inner {
+      position: absolute !important;
+      top: 0 !important;
+      bottom: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+    }
+  }
+
+  .hrs-slide {
+    width: 100%;
+    position: relative;
+    padding-bottom: 39.634% !important;
+  }
+
+  #hrs-carousel {
+    width: 100%;
+    position: relative;
+    padding-bottom: 39.634% !important;
+  }
+
+  ::ng-deep {
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      width: 1.62rem !important;
+      height: 2.62rem !important;
+
+    }
+
+    @media screen and (max-width: 768px) {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 1.2075rem !important;
+        height: 1.965rem !important;
+
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        width: 0.81rem !important;
+        height: 1.31rem !important;
+
+      }
+    }
+
+  }
+
+}
+
+.hot-image-div {
+  position: absolute;
+  right: 0.8rem;
+  top: 0.3rem;
+  z-index: 2;
+}
+
+.height-50px{
+  height: 50px !important;
+}
