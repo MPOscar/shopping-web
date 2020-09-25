@@ -45,7 +45,7 @@
   </div>
 </nav>-->
 
-<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent justify-content-center" color-on-scroll="500">
+<!--<nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent justify-content-center" color-on-scroll="500">
   <div class="container pl-10px pr-10px ml-10px mr-10px">
     <div class="dropdown button-dropdown">
       <div ngbDropdown>
@@ -123,7 +123,7 @@
             <p>BLOG</p>
           </a>
         </li>
-        <!--<li class="nav-item">
+        <li class="nav-item">
           <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
             <i class="fab fa-twitter"></i>
             <p class="d-lg-none d-xl-none">Twitter</p>
@@ -140,8 +140,37 @@
             <i class="fab fa-instagram"></i>
             <p class="d-lg-none d-xl-none">Instagram</p>
           </a>
-        </li>-->
+        </li>
       </ul>
     </div>
   </div>
-</nav>
+</nav>-->
+
+<nav class="nav-menu d-none d-lg-block">
+  <ul>
+    <li class="active"><a href="index.html">Home</a></li>
+    <li><a href="#" (click)="toggleCollapseWhatsNewMenu()">WHAT'S NEW</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#team">Team</a></li>
+    <li class="drop-down"><a href="">Drop Down</a>
+      <ul>
+        <li><a href="#">Drop Down 1</a></li>
+        <li class="drop-down"><a href="#">Drop Down 2</a>
+          <ul>
+            <li><a href="#">Deep Drop Down 1</a></li>
+            <li><a href="#">Deep Drop Down 2</a></li>
+            <li><a href="#">Deep Drop Down 3</a></li>
+            <li><a href="#">Deep Drop Down 4</a></li>
+            <li><a href="#">Deep Drop Down 5</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Drop Down 3</a></li>
+        <li><a href="#">Drop Down 4</a></li>
+        <li><a href="#">Drop Down 5</a></li>
+      </ul>
+    </li>
+    <li><a href="#contact">Contact Us</a></li>
+
+  </ul>
+</nav><!-- .nav-menu -->
