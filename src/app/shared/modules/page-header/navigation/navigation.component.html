@@ -154,6 +154,12 @@
       </ul>
     </li>
 
+    <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapseBrandsMenu()">BRANDS</a>
+      <ul>
+        <ms-brands-collaps-menu></ms-brands-collaps-menu>
+      </ul>
+    </li>
+
     <li class="drop-down"><a class="cursor-pointer">WHAT'S NEW</a>
       <ul>
         <ms-whats-new-collaps-menu></ms-whats-new-collaps-menu>
@@ -164,12 +170,6 @@
 
     <li><a href="#portfolio" [routerLink]="['/releases']">RELEASES</a></li>
 
-    <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapseBrandsMenu()">BRANDS</a>
-      <ul>
-        <ms-brands-collaps-menu></ms-brands-collaps-menu>
-      </ul>
-    </li>
-
     <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapsCategoriesMenu()">CATEGORIES</a>
       <ul>
         <ms-categories-collaps-menu></ms-categories-collaps-menu>
@@ -179,6 +179,5 @@
     <li><a class="cursor-pointer" [routerLink]="['/customize']">CUSTOMIZE</a></li>
 
     <li><a class="cursor-pointer"  [routerLink]="['/blog']">BLOG</a></li>
-
   </ul>
 </nav><!-- .nav-menu -->
