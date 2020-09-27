@@ -119,12 +119,12 @@ export class NavigationComponent implements OnInit {
   }
 
   sidebarClose() {
-    const navbar: HTMLElement = this.element.nativeElement.children[0];
+    /*const navbar: HTMLElement = this.element.nativeElement.children[0];
     this.toggleButton = navbar.getElementsByClassName("navbar-toggler")[0];
     const html = document.getElementsByTagName("html")[0];
     this.toggleButton.classList.remove("toggled");
     this.sidebarVisible = false;
-    html.classList.remove("nav-open");
+    html.classList.remove("nav-open");*/
   }
   sidebarToggle() {
     // const toggleButton = this.toggleButton;

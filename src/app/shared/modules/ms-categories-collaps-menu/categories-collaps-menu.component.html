@@ -1,4 +1,4 @@
-<div id="categories-collaps-menu-div"
+<!--<div id="categories-collaps-menu-div"
      class="collaps-menu-div position-relative top-80px"
      [class.collapsed]="!visible" [class.visible]="visible">
 
@@ -23,4 +23,11 @@
     </div>
 
   </div>
-</div>
+</div>-->
+
+
+ <li *ngFor="let category of allCategoriesToShow" >
+    <a class="text-uppercase cursor-pointer" [routerLink]="['/categories', getRouterName(category.name)]">
+      {{category.name}}
+    </a>
+ </li>

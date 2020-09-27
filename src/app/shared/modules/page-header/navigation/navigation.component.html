@@ -148,29 +148,37 @@
 
 <nav class="nav-menu d-none d-lg-block">
   <ul>
-    <li class="active"><a href="index.html">Home</a></li>
-    <li><a href="#" (click)="toggleCollapseWhatsNewMenu()">WHAT'S NEW</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#portfolio">Portfolio</a></li>
-    <li><a href="#team">Team</a></li>
-    <li class="drop-down"><a href="">Drop Down</a>
+    <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapsShopsMenu()">SHOPS</a>
       <ul>
-        <li><a href="#">Drop Down 1</a></li>
-        <li class="drop-down"><a href="#">Drop Down 2</a>
-          <ul>
-            <li><a href="#">Deep Drop Down 1</a></li>
-            <li><a href="#">Deep Drop Down 2</a></li>
-            <li><a href="#">Deep Drop Down 3</a></li>
-            <li><a href="#">Deep Drop Down 4</a></li>
-            <li><a href="#">Deep Drop Down 5</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Drop Down 3</a></li>
-        <li><a href="#">Drop Down 4</a></li>
-        <li><a href="#">Drop Down 5</a></li>
+        <ms-shops-collaps-menu></ms-shops-collaps-menu>
       </ul>
     </li>
-    <li><a href="#contact">Contact Us</a></li>
+
+    <li class="drop-down"><a class="cursor-pointer">WHAT'S NEW</a>
+      <ul>
+        <ms-whats-new-collaps-menu></ms-whats-new-collaps-menu>
+      </ul>
+    </li>
+
+    <li><a class="cursor-pointer" [routerLink]="['/release-calendar']">CALENDAR</a></li>
+
+    <li><a href="#portfolio" [routerLink]="['/releases']">RELEASES</a></li>
+
+    <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapseBrandsMenu()">BRANDS</a>
+      <ul>
+        <ms-brands-collaps-menu></ms-brands-collaps-menu>
+      </ul>
+    </li>
+
+    <li class="drop-down"><a class="cursor-pointer" (click)="toggleCollapsCategoriesMenu()">CATEGORIES</a>
+      <ul>
+        <ms-categories-collaps-menu></ms-categories-collaps-menu>
+      </ul>
+    </li>
+
+    <li><a class="cursor-pointer" [routerLink]="['/customize']">CUSTOMIZE</a></li>
+
+    <li><a class="cursor-pointer"  [routerLink]="['/blog']">BLOG</a></li>
 
   </ul>
 </nav><!-- .nav-menu -->

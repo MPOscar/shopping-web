@@ -53,6 +53,7 @@ export class BrandsCollapsMenuComponent implements OnInit, MsCollapsMenu {
 
     this.layoutService.getMenu('brands').subscribe(response => {
       const brandsMenu = response.data;
+      console.log(brandsMenu);
       this.brandsService.getAllBrands().subscribe(allBrands => {
         this.collectionsService.getAllCollections().subscribe(allCollections => {
           this.stylesService.getAllStyles().subscribe(allStyles => {

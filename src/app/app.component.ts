@@ -13,10 +13,10 @@ declare let ga: Function;
 export class AppComponent implements OnInit {
     constructor(public router: Router) {
         this.router.events.subscribe(event => {
-            if (event instanceof NavigationEnd) {
+            /*if (event instanceof NavigationEnd) {
                 ga('set', 'page', event.urlAfterRedirects);
                 ga('send', 'pageview');
-            }
+            }*/
         });
     }
 

@@ -1,4 +1,4 @@
-<div id="whats-new-collaps-menu-div"
+<!--<div id="whats-new-collaps-menu-div"
      class="collaps-menu-div position-relative"
      [class.collapsed]="!visible" [class.visible]="visible">
 
@@ -29,4 +29,21 @@
     </div>
 
   </div>
-</div>
+</div>-->
+
+<li *ngFor="let statusItem of status" >
+  <a class="text-uppercase cursor-pointer" [routerLink]="['/whats-new', getRouteFromId(statusItem.id)]">
+    {{statusItem.name}}
+  </a>
+</li>
+
+<li>
+  <a class="text-uppercase cursor-pointer" (click)="seeAllItem(true)" [routerLink]="['/whats-new']">
+    SEE ALL
+    <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+    </span>
+  </a>
+</li>
+
+

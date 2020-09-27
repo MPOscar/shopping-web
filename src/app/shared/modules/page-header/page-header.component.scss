@@ -49,41 +49,4 @@
   :-ms-input-placeholder {
     font-style: italic;
   }
-
-  ::ng-deep ms-categories-collaps-menu {
-    position: fixed;
-    z-index: 1050;
-    background: transparent;
-    top: 61px;
-    width: 100%;
-    left: 0;
-  }
-
-  ::ng-deep ms-brands-collaps-menu {
-    position: fixed;
-    z-index: 1050;
-    background: transparent;
-    top: 61px;
-    width: 100%;
-    left: 0;
-  }
-
-  ::ng-deep ms-shops-collaps-menu {
-    position: fixed;
-    z-index: 1050;
-    background: transparent;
-    top: 61px;
-    width: 100%;
-    left: 0;
-  }
-
-  ::ng-deep ms-whats-new-collaps-menu {
-    position: fixed;
-    z-index: 1050;
-    background: transparent;
-    top: 61px;
-    width: 100%;
-    left: 0;
-  }
-
 }

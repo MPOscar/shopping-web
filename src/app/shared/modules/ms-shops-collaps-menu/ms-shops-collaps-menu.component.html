@@ -1,4 +1,4 @@
-<div id="shops-collaps-menu-div" class="collaps-menu-div position-relative" [class.collapsed]="!visible"
+<!--<div id="shops-collaps-menu-div" class="collaps-menu-div position-relative" [class.collapsed]="!visible"
   [class.visible]="visible">
 
   <span class="collapse-menu-close-btn" (click)="hideMenu()">
@@ -42,4 +42,41 @@
     </div>
 
   </div>
+</div>-->
+
+
+<div *ngIf="showAllItems">
+  <li *ngFor="let item of shippingCountries" >
+    <a class="text-uppercase cursor-pointer" [routerLink]="['/shops']"
+       [queryParams]="{'shippingCountries': item.id}">
+      {{item.name}}
+    </a>
+  </li>
 </div>
+
+<div *ngIf="!showAllItems">
+  <li *ngFor="let item of shippingCountries.slice(0, 4)" >
+    <a class="text-uppercase cursor-pointer" [routerLink]="['/shops']"
+       [queryParams]="{'shippingCountries': item.id}">
+      {{item.name}}
+    </a>
+  </li>
+</div>
+
+<li *ngIf="!showAllItems">
+  <a class="text-uppercase cursor-pointer" [routerLink]="['/shops']">
+    SEE ALL
+    <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+    </span>
+  </a>
+</li>
+
+<li *ngIf="showAllItems">
+  <a class="text-uppercase cursor-pointer" (click)="seeAllItem(false)">
+    SHOW LESS
+    <span class="float-right mr-2 ml-4">
+            <i class="fas fa-chevron-right"></i>
+    </span>
+  </a>
+</li>
