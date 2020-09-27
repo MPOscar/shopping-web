@@ -5,12 +5,16 @@
         <div class="cursor-pointer" [routerLink]="['/brands', getRouterName(brand.name)]">
 
           <div class="bcm-logo-div">
-            <div class="wrapper-div">
+            <div class="wrapper-div margin-left-20px" *ngIf="brand.logo !== ''; else name">
               <img [src]="brand.logo" class="center fill-cover h-100">
             </div>
+            <ng-template #name>
+              <div class="wrapper-div margin-left-20px">
+                {{brand.name}}
+              </div>
+            </ng-template>
           </div>
-
-          <div class="brand-line my-3"></div>
+          <div class="brand-line my-3 margin-left-20px"></div>
         </div>
 
         <div>

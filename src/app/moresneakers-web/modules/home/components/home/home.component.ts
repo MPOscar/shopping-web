@@ -131,7 +131,7 @@ export class HomeComponent implements OnInit {
           if (response.data) {
             this.displayHeadingOnPage = response.data.displayOnPage;
             this.title = response.data.title;
-            this.description = response.data.description;
+            this.description = response.data.keywords;
             this.imgUrl = response.data.imgUrl || 'assets/images/whats-new/banner.svg';
             this.msSeoService.addMetadata(response.data.keywords);
           }
