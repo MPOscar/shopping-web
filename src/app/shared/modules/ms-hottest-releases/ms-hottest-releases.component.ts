@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostListener, OnInit, Input, ViewChild } from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnInit, Input, ViewChild, ElementRef} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgbCarousel } from '@ng-bootstrap/ng-bootstrap';
 import { ReleasesService } from '../../../moresneakers-web/modules/ms-releases/services/releases.service';
@@ -26,11 +26,14 @@ export class MsHottestReleasesComponent implements OnInit, AfterViewInit {
     tablet: 1024
   };
 
+  public imgHeigth: 100;
+
   @Input() releases: Array<Release> = [];
 
   @ViewChild('hottestReleaseCarousel') carousel: NgbCarousel;
 
   constructor(
+    private elem: ElementRef,
     public activatedRoute: ActivatedRoute,
     public releasesService: ReleasesService,
   ) {  }
@@ -38,6 +41,7 @@ export class MsHottestReleasesComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     this.carousel.showNavigationArrows = false;
     this.carousel.showNavigationIndicators = true;
+    this.setWidth();
   }
 
   ngOnInit() {
@@ -63,6 +67,21 @@ export class MsHottestReleasesComponent implements OnInit, AfterViewInit {
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.screenWidth = window.innerWidth;
+    this.setWidth();
+  }
+
+  @HostListener('window:scroll', ['$event']) // for window scroll events
+  onScroll(event) {
+    this.setWidth();
+  }
+
+  public setWidth() {
+    const elements = this.elem.nativeElement.querySelectorAll('.img-hottest-release-carousel');
+    console.log(elements);
+    if (elements.length > 0) {
+      this.imgHeigth = elements[0].width;
+      console.log(this.imgHeigth);
+    }
   }
 
   getHotPages(): number {

@@ -51,6 +51,7 @@ export class ComingSoonComponent implements OnInit, AfterViewInit {
       this.imgHeigth = elements[0].width;
     }
   }
+
   public mouseEnter(index: number) {
     this.cardHover[index] = true;
   }

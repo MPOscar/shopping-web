@@ -1,4 +1,4 @@
-<div id="ms-hottest-releases-div" *ngIf="releases">
+<!--<div id="ms-hottest-releases-div" *ngIf="releases">
 
   <div id="hottest-release-header" class="d-flex justify-content-center my-2 mt-md-3 mb-md-2 align-items-baseline">
     <h1 class="font-weight-light mr-3 text-uppercase">Hottest</h1>
@@ -25,10 +25,10 @@
                     </div>
 
                     <div class="slogan-div mx-auto adjust-text" data-toggle="tooltip" data-placement="bottom" [title]="item.slogan">
-                      
+
                         Release Date: {{item.releaseDate? (item.releaseDate | date) : 'N/A'}} <br>
                         {{item.slogan}}
-                     
+
                     </div>
                   </div>
                 </a>
@@ -41,4 +41,163 @@
     </ng-container>
   </ngb-carousel>
 
-</div>
+</div>-->
+
+<!-- ======= Portfolio Section ======= -->
+<section id="portfolio" class="portfolio">
+  <div class="container">
+
+    <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+      <h2>Hottest Releases</h2>
+      <img id="hot-image" class="ml-3" src="assets/images/hot-release-fire-big.svg"/>
+    </div>
+
+   <div id="ms-hottest-releases-div">
+
+     <ngb-carousel id="hottest-release-carousel" #hottestReleaseCarousel>
+
+       <ng-container *ngFor="let page of getHotPagesList()">
+         <ng-template ngbSlide class="mb-3">
+
+           <div class="d-flex flex-wrap mb-5 justify-content-left">
+
+             <div *ngFor="let item of getHotItems(page); let i = index"
+                  class="col-lg-3 col-md-4 portfolio-item filter-web"
+             >
+               <div class="portfolio-wrap">
+                 <div class="slogan-div adjust-text" data-toggle="tooltip" data-placement="bottom" [title]="item.slogan">
+
+                   {{item.releaseDate? (item.releaseDate | date) : 'N/A'}} <br>
+                   {{item.slogan}}
+
+                 </div>
+                 <img class="w-100 img-hottest-release-carousel" [style.height.px]="imgHeigth" [src]="item.image">
+
+                 <div class="portfolio-links" [routerLink]="['/releases', item.slug]">
+                   <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox w-100" title="Web 3">DETAILS</a>
+                 </div>
+               </div>
+             </div>
+
+
+             <!--<div *ngFor="let item of getHotItems(page); let i = index"
+                  class="col-6 col-md-3 col-xl-2 mx-1 mb-3 card rounded-0 p-0 mr-2">
+               <div class="hr-card">
+                 <div class="wrapper-div">
+                   <a [routerLink]="['/releases', item.slug]" class="h-100 w-100">
+                     <div class="d-flex flex-column h-100 w-100">
+                       <div class="item-image-div">
+                         <img class="w-100 h-100 fit-contain" [src]="item.image">
+                       </div>
+
+                       <div class="slogan-div mx-auto adjust-text" data-toggle="tooltip" data-placement="bottom" [title]="item.slogan">
+
+                         Release Date: {{item.releaseDate? (item.releaseDate | date) : 'N/A'}} <br>
+                         {{item.slogan}}
+
+                       </div>
+                     </div>
+                   </a>
+                 </div>
+               </div>
+             </div>-->
+           </div>
+
+         </ng-template>
+       </ng-container>
+     </ngb-carousel>
+
+    <!--<div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox" title="App 1"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox" title="App 2"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox" title="Card 2"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox" title="Web 2"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox" title="App 3"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox" title="Card 1"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-card">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox" title="Card 3"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6 portfolio-item filter-web">
+        <div class="portfolio-wrap">
+          <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
+          <div class="portfolio-links">
+            <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox" title="Web 3"><i class="bx bx-plus"></i></a>
+            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
+          </div>
+        </div>
+      </div>-->
+
+    </div>
+
+  </div>
+</section><!-- End Portfolio Section -->

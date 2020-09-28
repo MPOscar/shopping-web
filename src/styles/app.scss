@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/scss/bootstrap.scss";
-@import "../assets/sass/now-ui-kit";
 @import "../assets/css/demo.css";
 @import "spinner";
 @import "utils";
@@ -194,4 +193,8 @@ footer{
 
 .height-50vh {
   height: 50vh !important;
+}
+
+.max-height-80px {
+  max-height: 80px !important;
 }
