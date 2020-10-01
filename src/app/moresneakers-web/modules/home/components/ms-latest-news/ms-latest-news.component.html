@@ -1,4 +1,4 @@
-<div class="mt-5" id="ms-latest-new-div">
+<!--<div class="mt-5" id="ms-latest-new-div">
 
   <div id="latest-news-header " class="d-flex justify-content-center my-2 mt-3 mb-2 pt-md-3 mb-md-4">
     <h1 class="font-weight-light mr-3 text-uppercase">Latest</h1>
@@ -17,7 +17,6 @@
         <img src="assets/images/latest-news/right-trapecius.svg">
       </div>
 
-      <!--These have the image at left-->
       <div *ngIf="even" class="d-flex flex-column flex-lg-row pr-0 pr-lg-3 h-100">
         <span class="img-div position-relative">
           <div class="wrapper-div">
@@ -46,7 +45,6 @@
         </span>
       </div>
 
-      <!--These have the image at right-->
       <div *ngIf="odd" class="d-flex flex-column-reverse flex-lg-row pl-0 pl-lg-3 h-100">
 
         <span class="news-body ml-2 ml-lg-3 pt-2 pt-lg-3 text-right text-lg-left d-flex flex-column">
@@ -77,6 +75,34 @@
       </div>
 
     </div>
+  </div>
+
+</div>-->
+<div class="padding-60px">
+
+  <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+    <h2>Latest News</h2>
+  </div>
+
+  <!-- ======= Cta Section ======= -->
+  <div *ngFor="let new of latestNews; let odd = odd; let even = even">
+
+    <section class="cta mb-3" [ngStyle]="{
+                  'background': 'linear-gradient(rgb(103 176 209 / 51%), rgb(103 176 209 / 55%)), url(' + new.image + ') fixed center center',
+                  'background-repeat': 'no-repeat',
+                  'background-size': 'cover'
+                }">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <h3>{{new.title | textOverflow:36}}</h3>
+          <p innerHTML="{{new.resume | cleanHtml | textOverflow:200 }}"></p>
+          <a class="cta-btn" [href]="new.link">Read More</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
   </div>
 
 </div>

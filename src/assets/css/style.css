@@ -56,10 +56,6 @@ h1, h2, h3, h4, h5, h6 {
   transition: background 0.2s ease-in-out;
 }
 
-#main {
-  margin-top: 90px;
-}
-
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -1448,4 +1444,8 @@ section {
   #footer .footer-top .footer-info {
     margin: -20px 0 30px 0;
   }
+}
+
+.padding-60px {
+  padding-top: 60px !important;
 }
