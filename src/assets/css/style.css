@@ -1449,3 +1449,13 @@ section {
 .padding-60px {
   padding-top: 60px !important;
 }
+
+
+.description-tittle {
+  color: #fff;
+  margin-bottom: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: -1px 0 2px #2f4d5a;
+}

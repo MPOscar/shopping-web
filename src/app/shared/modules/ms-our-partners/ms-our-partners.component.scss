@@ -23,23 +23,17 @@
       display: none !important;
     }
 
-    #our-partners-carousel .carousel-control-prev-icon {
-      background-image: url("/assets/images/our-partners/slide-prev-button.svg");
-    }
-
-    #our-partners-carousel .carousel-control-next-icon {
-      background-image: url("/assets/images/our-partners/slide-next-button.svg");
-    }
-
-    .nav-tabs .nav-link {
+  .nav-tabs .nav-link {
       border: rgb(236, 237, 239) solid 1px;
       border-bottom-width: 0 !important;
       border-radius: 0;
       text-transform: uppercase;
-      font-style: italic;
-      color: black;
-      font-family: TitilliumWeb;
-      font-size: 1.3rem;
+      font-size: 20px;
+      font-weight: bold;
+      position: relative;
+      color: #2f4d5a;
+      z-index: 2;
+      height: 100% !important;
     }
 
     .nav-tabs .nav-item {
@@ -47,17 +41,12 @@
     }
 
     .nav-tabs .nav-link.active {
-      background-color: rgb(255, 121, 40);
+      background: rgba(103, 176, 209, 0.8);
       color: white;
-      border-color: rgb(255, 121, 40);
     }
 
     .nav-tabs .nav-link:hover {
       font-weight: bold;
-    }
-
-    ul.nav {
-      border-bottom: solid 2px black;
     }
 
     .our-partners-button {
