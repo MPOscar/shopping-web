@@ -125,7 +125,6 @@
 
 }
 
-img{
-  width: 100% !important;
-  height: 100% !important;
+::ng-deep carousel-img-item{
+  height: 90vh !important;
 }
