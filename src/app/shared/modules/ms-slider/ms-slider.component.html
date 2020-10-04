@@ -53,11 +53,11 @@
     </div>
 
     <!-- Carousel Navigation -->
-    <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <div class="row mx-0">
-            <div *ngFor="let item of sliders; let i = index" id="carousel-selector-{{i}}" class="thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" [attr.data-slide-to]="i">
+    <div id="carousel-thumbs" class="carousel slide height-20-pct" data-ride="carousel">
+      <div class="carousel-inner h-100">
+        <div *ngFor="let item of sliders; let j = index" class="carousel-item h-100" [ngClass]="{'active' : j === 0}">
+          <div class="row mx-0 h-100">
+            <div *ngFor="let item of sliders.slice(j, j+1); let i = index" id="carousel-selector-{{j + i}}" class="h-100 thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" [attr.data-slide-to]="j + i">
               <img src="{{item.imgUrl}}" class="height-100-pct img-fluid" alt="...">
             </div>
           </div>
