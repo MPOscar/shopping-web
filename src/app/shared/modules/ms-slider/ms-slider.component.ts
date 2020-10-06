@@ -35,6 +35,8 @@ export class MsSliderComponent implements OnInit, OnDestroy {
 
   subscriptions: Subscription[] = [];
 
+  slidersPages: number[] = [];
+
   constructor(private releasesService: ReleasesService,
     private translate: TranslateService,
     private errorHandlingService: ErrorHandlingService,
@@ -106,7 +108,9 @@ export class MsSliderComponent implements OnInit, OnDestroy {
       this.subscriptions.push(postPostReleasesSearch2);
 
     }
-
+    const pages = Math.ceil(this.sliders.length / 6);
+    console.log(pages);
+    this.slidersPages = Array(pages).fill(0).map((x, i) => i);
   }
 
   reloadHottestSliderBrand(brandId: string) {
