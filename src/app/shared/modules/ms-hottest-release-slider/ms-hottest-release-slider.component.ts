@@ -27,6 +27,8 @@ export class MsHottestReleaseSliderComponent implements OnInit {
 
   data: any;
 
+  slidersPages: number[] = [];
+
   constructor(private releasesService: ReleasesService,
               private translate: TranslateService,
               private errorHandlingService: ErrorHandlingService) {
@@ -54,6 +56,8 @@ export class MsHottestReleaseSliderComponent implements OnInit {
             });
           }
         });
+        const pages = Math.ceil( this.hotItems.length / 6);
+        this.slidersPages = Array(pages).fill(0).map((x, i) => i);
       });
     } else if (this.categoryId) {
       this.data = {
@@ -73,6 +77,8 @@ export class MsHottestReleaseSliderComponent implements OnInit {
             });
           }
         });
+        const pages = Math.ceil( this.hotItems.length / 6);
+        this.slidersPages = Array(pages).fill(0).map((x, i) => i);
       });
     } else {
       this.data = {
@@ -90,6 +96,8 @@ export class MsHottestReleaseSliderComponent implements OnInit {
             });
           }
         });
+        const pages = Math.ceil( this.hotItems.length / 6);
+        this.slidersPages = Array(pages).fill(0).map((x, i) => i);
       });
     }
 

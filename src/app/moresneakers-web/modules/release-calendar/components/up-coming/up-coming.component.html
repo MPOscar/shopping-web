@@ -1,4 +1,4 @@
-<div id="up-coming-div" class="d-flex flex-wrap py-4">
+<!--<div id="up-coming-div" class="d-flex flex-wrap py-4">
 
   <div class="pr-xl-4 col-12 col-md-8 col-lg-4 mb-2 mb-md-0 pl-md-5
               align-self-center d-flex justify-content-center height-300px" id="coming-soon-header">
@@ -32,7 +32,6 @@
 
         <div class="pt-3 card-body padding-bottom-none padding-top-none">
           <img class="img-fluid" [src]="item.mainImage">
-          <!--p class="margin-bottom-none padding-top-10px small text-center">{{item.description}}</p-->
         </div>
 
         <div class="card-footer px-2 pb-3 border-0">
@@ -46,4 +45,52 @@
     </div>
   </div>
 
-</div>
+</div>-->
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+  <div class="container">
+
+    <div class="row no-gutters">
+      <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+        <div class="content">
+          <h3>MORE UPCOMING RELEASES</h3>
+          <p>
+            Vea nuestros proximos lanzamientos.
+          </p>
+          <a class="about-btn cursor-pointer" [routerLink]="['/releases/upcoming']">SEE ALL<i class="bx bx-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="col-xl-7 d-flex align-items-stretch">
+        <div class="icon-boxes d-flex flex-column justify-content-center">
+          <div class="row">
+            <section id="team" class="team">
+
+              <div class="container width-100vh">
+
+                <div class="row">
+
+                  <div class="col-lg-4 col-md-6" *ngFor="let item of comingItems; let i = index">
+                    <div class="member" data-aos="fade-up">
+                      <div class="pic"><img [src]="item.mainImage" class="img-fluid img-coming-soon" alt="" [style.height.px]="imgHeigth"></div>
+                      <div class="member-info max-height-80px">
+                        <span>{{ item.releaseDate | date: 'MMMM d' }}</span>
+                        <h4>{{ item.name | textOverflow: 46 }}</h4>
+                        <div class="social">
+                          <div class="text-center">
+                            <button class="coming-soon-button" [routerLink]="['/releases', item.slug]" >DETAILS</button></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </section><!-- End Team Section -->
+          </div>
+        </div><!-- End .content-->
+      </div>
+    </div>
+
+  </div>
+</section><!-- End About Section -->

@@ -109,7 +109,6 @@ export class MsSliderComponent implements OnInit, OnDestroy {
 
     }
     const pages = Math.ceil(this.sliders.length / 6);
-    console.log(pages);
     this.slidersPages = Array(pages).fill(0).map((x, i) => i);
   }
 
