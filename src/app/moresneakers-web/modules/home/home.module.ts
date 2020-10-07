@@ -16,8 +16,7 @@ import { MsHottestReleasesComponent } from './components/ms-hottest-releases/ms-
 import { MsLatestNewsComponent } from './components/ms-latest-news/ms-latest-news.component';
 import { SharedPipesModule } from '../../../shared';
 import { SocialSectionComponent } from './components/social-section/social-section.component';
-import {MsBannerComponent} from '../../../shared/modules/ms-banner/ms-banner.component';
-import {MsBannerModule} from '../../../shared/modules/ms-banner/ms-banner.module';
+import { MsBannerModule } from '../../../shared/modules/ms-banner/ms-banner.module';
 
 @NgModule({
     imports: [
