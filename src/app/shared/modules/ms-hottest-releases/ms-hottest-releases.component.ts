@@ -77,10 +77,8 @@ export class MsHottestReleasesComponent implements OnInit, AfterViewInit {
 
   public setWidth() {
     const elements = this.elem.nativeElement.querySelectorAll('.img-hottest-release-carousel');
-    console.log(elements);
     if (elements.length > 0) {
       this.imgHeigth = elements[0].width;
-      console.log(this.imgHeigth);
     }
   }
 
