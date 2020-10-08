@@ -168,8 +168,10 @@
     position: relative;
     display: inline-block;
     padding: 10px;
-    background-color: #e5e6e8;
     min-width: 150px;
+    background: #67b0d1;
+    color: #fff;
+    border-radius: 50px;
   }
 
   .strike > span:before,

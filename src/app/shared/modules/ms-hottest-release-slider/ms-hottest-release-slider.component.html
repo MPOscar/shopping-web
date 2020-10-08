@@ -36,54 +36,9 @@
 
 </div>-->
 
-<!--<div class="">
-  <div class="carousel-container position-relative row">
-
-
-    <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
-      <div class="carousel-inner w-100">
-        <div *ngFor="let item of hotItems; let i = index" class="carousel-item  w-100" [ngClass]="{'active' : i === 0}"  [attr.data-slide-number]="i">
-          <img class="height-90vh w-100" src="{{item.image}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
-          <div class="carousel-caption bottom-20-pct">
-            <a class="mb-3">
-              <button class="btn btn-outline-dark rounded-0 mb-1 mb-md-2 mb-lg-3 md px-2 px-md-4 py-2 hrs-button
-                            font-weight-light text-uppercase">
-                <span class="ml-2 font-italic">AAA</span>
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="carousel-thumbs" class="carousel slide height-20-pct" data-ride="carousel">
-      <div class="carousel-inner h-100">
-        <div *ngFor="let page of slidersPages; let j = index" class="carousel-item h-100" [ngClass]="{'active' : j === 0}">
-          <div class="row mx-0 h-100">
-            <div *ngFor="let item of hotItems.slice((j * 6), (j * 6) + 6); let i = index" id="carousel-selector-{{(j * 6) + i}}" class="h-100 thumb col-4 col-sm-2 px-1 py-2" data-target="#myCarousel" [attr.data-slide-to]="(j * 6) + i">
-              <img src="{{item.image}}" class="height-100-pct img-fluid" alt="...">
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-
-  </div>
-</div>  -->
-
 
 <div class="" *ngIf="hotItems.length > 0">
   <div class="carousel-container position-relative row">
-
-    <!-- Sorry! Lightbox doesn't work - yet. -->
 
     <div id="myCarousel1" class="carousel slide w-100" data-ride="carousel">
       <div class="carousel-inner w-100">
@@ -93,7 +48,7 @@
             <a class="mb-3">
               <button class="btn btn-outline-dark rounded-0 mb-1 mb-md-2 mb-lg-3 md px-2 px-md-4 py-2 hrs-button
                             font-weight-light text-uppercase">
-                <span class="ml-2 font-italic">AAA</span>
+                <span class="ml-2 font-italic">"{{item.slogan | textOverflow:44}}"</span>
               </button>
             </a>
           </div>
@@ -101,7 +56,6 @@
       </div>
     </div>
 
-    <!-- Carousel Navigation -->
     <div id="carousel-thumbs" class="carousel slide height-20-pct" data-ride="carousel">
       <div class="carousel-inner h-100">
         <div *ngFor="let page of slidersPages; let j = index" class="carousel-item h-100" [ngClass]="{'active' : j === 0}">
@@ -122,5 +76,5 @@
       </a>
     </div>
 
-  </div> <!-- /row -->
-</div> <!-- /container -->
+  </div>
+</div>
