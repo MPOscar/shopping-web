@@ -150,6 +150,11 @@ export class MsReleasePageComponent implements AfterViewInit, OnInit, OnDestroy 
     this.shops = this.activatedRoute.snapshot.data.shops;
     this.offers = this.activatedRoute.snapshot.data.offers;
 
+    if (!this.releaseId && this.activatedRoute.snapshot.data.slug) {
+      this.release = this.activatedRoute.snapshot.data.slug;
+      this.releaseId = this.activatedRoute.snapshot.data.slug.id;
+    }
+
     this.releasePage = {
       name: '',
       color: '',
@@ -247,7 +252,7 @@ export class MsReleasePageComponent implements AfterViewInit, OnInit, OnDestroy 
         this.releaseImages = [...this.releaseImages, image];
       });
 
-      this.releasePageDetailsComponent.setGalleryImages(this.releaseImages);
+      // this.releasePageDetailsComponent.setGalleryImages(this.releaseImages);
       // this.scrollTop();
     });
     this.subscriptions.push(subGetReleaseAllImages);
@@ -789,6 +794,5 @@ export class MsReleasePageComponent implements AfterViewInit, OnInit, OnDestroy 
   ngOnDestroy(): void {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
-
 
 }

@@ -1,17 +1,13 @@
 <div id="ms-release-page-div" class="padding-bottom-1-5rem">
 
-  <ms-breadcrumb *ngIf="collectionName" [steps]="['Home', 'Releases', brandName,
-                         collectionName, releaseName]"></ms-breadcrumb>
 
-  <ms-breadcrumb *ngIf="!collectionName" [steps]="['Home', 'Releases', brandName,
-                         releaseName]"></ms-breadcrumb>
-  <div>
-    <ms-advertisement></ms-advertisement>
+  <div class="">
+    <ms-slider [sliders]="release.images"></ms-slider>
   </div>
 
-  <div>
+ <div>
     <ms-release-page-details [releasePage]="releasePage"></ms-release-page-details>
-  </div>
+ </div>
 
   <div>
     <ms-release-page-shops [shops]="shops" ></ms-release-page-shops>
@@ -70,4 +66,4 @@
     </ngb-carousel>
   </div>
 
-</div>
+</div>-->

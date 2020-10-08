@@ -6,7 +6,7 @@
     <div id="myCarousel" class="carousel slide w-100" data-ride="carousel">
       <div class="carousel-inner w-100">
         <div *ngFor="let item of sliders; let i = index" class="carousel-item  w-100" [ngClass]="{'active' : i === 0}"  [attr.data-slide-number]="i">
-          <img class="height-90vh w-100" src="{{item.imgUrl}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
+          <img class="height-100vh w-100" src="{{item.imgUrl}}" data-type="image" data-toggle="lightbox" data-gallery="example-gallery">
           <div class="carousel-caption bottom-20-pct">
             <a class="mb-3">
               <button class="btn btn-outline-dark rounded-0 mb-1 mb-md-2 mb-lg-3 md px-2 px-md-4 py-2 hrs-button

@@ -48,7 +48,7 @@ export class ComingSoonComponent implements OnInit, AfterViewInit {
   public setWidth() {
     const elements = this.elem.nativeElement.querySelectorAll('.img-coming-soon');
     if (elements.length > 0) {
-      this.imgHeigth = elements[0].width;
+      this.imgHeigth = elements[0].width - 50;
     }
   }
 
