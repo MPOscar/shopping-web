@@ -1094,7 +1094,7 @@ section {
 }
 
 .team .member:hover .member-info {
-  max-height: 300px;
+  max-height: 300px !important;
 }
 
 .team .member h4 {

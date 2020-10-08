@@ -12,7 +12,7 @@ export class ComingSoonComponent implements OnInit, AfterViewInit {
 
   public cardHover: Array<boolean> = [];
 
-  public imgHeigth: 100;
+  public imgHeigth: number = 100;
 
   constructor(
     public releasesService: ReleasesService,

@@ -66,7 +66,7 @@
   }
 
   .card:hover {
-    background-color: #365577;
+    background-color: #85c0da;
 
     a {
       color: white;
@@ -94,10 +94,6 @@
 
   .card-body, .card-footer {
     background-color: rgb(236, 236, 224);
-  }
-
-  .card-image {
-    object-fit: contain;
   }
 
   .rpc-card-footer {
@@ -296,7 +292,7 @@
 }
 
 .card-logo {
-  height: 45px !important;
+  height: 25px !important;
   width: auto !important;
 }
 
@@ -360,7 +356,7 @@ table td, table th {
 }
 
 th {
-  background-color: #365577;
+   background-color: #2f4d5a;
   font-family: TitilliumWeb;
   color: white;
   line-height: 1;

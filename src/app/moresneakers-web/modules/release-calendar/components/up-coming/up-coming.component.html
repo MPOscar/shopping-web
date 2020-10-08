@@ -71,10 +71,10 @@
 
                   <div class="col-lg-4 col-md-6" *ngFor="let item of comingItems; let i = index">
                     <div class="member" data-aos="fade-up">
+                      <h4>{{ item.name | textOverflow: 46 }}</h4>
                       <div class="pic"><img [src]="item.mainImage" class="img-fluid img-coming-soon" alt="" [style.height.px]="imgHeigth"></div>
-                      <div class="member-info max-height-80px">
+                      <div class="member-info max-height-40px">
                         <span>{{ item.releaseDate | date: 'MMMM d' }}</span>
-                        <h4>{{ item.name | textOverflow: 46 }}</h4>
                         <div class="social">
                           <div class="text-center">
                             <button class="coming-soon-button" [routerLink]="['/releases', item.slug]" >DETAILS</button></div>
