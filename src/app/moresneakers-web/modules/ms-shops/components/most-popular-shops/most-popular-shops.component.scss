@@ -21,7 +21,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  background-color: #365577;
+  background: rgba(103, 176, 209, 0.95);
   color: white;
   font-family: TitilliumWeb;
   font-size: 1.33rem;
@@ -48,15 +48,16 @@
   cursor: pointer !important;
   height: 100%;
   font-size: 1.25rem;
-  border: solid 1px gray;
+  border: 1px;
   width: 100%;
   font-family: TitilliumWeb;
   color: #ffffff;
   text-transform: uppercase;
   font-style: italic;
-  background-color: #365577;
+  background: rgba(103, 176, 209, 0.95);
+  border-radius: 50px !important;
 }
 
 .shop-btn:hover {
-  color: white;
+  background-color: rgba(0, 0, 0, .9);
 }

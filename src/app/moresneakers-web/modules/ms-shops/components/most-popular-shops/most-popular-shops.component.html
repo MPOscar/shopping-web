@@ -1,8 +1,11 @@
-<div>
+<section id="about" class="about">
+  <div class="container">
 
-  <ms-section-title [title]="'Most Popular'"
-                    [titleItalic]="'Shops'">
-  </ms-section-title>
+    <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+      <div class="content">
+        <h3>Most Popular Shops</h3>
+      </div>
+    </div>
 
   <div class="d-flex flex-column flex-lg-row">
     <div *ngFor="let shop of shops; let first = first; let last = last"
@@ -34,3 +37,51 @@
   </div>
 
 </div>
+</section>
+
+<!--
+<section id="about" class="about">
+  <div class="container">
+
+    <div class="row no-gutters">
+      <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
+        <div class="content">
+          <h3>Most Popular Shops</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+          </p>
+          <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
+        </div>
+      </div>
+      <div class="d-flex flex-column flex-lg-row">
+        <div *ngFor="let shop of shops; let first = first; let last = last"
+             [class.pl-lg-0]="first" [class.pr-lg-0]="last"
+             [class.middle-padding]="!first && !last"
+             class="col-12 col-lg-4 p-0 p-lg-2 mb-3 mb-lg-0">
+
+          <a class="text-decoration-none" [routerLink]="['/shops/details', getRoute(shop.name)]">
+
+            <div class="shop-card">
+              <div class="wrapper-div">
+                <img [src]="shop.mainImage">
+              </div>
+
+              <div class="text-center shop-name align-middle">{{shop.name}}</div>
+
+              <div class="d-flex shop-btn-div">
+                <a class="mx-auto">
+                  <button class="button shop-btn" [routerLink]="['/shops/details', getRoute(shop.name)]">
+                    Visit Store
+                  </button>
+                </a>
+              </div>
+
+            </div>
+
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>-->

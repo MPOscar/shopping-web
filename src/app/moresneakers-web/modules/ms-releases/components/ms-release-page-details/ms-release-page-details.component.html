@@ -78,35 +78,55 @@
     <div class="row no-gutters">
       <div class="content col-xl-5 d-flex align-items-stretch" data-aos="fade-up">
         <div class="content">
-          <h3>Voluptatem dignissimos provident quasi</h3>
+          <h3>{{releasePage.name}}</h3>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+            {{releasePage.description}}
           </p>
-          <a href="#" class="about-btn">About us <i class="bx bx-chevron-right"></i></a>
         </div>
       </div>
       <div class="col-xl-7 d-flex align-items-stretch">
-        <div class="icon-boxes d-flex flex-column justify-content-center">
+        <div class="icon-boxes d-flex flex-column justify-content-center w-100">
           <div class="row">
             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
               <i class="bx bx-receipt"></i>
-              <h4>Corporis voluptates sit</h4>
-              <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+              <h4>BRAND</h4>
+              <p [routerLink]="['/brands', getRoute(releasePage.brand)]" class="cursor-pointer">{{releasePage.brand}}</p>
             </div>
+
             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
               <i class="bx bx-cube-alt"></i>
-              <h4>Ullamco laboris nisi</h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+              <h4>COLLECTION</h4>
+              <p class="cursor-pointer" [routerLink]="['/collections', getRoute(releasePage.collection)]">{{releasePage.collection}}</p>
             </div>
+
             <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-images"></i>
-              <h4>Labore consequatur</h4>
-              <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+              <h4>DETAILS</h4>
+              <div *ngIf="releasePage.supplierColor">
+                <span class="release-details-feature">Supplier Color : </span>
+                <span>{{releasePage.supplierColor}}</span>
+              </div>
+              <div *ngIf="releasePage.sku">
+                <span class="release-details-feature">Style Code : </span>
+                <span>{{releasePage.sku}}</span>
+              </div>
+              <div *ngIf="releasePage.releaseDate">
+                <span class="release-details-feature">Release Date : </span>
+                <span>{{releasePage.releaseDate}}</span>
+              </div>
+              <div *ngIf="releaseHasPrice">
+                <span class="release-details-feature">Retail Price : </span>
+                <span>{{ releasePage.retailerPrice }} </span>
+              </div>
+              <div *ngIf="releasePage.gender">
+                <span class="release-details-feature">Gender : </span>
+                <span>{{getFullGender(releasePage.gender)}}</span>
+              </div>
             </div>
-            <div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div *ngIf="releasePage.category" class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
               <i class="bx bx-shield"></i>
-              <h4>Beatae veritatis</h4>
-              <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
+              <h4>Category</h4>
+              <p class="cursor-pointer" [routerLink]="['/categories', getRoute(releasePage.category)]">{{releasePage.category}}</p>
             </div>
           </div>
         </div><!-- End .content-->

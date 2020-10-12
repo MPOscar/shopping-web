@@ -123,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu a {
   display: block;
   position: relative;
-  color: #2f4d5a;
+  color: #ffffff;
   padding: 20px 15px;
   transition: 0.3s;
   font-size: 13px;
@@ -858,7 +858,7 @@ section {
 
 .portfolio .portfolio-wrap .portfolio-links a {
   color: #fff;
-  font-size: 28px;
+  font-size: 20px;
   text-align: center;
   background: rgba(103, 176, 209, 0.75);
   transition: 0.3s;

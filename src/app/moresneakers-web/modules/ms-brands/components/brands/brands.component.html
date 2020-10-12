@@ -10,9 +10,7 @@
   <ms-hottest-releases></ms-hottest-releases>
 </div>
 
-<div id="brands-div" class="padding-bottom-1-5rem">
-
-  <ms-breadcrumb [steps]="['Home','Brands', selectedBrand.name]"></ms-breadcrumb>
+<div id="brands-div">
 
   <ms-banner [backgroundImage]="'assets/images/whats-new/banner.svg'"
     [isBrand]="true"
@@ -23,20 +21,27 @@
     [text]="selectedBrand.description">
   </ms-banner>
 
-  <ms-top5-stores [shops]="shops" [brandId]="brandId" [brands]="brands"></ms-top5-stores>
+  <!-- ======= Section ======= -->
+  <section id="services" class="services">
+    <div class="">
 
-  <div class="d-flex align-items-stretch flex-column flex-md-row">
-    <div id="filters-div">
-      <filters-form  [isFiltersReleases]="true" [inputFilters]="filters" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
+      <ms-top5-stores [shops]="shops" [brandId]="brandId" [brands]="brands"></ms-top5-stores>
+
+
+
+      <div class="d-flex align-items-stretch flex-column flex-md-row">
+        <div id="filters-div">
+          <filters-form  [isFiltersReleases]="true" [inputFilters]="filters" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
+        </div>
+
+        <div id="product-table-div">
+          <releases-table [itemsPerRow]="4" [releases]="releases" [shops]="shops" [styles]="styles" [brandId]="brandId" [brands]="brands"
+            (sortByPriceEvent)="sortByPrice($event)">
+          </releases-table>
+        </div>
+      </div>
     </div>
-
-    <div id="product-table-div">
-      <releases-table [itemsPerRow]="4" [releases]="releases" [shops]="shops" [styles]="styles" [brandId]="brandId" [brands]="brands"
-        (sortByPriceEvent)="sortByPrice($event)">
-      </releases-table>
-    </div>
-  </div>
-
+  </section>
   <ms-hottest-release-slider [brandId]="brandId"></ms-hottest-release-slider>
 
 </div>

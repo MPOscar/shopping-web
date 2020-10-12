@@ -54,8 +54,8 @@
   text-align: center;
   line-height: 2.25rem;
 
-  background-color: $dark-gray-text;
-  border: solid 1px $dark-gray-text;
+  background-color: #2f4d5a;
+  border: solid 1px #000000;
 
   color: white;
   font-family: TitilliumWeb;
@@ -83,10 +83,10 @@
   position: relative;
 }
 
-.shop-card:hover {
+/*.shop-card:hover {
   border: rgba(0, 0, 0, 0.19) solid 1px !important;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+}*/
 
 .shop-image-div {
   position: relative;
@@ -102,7 +102,7 @@
 
 .shop-name {
   width: 100%;
-  background-color: $dark-gray-text;
+  background: rgba(103, 176, 209, 0.95);
   color: white;
   font-family: TitilliumWeb;
   font-size: 1.15rem;
@@ -129,13 +129,14 @@
   cursor: pointer !important;
   height: 100%;
   font-size: 1.15rem;
-  border: solid 1px gray;
+  border: 1px;
   width: 100%;
   font-family: TitilliumWeb;
   color: white;
   text-transform: uppercase;
   font-style: italic;
-  background-color: rgba(0, 0, 0, .7);
+  background: rgba(103, 176, 209, 0.95);
+  border-radius: 50px !important;
 }
 
 .shop-btn:hover {
