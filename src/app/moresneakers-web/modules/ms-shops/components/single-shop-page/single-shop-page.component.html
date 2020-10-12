@@ -1,8 +1,9 @@
 <div class="padding-bottom-1-5rem">
 
-  <ms-breadcrumb [steps]="['Home', 'Shops', shopName]"></ms-breadcrumb>
-
-  <ms-advertisement></ms-advertisement>
+  <div class="">
+    Sliders
+    <ms-slider [sliders]="sliders"></ms-slider>
+  </div>
 
   <ms-single-shop-details *ngIf="showPageDetails" [shop]="shop"></ms-single-shop-details>
 

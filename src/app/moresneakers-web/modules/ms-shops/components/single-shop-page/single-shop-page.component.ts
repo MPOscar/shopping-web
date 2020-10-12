@@ -16,6 +16,7 @@ import { ShopsService } from '../../services/shops.service';
 import { ShopsImgesService } from '../../services/shops-images.service';
 import { MsProductTableComponent } from '../../../../../shared/modules/ms-product-table/ms-product-table.component';
 import { ErrorHandlingService } from '../../../../../error-handling/services/error-handling.service';
+import {Slide} from '../../../ms-layout/models/layout';
 
 const errorKey = 'Error';
 
@@ -58,6 +59,8 @@ export class SingleShopPageComponent implements OnInit {
 
   shopName = '';
 
+  sliders: Slide[] = [];
+
   constructor(public activatedRoute: ActivatedRoute,
     public errorHandlingService: ErrorHandlingService,
     public offersService: OffersService,
@@ -81,25 +84,57 @@ export class SingleShopPageComponent implements OnInit {
       this.shop = this.activatedRoute.snapshot.data.shop;
       this.shopId = this.shop.id;
       this.shopName = this.shop.name;
+      this.sliders.push({
+        id: 'abf5rt',
+        entityId: 'a',
+        entityType: 'b',
+        type: 'wewe',
+        imgUrl: this.shop.headerImage,
+        description: this.shop.name
+      });
+      this.sliders.push({
+        id: 'abf5rt',
+        entityId: 'a',
+        entityType: 'b',
+        type: 'wewe',
+        imgUrl: this.shop.mainImage,
+        description: this.shop.name
+      });
     } else {
       this.shopId = this.activatedRoute.snapshot.data.shopId;
       this.shopsService.getShop(this.shopId).subscribe(response => {
         this.shop = response.data;
         this.shopName = this.shop.name;
+        this.sliders.push({
+          id: 'abf5rt',
+          entityId: 'a',
+          entityType: 'b',
+          type: 'wewe',
+          imgUrl: this.shop.headerImage,
+          description: this.shop.name
+        });
+        this.sliders.push({
+          id: 'abf5rt',
+          entityId: 'a',
+          entityType: 'b',
+          type: 'wewe',
+          imgUrl: this.shop.mainImage,
+          description: this.shop.name
+        });
       });
     }
 
     this.showPageDetails = true;
     this.scrollTop();
 
-    this.shopsImgesService.getShopAllImages(this.shopId).subscribe(response => {
+    /*this.shopsImgesService.getShopAllImages(this.shopId).subscribe(response => {
       let images: Array<String> = [];
       response.data.forEach(element => {
         images = [...images, element.imgUrl];
       });
       this.shop.images = images;
       this.showImages = true;
-    });
+    });*/
 
     if (!this.shop.isParent && this.shop.type === 'virtual') {
       this.data = {
