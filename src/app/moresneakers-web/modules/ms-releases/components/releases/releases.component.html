@@ -16,9 +16,19 @@
     [text]="description">
   </ms-banner>
 
-  <ms-breadcrumb [steps]="['Home','Releases']"></ms-breadcrumb>
+  <section id="services" class="services pb-0">
+    <div class="w-100">
+
+      <div class="section-title" data-aos="fade-in" data-aos-delay="100">
+        <h2>Releases</h2>
+        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+      </div>
+    </div>
+  </section>
 
   <div class="d-flex align-items-stretch flex-column flex-md-row">
+
+
     <div id="filters-div">
       <filters-form [isFiltersReleases]="true" [shops]="shops" [styles]="styles" [categories]="categories" [brands]="brands" [samePage]="true" (filterEventEmiter)="filter($event)"></filters-form>
     </div>
@@ -28,7 +38,7 @@
         (sortByPriceEvent)="sortByPrice($event)">
       </releases-table>
     </div>
-  </div>
+
 
 </div>
 
