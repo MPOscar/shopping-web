@@ -623,7 +623,7 @@ section {
 }
 
 .services .icon-box:hover::before {
-  background: #67b0d1;
+  background: #67b0d173;
   top: 0;
   border-radius: 0px;
 }

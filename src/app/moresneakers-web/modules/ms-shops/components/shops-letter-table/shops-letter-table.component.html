@@ -1,4 +1,4 @@
-<div *ngIf="shops" class="portfolio">
+<div *ngIf="shops" class="portfolio services">
 
   <div class="d-flex flex-wrap mb-3">
     <div *ngFor="let letter of letters; let index = index; let last = last"
@@ -21,7 +21,21 @@
         <hr class="letter-line-separator">
       </div>
 
-      <div *ngFor="let shop of groupOfShopsByLetter"
+      <div class="row">
+        <div *ngFor="let shop of groupOfShopsByLetter" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" >
+          <div class="icon-box" data-aos="fade-up" [ngStyle]="{
+                  'background-image': 'url(' + shop.mainImage + ')',
+                  'color': '',
+                  'background-repeat': 'no-repeat',
+                  'background-size': 'cover'
+                }">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4 class="title"><a href="">{{shop.name}}</a></h4>
+            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+          </div>
+        </div>
+      </div>
+      <!--<div *ngFor="let shop of groupOfShopsByLetter"
            class="ml-1 col-md-4 items-per-row-4 ml-lg-3 p-0 mb-3 shop-card">
 
         <a class="text-decoration-none cursor-pointer h-100 mx-auto" [routerLink]="['/shops/details', getRoute(shop.name)]">
@@ -44,7 +58,7 @@
           </div>
 
         </a>
-      </div>
+      </div>-->
     </div>
   </div>
 
