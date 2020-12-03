@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #header.header-scrolled {
-  background: rgba(103, 176, 209, 0.8);
+  background: #da853bbd !important;
   padding: 0;
 }
 

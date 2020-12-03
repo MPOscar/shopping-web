@@ -31,23 +31,34 @@ export class BrandsComponent implements OnInit {
 
   @ViewChild(MsHottestReleaseSliderComponent) hottestReleaseSliderComponent: MsHottestReleaseSliderComponent;
 
-  brands: Array<Brand>;
 
-  selectedBrand: Brand;
+
 
   brandId: string;
+
+  brands: Array<Brand>;
 
   categories: Array<Category>;
 
   data: any = {};
 
+  description: string;
+
+  displayHeadertOnPage: boolean = false;
+
+  displaySlidersOnPage: boolean = false;
+
+  displayHottestOnPage: boolean = false;
+
   filters: any;
 
-  shops: Array<Shop>;
+  header: Header;
 
-  styles: Array<Style>;
+  headerDisplay: string = "";
 
-  showAll: boolean = false;
+  hottestDisplay: string = "";
+
+  imgUrl = '';
 
   offers: Array<any>;
 
@@ -55,9 +66,13 @@ export class BrandsComponent implements OnInit {
 
   releaseName: string;
 
-  title: string;
+  shops: Array<Shop>;
 
-  description: string;
+  styles: Array<Style>;
+
+  showAll: boolean = false;
+
+  selectedBrand: Brand;
 
   shopsSellingThisBrand: Array<any> = [];
 
@@ -65,21 +80,11 @@ export class BrandsComponent implements OnInit {
 
   shopsIdSellingThisBrand: Array<any>;
 
-  header: Header;
-
   slidersData: Sliders;
 
   slideDisplay: string = "";
 
-  headerDisplay: string = "";
-
-  hottestDisplay: string = "";
-
-  displayHeadertOnPage: boolean = false;
-
-  displaySlidersOnPage: boolean = false;
-
-  displayHottestOnPage: boolean = false;
+  title: string;
 
   constructor(
     public activatedRoute: ActivatedRoute,
@@ -116,6 +121,7 @@ export class BrandsComponent implements OnInit {
       this.title = response.data.title;
       this.description = response.data.description;
       this.msSeoService.addMetadata(response.data.keywords);
+      this.imgUrl = response.data.imgUrl;
     });
 
     this.data = {

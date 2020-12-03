@@ -148,6 +148,7 @@ export class CollectionsComponent implements OnInit {
     });
 
     if (this.collection) {
+      this.title = this.collection.name;
       this.description = this.collection.description;
       this.imgUrl = this.collection.imgUrl;
     }

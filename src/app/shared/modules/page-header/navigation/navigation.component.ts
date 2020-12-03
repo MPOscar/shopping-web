@@ -52,12 +52,14 @@ export class NavigationComponent implements OnInit {
       const collapMenu = document.getElementsByClassName("visible")[0];
       if (number > 150 || window.pageYOffset > 150) {
         navbar.classList.remove("navbar-transparent");
+        navbar.classList.remove("background-nav");
       } else if (
         _location !== "login" &&
         this.location.path() !== "/nucleoicons"
       ) {
         if (this.showTransparent && collapMenu === undefined) {
           navbar.classList.add("navbar-transparent");
+          navbar.classList.add("background-nav");
         }
       }
     });

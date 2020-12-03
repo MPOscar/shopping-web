@@ -132,7 +132,7 @@ export class HomeComponent implements OnInit {
             this.displayHeadingOnPage = response.data.displayOnPage;
             this.title = response.data.title;
             this.description = response.data.keywords;
-            this.imgUrl = response.data.imgUrl || 'assets/images/whats-new/banner.svg';
+            this.imgUrl = response.data.imgUrl;
             this.msSeoService.addMetadata(response.data.keywords);
           }
         });

@@ -22,43 +22,18 @@
       </div>
 
       <div class="row">
-        <div *ngFor="let shop of groupOfShopsByLetter" class="col-md-6 col-lg-4 d-flex align-items-stretch mb-5 mb-lg-0" >
-          <div class="icon-box" data-aos="fade-up" [ngStyle]="{
+        <div *ngFor="let shop of groupOfShopsByLetter" class="pl-3" >
+          <div class="icon-box w-100 h-100" data-aos="fade-up" [ngStyle]="{
                   'background-image': 'url(' + shop.mainImage + ')',
                   'color': '',
                   'background-repeat': 'no-repeat',
                   'background-size': 'cover'
                 }">
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4 class="title"><a href="">{{shop.name}}</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+            <h4 class="title"><a [routerLink]="['/shops/details', getRoute(shop.name)]">{{shop.name}}</a></h4>
           </div>
         </div>
       </div>
-      <!--<div *ngFor="let shop of groupOfShopsByLetter"
-           class="ml-1 col-md-4 items-per-row-4 ml-lg-3 p-0 mb-3 shop-card">
-
-        <a class="text-decoration-none cursor-pointer h-100 mx-auto" [routerLink]="['/shops/details', getRoute(shop.name)]">
-
-          <div class="text-center shop-name align-middle">{{shop.name}}</div>
-
-          <div class="shop-image-div">
-
-            <div class="wrapper-div">
-              <img [src]="shop.mainImage">
-            </div>
-
-            <div class="d-flex shop-btn-div">
-              <a class="text-decoration-none h-100 mx-auto">
-                <button class="button shop-btn" [routerLink]="['/shops/details', getRoute(shop.name)]">
-                  Visit Store
-                </button>
-              </a>
-            </div>
-          </div>
-
-        </a>
-      </div>-->
     </div>
   </div>
 
